@@ -1,0 +1,13 @@
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\bin\Debug\ImportOrderManagementSystem.exe.config
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.csprojResolveAssemblyReference.cache
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.LoginUI.frmRegistration.resources
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.Properties.Resources.resources
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.csproj.GenerateResource.Cache
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.LoginUI.LoginForm.resources
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.LoginUI.ResetPassword.resources
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.LoginUI.UserManagementUI.resources
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.UI.frmMainUI.resources
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\bin\Debug\ImportOrderManagementSystem.exe
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\bin\Debug\ImportOrderManagementSystem.pdb
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.exe
+c:\users\kyoto\Documents\Visual Studio 2013\Projects\ImportOrderManagementSystem\ImportOrderManagementSystem\obj\Debug\ImportOrderManagementSystem.pdb
