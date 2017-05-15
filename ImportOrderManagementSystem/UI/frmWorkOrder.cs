@@ -23,7 +23,7 @@ namespace ImportOrderManagementSystem.UI
         ConnectionString cs = new ConnectionString();
         SqlDataReader rdr;
         public string submittedBy, fullName;
-        public int iOId;
+        public int SupplierId, brandid;
         public frmWorkOrder()
         {
             InitializeComponent();
@@ -36,14 +36,14 @@ namespace ImportOrderManagementSystem.UI
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string cb2 = "Update ImportOrder set ImportOrder.OrderByUId=@d1, OrderStatus=@d2,OrderEntryDate=@d3 where  ImportOrder.IOId='" + iOId + "' ";
+                string cb2 = "Update ImportOrder set ImportOrder.OrderByUId=@d1, OrderStatus=@d2,OrderEntryDate=@d3 where  ImportOrder.IOId='" + SupplierId + "' ";
                 cmd = new SqlCommand(cb2,con);
                 cmd.Parameters.AddWithValue("@d1", submittedBy);
                 cmd.Parameters.AddWithValue("@d2", "OrderComplete");
                 cmd.Parameters.AddWithValue("@d3", System.DateTime.UtcNow.ToLocalTime());
                 cmd.ExecuteReader();
                 con.Close();               
-                cmbWorkOrderNo.SelectedIndex = -1;
+                SupliercomboBox.SelectedIndex = -1;
                 FillWOrderCombo();
 
             }
@@ -72,7 +72,7 @@ namespace ImportOrderManagementSystem.UI
                     con = new SqlConnection(cs.DBConn);
                     string cd = "insert Into OrderListProduct(IOId,Sl,OrderAmount,OrderPrice,ProductStatus) VALUES (@d1,@d2,@d3,@d4,@d5)";
                     cmd = new SqlCommand(cd,con);                   
-                    cmd.Parameters.AddWithValue("d1", iOId);                  
+                    cmd.Parameters.AddWithValue("d1", SupplierId);                  
                     cmd.Parameters.AddWithValue("d2", listView1.Items[i].SubItems[1].Text);                    
                     cmd.Parameters.AddWithValue("d3", listView1.Items[i].SubItems[3].Text);
                     cmd.Parameters.AddWithValue("d4", listView1.Items[i].SubItems[4].Text);                    
@@ -95,23 +95,7 @@ namespace ImportOrderManagementSystem.UI
         }
         public void GetData()
         {
-            try
-            {
-                con = new SqlConnection(cs.DBConn);
-                con.Open();
-                cmd = new SqlCommand("SELECT RTRIM(Sl) as ProductId,RTRIM(ProductGenericDescription),RTRIM(ItemDescription),RTRIM(ItemCode) from ProductListSummary  order by Sl desc", con);
-                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                dataGridViewk.Rows.Clear();
-                while (rdr.Read() == true)
-                {
-                    dataGridViewk.Rows.Add(rdr[0], rdr[1],rdr[2],rdr[3]);
-                }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
         public void FillWOrderCombo()
         {
@@ -127,7 +111,7 @@ namespace ImportOrderManagementSystem.UI
 
                 while (rdr.Read())
                 {
-                    cmbWorkOrderNo.Items.Add(rdr[0]);
+                    SupliercomboBox.Items.Add(rdr[0]);
                 }
                 con.Close();
             }
@@ -136,30 +120,30 @@ namespace ImportOrderManagementSystem.UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        static Splash splash = null;
+        //static Splash splash = null;
 
         /// <summary>
         /// Starts the splash screen on a separate thread
         /// </summary>
-        static public void StartSplash()
-        {
-            // Instance a splash form given the image names
-            splash = new Splash(kSplashUpdateInterval_ms);
+        //static public void StartSplash()
+        //{
+        //    // Instance a splash form given the image names
+        //    splash = new Splash(kSplashUpdateInterval_ms);
 
-            // Run the form
-            Application.Run(splash);
-        }
+        //    // Run the form
+        //    Application.Run(splash);
+        //}
 
-        private void CloseSplash()
-        {
-            if (splash == null)
-                return;
+        //private void CloseSplash()
+        //{
+        //    if (splash == null)
+        //        return;
 
-            // Shut down the splash screen
-            splash.Invoke(new EventHandler(splash.KillMe));
-            splash.Dispose();
-            splash = null;
-        }
+        //    // Shut down the splash screen
+        //    splash.Invoke(new EventHandler(splash.KillMe));
+        //    splash.Dispose();
+        //    splash = null;
+        //}
 
         private void temp()
         {
@@ -168,21 +152,22 @@ namespace ImportOrderManagementSystem.UI
         private void frmWorkOrder_Load(object sender, EventArgs e)
         {
             groupBox2.Enabled = false;
-            Application.UseWaitCursor = true;
-            Thread splashThread = new Thread(new ThreadStart(StartSplash));
-            splashThread.Start();
+            //Application.UseWaitCursor = true;
+            //Thread splashThread = new Thread(new ThreadStart(StartSplash));
+            //splashThread.Start();
 
             // Pretend that our application is doing a bunch of loading and
             // initialization
-            Thread.Sleep(kMinAmountOfSplashTime_ms / 8);
+            //Thread.Sleep(kMinAmountOfSplashTime_ms / 8);
 
-            cmbWorkOrderNo.Focus();
+            SupliercomboBox.Focus();
             FillWOrderCombo();
-        
+            GetBrand();
+            GetSuplier();
             GetData();
             submittedBy = LoginForm.uId2.ToString();
-            CloseSplash();
-            Application.UseWaitCursor = false;
+            //CloseSplash();
+            //Application.UseWaitCursor = false;
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -197,7 +182,7 @@ namespace ImportOrderManagementSystem.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cmbWorkOrderNo.Enabled = false;
+            SupliercomboBox.Enabled = false;
 
             if (txtProductId.Text == "")
             {
@@ -423,23 +408,24 @@ namespace ImportOrderManagementSystem.UI
 
         private void cmbWorkOrderNo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtProductId.Focus();
-            groupBox2.Enabled = true;
+            
             try
             {
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string cty4 = "select ImportOrder.IOId from ImportOrder where  ImportOrder.ImportOrderNo='" + cmbWorkOrderNo.Text + "'";
+                string cty4 = "SELECT SupplierId FROM Supplier WHERE SupplierName ='" + SupliercomboBox.Text + "'";
                 cmd = new SqlCommand(cty4);
                 cmd.Connection = con;
                 rdr = cmd.ExecuteReader();
                 if (rdr.Read())
                 {
-                    iOId = (rdr.GetInt32(0));
+                    SupplierId = (rdr.GetInt32(0));
                 }
+                groupBox2.Enabled = true;
             }
             catch (Exception ex)
             {
+                groupBox2.Enabled = false;
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -504,6 +490,87 @@ namespace ImportOrderManagementSystem.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void GetBrand()
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ctt = "select BrandName from Brand";
+                cmd = new SqlCommand(ctt);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    BrandcomboBox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                //cmbGender.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void GetSuplier()
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ctt = "SELECT SupplierName FROM Supplier";
+                cmd = new SqlCommand(ctt);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    SupliercomboBox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                //cmbGender.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BrandcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ct = "select BrandId from Brand  where  Brand.BrandName='" + BrandcomboBox.Text + "' ";
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+
+                    brandid = Convert.ToInt32(rdr["BrandId"]);
+                }
+                con.Close();
+
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                //cmd = new SqlCommand("SELECT RTRIM(ProductListSummary.Sl),RTRIM(ProductListSummary.ProductGenericDescription),RTRIM(ProductListSummary.ItemDescription),RTRIM(ProductListSummary.ItemCode),RTRIM(MasterStocks.MQuantity),RTRIM(MasterStocks.UnitPrice) from ProductListSummary,MasterStocks where MasterStocks.Sl=ProductListSummary.Sl order by MasterStocks.Sl desc", con);
+                cmd = new SqlCommand("SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode FROM Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId where Brand.BrandName='" + BrandcomboBox.Text + "' order by ProductListSummary.Sl desc", con);
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                dataGridViewk.Rows.Clear();
+                while (rdr.Read() == true)
+                {
+                    dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3]);
+                }
+               
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
         }
     }

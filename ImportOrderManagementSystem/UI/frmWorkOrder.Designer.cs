@@ -31,9 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWorkOrder));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BrandcomboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.importOrderDate = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtImportOrderNo = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.removeButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
-            this.cmbWorkOrderNo = new System.Windows.Forms.ComboBox();
+            this.SupliercomboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtOrderPrice = new System.Windows.Forms.TextBox();
@@ -41,18 +47,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtItemCode = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtProductId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtProductId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewk = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,21 +73,6 @@
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.k = new System.Windows.Forms.Label();
             this.g = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.invoiceDate = new System.Windows.Forms.DateTimePicker();
-            this.importOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.lcNumberTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.invoiceNumberTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.packingListNoTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtImportOrderNo = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -92,23 +84,15 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Olive;
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.BrandcomboBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.invoiceDate);
             this.groupBox1.Controls.Add(this.importOrderDate);
-            this.groupBox1.Controls.Add(this.lcNumberTextBox);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.invoiceNumberTextBox);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.packingListNoTextBox);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtImportOrderNo);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.removeButton);
             this.groupBox1.Controls.Add(this.submitButton);
-            this.groupBox1.Controls.Add(this.cmbWorkOrderNo);
+            this.groupBox1.Controls.Add(this.SupliercomboBox);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtOrderPrice);
@@ -127,12 +111,75 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // BrandcomboBox
+            // 
+            this.BrandcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BrandcomboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrandcomboBox.FormattingEnabled = true;
+            this.BrandcomboBox.Location = new System.Drawing.Point(183, 19);
+            this.BrandcomboBox.Name = "BrandcomboBox";
+            this.BrandcomboBox.Size = new System.Drawing.Size(274, 32);
+            this.BrandcomboBox.TabIndex = 40;
+            this.BrandcomboBox.SelectedIndexChanged += new System.EventHandler(this.BrandcomboBox_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Lime;
+            this.label3.Location = new System.Drawing.Point(7, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 22);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Brand";
+            // 
+            // importOrderDate
+            // 
+            this.importOrderDate.Enabled = false;
+            this.importOrderDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.importOrderDate.Location = new System.Drawing.Point(183, 153);
+            this.importOrderDate.Name = "importOrderDate";
+            this.importOrderDate.Size = new System.Drawing.Size(274, 32);
+            this.importOrderDate.TabIndex = 28;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label14.Location = new System.Drawing.Point(59, 153);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(104, 22);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Order Date";
+            // 
+            // txtImportOrderNo
+            // 
+            this.txtImportOrderNo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImportOrderNo.Location = new System.Drawing.Point(183, 108);
+            this.txtImportOrderNo.Name = "txtImportOrderNo";
+            this.txtImportOrderNo.ReadOnly = true;
+            this.txtImportOrderNo.Size = new System.Drawing.Size(274, 32);
+            this.txtImportOrderNo.TabIndex = 27;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label15.Location = new System.Drawing.Point(6, 65);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 22);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "Supplier";
+            // 
             // removeButton
             // 
             this.removeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.removeButton.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.removeButton.Location = new System.Drawing.Point(476, 137);
+            this.removeButton.Location = new System.Drawing.Point(476, 266);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(113, 56);
             this.removeButton.TabIndex = 7;
@@ -145,7 +192,7 @@
             this.submitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.submitButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.Fuchsia;
-            this.submitButton.Location = new System.Drawing.Point(478, 216);
+            this.submitButton.Location = new System.Drawing.Point(478, 345);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(111, 55);
             this.submitButton.TabIndex = 6;
@@ -153,16 +200,16 @@
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // cmbWorkOrderNo
+            // SupliercomboBox
             // 
-            this.cmbWorkOrderNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbWorkOrderNo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbWorkOrderNo.FormattingEnabled = true;
-            this.cmbWorkOrderNo.Location = new System.Drawing.Point(186, 407);
-            this.cmbWorkOrderNo.Name = "cmbWorkOrderNo";
-            this.cmbWorkOrderNo.Size = new System.Drawing.Size(246, 32);
-            this.cmbWorkOrderNo.TabIndex = 0;
-            this.cmbWorkOrderNo.SelectedIndexChanged += new System.EventHandler(this.cmbWorkOrderNo_SelectedIndexChanged);
+            this.SupliercomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SupliercomboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupliercomboBox.FormattingEnabled = true;
+            this.SupliercomboBox.Location = new System.Drawing.Point(183, 63);
+            this.SupliercomboBox.Name = "SupliercomboBox";
+            this.SupliercomboBox.Size = new System.Drawing.Size(274, 32);
+            this.SupliercomboBox.TabIndex = 0;
+            this.SupliercomboBox.SelectedIndexChanged += new System.EventHandler(this.cmbWorkOrderNo_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -177,7 +224,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Lime;
-            this.label10.Location = new System.Drawing.Point(14, 623);
+            this.label10.Location = new System.Drawing.Point(14, 349);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(162, 22);
             this.label10.TabIndex = 24;
@@ -186,9 +233,9 @@
             // txtOrderPrice
             // 
             this.txtOrderPrice.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderPrice.Location = new System.Drawing.Point(197, 618);
+            this.txtOrderPrice.Location = new System.Drawing.Point(182, 344);
             this.txtOrderPrice.Name = "txtOrderPrice";
-            this.txtOrderPrice.Size = new System.Drawing.Size(247, 32);
+            this.txtOrderPrice.Size = new System.Drawing.Size(275, 32);
             this.txtOrderPrice.TabIndex = 4;
             this.txtOrderPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOrderPrice_KeyDown);
             this.txtOrderPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrderPrice_KeyPress);
@@ -196,9 +243,9 @@
             // txtOrderAmount
             // 
             this.txtOrderAmount.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderAmount.Location = new System.Drawing.Point(197, 572);
+            this.txtOrderAmount.Location = new System.Drawing.Point(182, 298);
             this.txtOrderAmount.Name = "txtOrderAmount";
-            this.txtOrderAmount.Size = new System.Drawing.Size(247, 32);
+            this.txtOrderAmount.Size = new System.Drawing.Size(275, 32);
             this.txtOrderAmount.TabIndex = 3;
             this.txtOrderAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOrderAmount_KeyDown);
             this.txtOrderAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrderAmount_KeyPress);
@@ -208,7 +255,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Lime;
-            this.label9.Location = new System.Drawing.Point(48, 572);
+            this.label9.Location = new System.Drawing.Point(33, 298);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 22);
             this.label9.TabIndex = 21;
@@ -219,7 +266,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Lime;
-            this.label8.Location = new System.Drawing.Point(83, 521);
+            this.label8.Location = new System.Drawing.Point(68, 247);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 22);
             this.label8.TabIndex = 19;
@@ -228,12 +275,57 @@
             // txtItemCode
             // 
             this.txtItemCode.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemCode.Location = new System.Drawing.Point(198, 516);
+            this.txtItemCode.Location = new System.Drawing.Point(183, 242);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.ReadOnly = true;
-            this.txtItemCode.Size = new System.Drawing.Size(246, 32);
+            this.txtItemCode.Size = new System.Drawing.Size(274, 32);
             this.txtItemCode.TabIndex = 2;
             this.txtItemCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemCode_KeyDown);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.Location = new System.Drawing.Point(476, 188);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 63);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Add To Chart    ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtProductId
+            // 
+            this.txtProductId.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductId.Location = new System.Drawing.Point(183, 196);
+            this.txtProductId.Name = "txtProductId";
+            this.txtProductId.ReadOnly = true;
+            this.txtProductId.Size = new System.Drawing.Size(274, 32);
+            this.txtProductId.TabIndex = 1;
+            this.txtProductId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductId_KeyDown);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Lime;
+            this.label4.Location = new System.Drawing.Point(61, 195);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 22);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Product Id";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Lime;
+            this.label1.Location = new System.Drawing.Point(14, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Import Order No";
             // 
             // listView1
             // 
@@ -279,51 +371,6 @@
             this.columnHeader6.Text = "Order Unit  Price";
             this.columnHeader6.Width = 131;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Yellow;
-            this.button1.Location = new System.Drawing.Point(476, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 63);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add To Chart    ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtProductId
-            // 
-            this.txtProductId.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductId.Location = new System.Drawing.Point(198, 469);
-            this.txtProductId.Name = "txtProductId";
-            this.txtProductId.ReadOnly = true;
-            this.txtProductId.Size = new System.Drawing.Size(246, 32);
-            this.txtProductId.TabIndex = 1;
-            this.txtProductId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductId_KeyDown);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(76, 473);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 22);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Product Id";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(11, 412);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Import Order No";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -348,6 +395,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.UseCompatibleTextRendering = true;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Lime;
+            this.label5.Location = new System.Drawing.Point(6, 323);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 20);
+            this.label5.TabIndex = 123;
+            this.label5.Text = " List of  Ordered Item";
             // 
             // dataGridViewk
             // 
@@ -477,161 +535,6 @@
             this.g.Text = "g";
             this.g.Visible = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Lime;
-            this.label5.Location = new System.Drawing.Point(6, 323);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 20);
-            this.label5.TabIndex = 123;
-            this.label5.Text = " List of  Ordered Item";
-            // 
-            // invoiceDate
-            // 
-            this.invoiceDate.Enabled = false;
-            this.invoiceDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.invoiceDate.Location = new System.Drawing.Point(179, 317);
-            this.invoiceDate.Name = "invoiceDate";
-            this.invoiceDate.Size = new System.Drawing.Size(278, 32);
-            this.invoiceDate.TabIndex = 32;
-            // 
-            // importOrderDate
-            // 
-            this.importOrderDate.Enabled = false;
-            this.importOrderDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.importOrderDate.Location = new System.Drawing.Point(178, 109);
-            this.importOrderDate.Name = "importOrderDate";
-            this.importOrderDate.Size = new System.Drawing.Size(277, 32);
-            this.importOrderDate.TabIndex = 28;
-            // 
-            // lcNumberTextBox
-            // 
-            this.lcNumberTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lcNumberTextBox.Location = new System.Drawing.Point(179, 164);
-            this.lcNumberTextBox.Name = "lcNumberTextBox";
-            this.lcNumberTextBox.ReadOnly = true;
-            this.lcNumberTextBox.Size = new System.Drawing.Size(278, 32);
-            this.lcNumberTextBox.TabIndex = 29;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Lime;
-            this.label6.Location = new System.Drawing.Point(53, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 22);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "LC Number";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label11.Location = new System.Drawing.Point(15, 367);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 22);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Packing List No";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label12.Location = new System.Drawing.Point(48, 318);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 22);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "Invoice Date";
-            // 
-            // invoiceNumberTextBox
-            // 
-            this.invoiceNumberTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceNumberTextBox.Location = new System.Drawing.Point(179, 271);
-            this.invoiceNumberTextBox.Name = "invoiceNumberTextBox";
-            this.invoiceNumberTextBox.ReadOnly = true;
-            this.invoiceNumberTextBox.Size = new System.Drawing.Size(278, 29);
-            this.invoiceNumberTextBox.TabIndex = 31;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label13.Location = new System.Drawing.Point(20, 273);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(140, 22);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Invoice Number";
-            // 
-            // packingListNoTextBox
-            // 
-            this.packingListNoTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.packingListNoTextBox.Location = new System.Drawing.Point(179, 364);
-            this.packingListNoTextBox.Name = "packingListNoTextBox";
-            this.packingListNoTextBox.ReadOnly = true;
-            this.packingListNoTextBox.Size = new System.Drawing.Size(278, 29);
-            this.packingListNoTextBox.TabIndex = 33;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label14.Location = new System.Drawing.Point(57, 111);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(104, 22);
-            this.label14.TabIndex = 35;
-            this.label14.Text = "Order Date";
-            // 
-            // txtImportOrderNo
-            // 
-            this.txtImportOrderNo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportOrderNo.Location = new System.Drawing.Point(178, 61);
-            this.txtImportOrderNo.Name = "txtImportOrderNo";
-            this.txtImportOrderNo.ReadOnly = true;
-            this.txtImportOrderNo.Size = new System.Drawing.Size(279, 32);
-            this.txtImportOrderNo.TabIndex = 27;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label15.Location = new System.Drawing.Point(6, 65);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(150, 22);
-            this.label15.TabIndex = 34;
-            this.label15.Text = "Import Order No";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(178, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 32);
-            this.comboBox1.TabIndex = 40;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(7, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 22);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Brand";
-            // 
             // frmWorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,7 +595,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ComboBox cmbWorkOrderNo;
+        private System.Windows.Forms.ComboBox SupliercomboBox;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox productNameTextBox;
@@ -706,19 +609,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.DateTimePicker invoiceDate;
         public System.Windows.Forms.DateTimePicker importOrderDate;
-        public System.Windows.Forms.TextBox lcNumberTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.TextBox invoiceNumberTextBox;
-        private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.TextBox packingListNoTextBox;
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtImportOrderNo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox BrandcomboBox;
         private System.Windows.Forms.Label label3;
     }
 }
