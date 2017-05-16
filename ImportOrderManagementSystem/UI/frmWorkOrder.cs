@@ -22,8 +22,8 @@ namespace ImportOrderManagementSystem.UI
         SqlCommand cmd;
         ConnectionString cs = new ConnectionString();
         SqlDataReader rdr;
-        public string submittedBy, fullName;
-        public int SupplierId, brandid;
+        public string submittedBy, fullName, brandCode,impOrderNo;
+        public int SupplierId, brandid, SIO, IncoId;
         public frmWorkOrder()
         {
             InitializeComponent();
@@ -165,6 +165,7 @@ namespace ImportOrderManagementSystem.UI
             GetBrand();
             GetSuplier();
             GetData();
+            GetIncoTerms();
             submittedBy = LoginForm.uId2.ToString();
             //CloseSplash();
             //Application.UseWaitCursor = false;
@@ -421,6 +422,30 @@ namespace ImportOrderManagementSystem.UI
                 {
                     SupplierId = (rdr.GetInt32(0));
                 }
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                //string q2 = "Select SQN From RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
+                //string qr2 = "SELECT MAX(RefNumForQuotation.SQN) FROM RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
+                string qr2 = "SELECT   MAX(SIO) FROM ImportOrders where BrandId='" + brandid +
+                             " datepart(YEAR, ImportDate)'" + importOrderDate.Value.Year + "'";
+                cmd = new SqlCommand(qr2, con);
+                rdr = cmd.ExecuteReader();
+                if (rdr.HasRows)
+                {
+                    SIO = (rdr.GetInt32(0));
+                    SIO = SIO + 1;
+                    impOrderNo = brandCode + importOrderDate.Value.Year.ToString("yy") + "-IO-" + SIO;
+
+
+
+                }
+
+                else
+                {
+                    SIO = 1;
+                    impOrderNo = brandCode + importOrderDate.Value.Year.ToString("yy") + "-IO-" + SIO;
+
+                }
                 groupBox2.Enabled = true;
             }
             catch (Exception ex)
@@ -428,6 +453,7 @@ namespace ImportOrderManagementSystem.UI
                 groupBox2.Enabled = false;
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void txtProductId_KeyDown(object sender, KeyEventArgs e)
@@ -471,10 +497,6 @@ namespace ImportOrderManagementSystem.UI
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dataGridViewk_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -492,6 +514,50 @@ namespace ImportOrderManagementSystem.UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void GetIncoTerms()
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ctt = "SELECT Incoterm FROM IncoTerms";
+                cmd = new SqlCommand(ctt);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    incoCombobox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                //cmbGender.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void GetCurrency()
+        {
+            try
+            {
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ctt = "SELECT CurrencyName FROM Currency";
+                cmd = new SqlCommand(ctt);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    currencyComboBox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                //cmbGender.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
         private void GetBrand()
         {
             try
@@ -539,18 +605,15 @@ namespace ImportOrderManagementSystem.UI
         {
             try
             {
-
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string ct = "select BrandId from Brand  where  Brand.BrandName='" + BrandcomboBox.Text + "' ";
-                cmd = new SqlCommand(ct);
-                cmd.Connection = con;
+                string query1 = "Select BrandId,BrandCode From Brand where BrandName='" + BrandcomboBox.Text + "'";
+                cmd = new SqlCommand(query1, con);
                 rdr = cmd.ExecuteReader();
-
                 if (rdr.Read())
                 {
-
                     brandid = Convert.ToInt32(rdr["BrandId"]);
+                    brandCode = (rdr.GetValue(1).ToString());
                 }
                 con.Close();
 
@@ -571,6 +634,67 @@ namespace ImportOrderManagementSystem.UI
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                
+            }
+        }
+        private void SaveReferenceNumForQuotation()
+        {
+
+
+
+        }
+
+        private void SaveImportOrder()
+        {
+            if (Convert.ToInt32(txtClientId.Text) == sClientIdForRefNum)
+            {
+                con = new SqlConnection(cs.DBConn);
+                string cb =
+                    "insert into RefNumForQuotation(BrandCode,SClientId,SQN,QuotationId,ReferenceNo) VALUES (@d1,@d2,@d3,@d4,@d5)";
+                cmd = new SqlCommand(cb);
+                cmd.Connection = con;
+                cmd.Parameters.AddWithValue("d1", brandCode);
+                cmd.Parameters.AddWithValue("d2", sClientIdForRefNum);
+                cmd.Parameters.AddWithValue("d3", SIO);
+                cmd.Parameters.AddWithValue("d4", quotationId);
+                cmd.Parameters.AddWithValue("d5", referenceNo);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else
+            {
+                con = new SqlConnection(cs.DBConn);
+                string cb =
+                    "insert into RefNumForQuotation(BrandCode,SClientId,SQN,QuotationId,ReferenceNo) VALUES (@d1,@d2,@d3,@d4,@d5)";
+                cmd = new SqlCommand(cb);
+                cmd.Connection = con;
+                cmd.Parameters.AddWithValue("d1", brandCode);
+                cmd.Parameters.AddWithValue("d2", txtClientId.Text);
+                cmd.Parameters.AddWithValue("d3", SIO);
+                cmd.Parameters.AddWithValue("d4", quotationId);
+                cmd.Parameters.AddWithValue("d5", referenceNo);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void incoCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            string cty4 = "SELECT IncoID FROM IncoTerms WHERE Incoterm ='" + incoCombobox.Text + "'";
+            cmd = new SqlCommand(cty4);
+            cmd.Connection = con;
+            rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                IncoId = (rdr.GetInt32(0));
             }
         }
     }
