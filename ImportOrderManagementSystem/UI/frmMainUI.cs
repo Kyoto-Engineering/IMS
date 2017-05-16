@@ -117,5 +117,19 @@ namespace ImportOrderManagementSystem.UI
             //frm.ShowDialog();
             //this.Visible = true;  
         }
+
+        private void CompanyCreationbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCompanyRegistration frmC = new frmCompanyRegistration();
+            frmC.Show();
+        }
+
+        private void SupplierRegistrationbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmSupplierRegistration frmS = new frmSupplierRegistration();
+            frmS.Show();
+        }
     }
 }

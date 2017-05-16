@@ -30,11 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AddressrichTextBox = new System.Windows.Forms.RichTextBox();
+            this.CompanyNametextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.PhonetextBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,8 +50,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.PhonetextBox);
+            this.groupBox1.Controls.Add(this.AddressrichTextBox);
+            this.groupBox1.Controls.Add(this.CompanyNametextBox);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(127, 97);
@@ -59,6 +59,23 @@
             this.groupBox1.Size = new System.Drawing.Size(603, 217);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // AddressrichTextBox
+            // 
+            this.AddressrichTextBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressrichTextBox.Location = new System.Drawing.Point(175, 89);
+            this.AddressrichTextBox.Name = "AddressrichTextBox";
+            this.AddressrichTextBox.Size = new System.Drawing.Size(399, 96);
+            this.AddressrichTextBox.TabIndex = 6;
+            this.AddressrichTextBox.Text = "";
+            // 
+            // CompanyNametextBox
+            // 
+            this.CompanyNametextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyNametextBox.Location = new System.Drawing.Point(175, 46);
+            this.CompanyNametextBox.Name = "CompanyNametextBox";
+            this.CompanyNametextBox.Size = new System.Drawing.Size(399, 29);
+            this.CompanyNametextBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -80,15 +97,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Company Name :";
             // 
-            // PhonetextBox
-            // 
-            this.PhonetextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhonetextBox.Location = new System.Drawing.Point(175, 46);
-            this.PhonetextBox.MaxLength = 11;
-            this.PhonetextBox.Name = "PhonetextBox";
-            this.PhonetextBox.Size = new System.Drawing.Size(399, 29);
-            this.PhonetextBox.TabIndex = 5;
-            // 
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -100,14 +108,7 @@
             this.saveButton.TabIndex = 71;
             this.saveButton.Text = "Register";
             this.saveButton.UseVisualStyleBackColor = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(175, 89);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(399, 96);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // frmCompanyRegistration
             // 
@@ -119,7 +120,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmCompanyRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCompanyRegistration";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCompanyRegistration_FormClosed);
+            this.Load += new System.EventHandler(this.frmCompanyRegistration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -133,8 +137,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox PhonetextBox;
+        private System.Windows.Forms.TextBox CompanyNametextBox;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox AddressrichTextBox;
     }
 }
