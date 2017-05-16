@@ -38,6 +38,8 @@
             this.StreettextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LandmarktextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.blocktextBox = new System.Windows.Forms.TextBox();
             this.cPostOfficeCombo = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -78,12 +80,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.EmailAddresstextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.WebServiceUrltextBox = new System.Windows.Forms.TextBox();
+            this.WebSiteUrltextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.VendorNametextBox = new System.Windows.Forms.TextBox();
+            this.SupplierNametextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -108,12 +108,13 @@
             this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.saveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.Navy;
-            this.saveButton.Location = new System.Drawing.Point(961, 274);
+            this.saveButton.Location = new System.Drawing.Point(922, 276);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(118, 62);
             this.saveButton.TabIndex = 70;
             this.saveButton.Text = "Register";
             this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // groupBox6
             // 
@@ -191,7 +192,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.LandmarktextBox);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.blocktextBox);
             this.groupBox2.Controls.Add(this.cPostOfficeCombo);
@@ -229,6 +230,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Address or Corporate Address";
             // 
+            // LandmarktextBox
+            // 
+            this.LandmarktextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LandmarktextBox.Location = new System.Drawing.Point(155, 173);
+            this.LandmarktextBox.Name = "LandmarktextBox";
+            this.LandmarktextBox.Size = new System.Drawing.Size(171, 26);
+            this.LandmarktextBox.TabIndex = 83;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(12, 178);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(141, 19);
+            this.label11.TabIndex = 84;
+            this.label11.Text = "Nearest Landmark:";
+            // 
             // blocktextBox
             // 
             this.blocktextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,6 +264,7 @@
             this.cPostOfficeCombo.Name = "cPostOfficeCombo";
             this.cPostOfficeCombo.Size = new System.Drawing.Size(198, 30);
             this.cPostOfficeCombo.TabIndex = 9;
+            this.cPostOfficeCombo.SelectedIndexChanged += new System.EventHandler(this.cPostOfficeCombo_SelectedIndexChanged);
             // 
             // label44
             // 
@@ -284,6 +304,7 @@
             this.cDivisionCombo.Name = "cDivisionCombo";
             this.cDivisionCombo.Size = new System.Drawing.Size(198, 30);
             this.cDivisionCombo.TabIndex = 6;
+            this.cDivisionCombo.SelectedIndexChanged += new System.EventHandler(this.cDivisionCombo_SelectedIndexChanged);
             // 
             // label41
             // 
@@ -333,6 +354,7 @@
             this.cThanaCombo.Name = "cThanaCombo";
             this.cThanaCombo.Size = new System.Drawing.Size(198, 30);
             this.cThanaCombo.TabIndex = 8;
+            this.cThanaCombo.SelectedIndexChanged += new System.EventHandler(this.cThanaCombo_SelectedIndexChanged);
             // 
             // cContactNoTextBox
             // 
@@ -362,6 +384,7 @@
             this.cDistCombo.Name = "cDistCombo";
             this.cDistCombo.Size = new System.Drawing.Size(199, 27);
             this.cDistCombo.TabIndex = 7;
+            this.cDistCombo.SelectedIndexChanged += new System.EventHandler(this.cDistCombo_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -498,11 +521,11 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.EmailAddresstextBox);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.WebServiceUrltextBox);
+            this.groupBox3.Controls.Add(this.WebSiteUrltextBox);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.VendorNametextBox);
+            this.groupBox3.Controls.Add(this.SupplierNametextBox);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(14, 14);
+            this.groupBox3.Location = new System.Drawing.Point(11, 14);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(449, 335);
             this.groupBox3.TabIndex = 67;
@@ -536,6 +559,8 @@
             this.FaxtextBox.Name = "FaxtextBox";
             this.FaxtextBox.Size = new System.Drawing.Size(246, 29);
             this.FaxtextBox.TabIndex = 99;
+            this.FaxtextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FaxtextBox_KeyDown);
+            this.FaxtextBox.Validating += new System.ComponentModel.CancelEventHandler(this.FaxtextBox_Validating);
             // 
             // label5
             // 
@@ -558,6 +583,7 @@
             this.CountrycomboBox.Name = "CountrycomboBox";
             this.CountrycomboBox.Size = new System.Drawing.Size(246, 27);
             this.CountrycomboBox.TabIndex = 97;
+            this.CountrycomboBox.SelectedIndexChanged += new System.EventHandler(this.CountrycomboBox_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -590,15 +616,19 @@
             this.SupplierTypecomboBox.Name = "SupplierTypecomboBox";
             this.SupplierTypecomboBox.Size = new System.Drawing.Size(246, 27);
             this.SupplierTypecomboBox.TabIndex = 0;
+            this.SupplierTypecomboBox.SelectedIndexChanged += new System.EventHandler(this.SupplierTypecomboBox_SelectedIndexChanged);
             // 
             // PhonetextBox
             // 
             this.PhonetextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhonetextBox.Location = new System.Drawing.Point(197, 120);
-            this.PhonetextBox.MaxLength = 11;
+            this.PhonetextBox.MaxLength = 15;
             this.PhonetextBox.Name = "PhonetextBox";
             this.PhonetextBox.Size = new System.Drawing.Size(246, 29);
             this.PhonetextBox.TabIndex = 2;
+            this.PhonetextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PhonetextBox_KeyDown);
+            this.PhonetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhonetextBox_KeyPress);
+            this.PhonetextBox.Leave += new System.EventHandler(this.PhonetextBox_Leave);
             // 
             // label4
             // 
@@ -618,6 +648,8 @@
             this.EmailAddresstextBox.Name = "EmailAddresstextBox";
             this.EmailAddresstextBox.Size = new System.Drawing.Size(246, 29);
             this.EmailAddresstextBox.TabIndex = 3;
+            this.EmailAddresstextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EmailAddresstextBox_KeyDown);
+            this.EmailAddresstextBox.Validating += new System.ComponentModel.CancelEventHandler(this.EmailAddresstextBox_Validating);
             // 
             // label1
             // 
@@ -630,13 +662,15 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Email Address :";
             // 
-            // WebServiceUrltextBox
+            // WebSiteUrltextBox
             // 
-            this.WebServiceUrltextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebServiceUrltextBox.Location = new System.Drawing.Point(197, 227);
-            this.WebServiceUrltextBox.Name = "WebServiceUrltextBox";
-            this.WebServiceUrltextBox.Size = new System.Drawing.Size(246, 29);
-            this.WebServiceUrltextBox.TabIndex = 4;
+            this.WebSiteUrltextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebSiteUrltextBox.Location = new System.Drawing.Point(197, 227);
+            this.WebSiteUrltextBox.Name = "WebSiteUrltextBox";
+            this.WebSiteUrltextBox.Size = new System.Drawing.Size(246, 29);
+            this.WebSiteUrltextBox.TabIndex = 4;
+            this.WebSiteUrltextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.WebSiteUrltextBox_KeyDown);
+            this.WebSiteUrltextBox.Leave += new System.EventHandler(this.WebSiteUrltextBox_Leave);
             // 
             // label3
             // 
@@ -649,13 +683,15 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Web Site URL :";
             // 
-            // VendorNametextBox
+            // SupplierNametextBox
             // 
-            this.VendorNametextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorNametextBox.Location = new System.Drawing.Point(197, 83);
-            this.VendorNametextBox.Name = "VendorNametextBox";
-            this.VendorNametextBox.Size = new System.Drawing.Size(246, 29);
-            this.VendorNametextBox.TabIndex = 1;
+            this.SupplierNametextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupplierNametextBox.Location = new System.Drawing.Point(197, 83);
+            this.SupplierNametextBox.Name = "SupplierNametextBox";
+            this.SupplierNametextBox.Size = new System.Drawing.Size(246, 29);
+            this.SupplierNametextBox.TabIndex = 1;
+            this.SupplierNametextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SupplierNametextBox_KeyDown);
+            this.SupplierNametextBox.Leave += new System.EventHandler(this.SupplierNametextBox_Leave);
             // 
             // label2
             // 
@@ -667,24 +703,6 @@
             this.label2.Size = new System.Drawing.Size(141, 22);
             this.label2.TabIndex = 15;
             this.label2.Text = "Supplier Name :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(155, 173);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 26);
-            this.textBox1.TabIndex = 83;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 178);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 19);
-            this.label11.TabIndex = 84;
-            this.label11.Text = "Nearest Landmark:";
             // 
             // label12
             // 
@@ -705,7 +723,10 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSupplierRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSupplierRegistration";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSupplierRegistration_FormClosed);
+            this.Load += new System.EventHandler(this.frmSupplierRegistration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -770,11 +791,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox EmailAddresstextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox WebServiceUrltextBox;
+        private System.Windows.Forms.TextBox WebSiteUrltextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox VendorNametextBox;
+        private System.Windows.Forms.TextBox SupplierNametextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox LandmarktextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
 

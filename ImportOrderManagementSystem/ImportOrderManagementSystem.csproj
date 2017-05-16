@@ -92,11 +92,23 @@
     <Compile Include="Manager\UserManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frmCompanyRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCompanyRegistration.Designer.cs">
+      <DependentUpon>frmCompanyRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmMainUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmMainUI.designer.cs">
       <DependentUpon>frmMainUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSupplierRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSupplierRegistration.Designer.cs">
+      <DependentUpon>frmSupplierRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmWorkOrder.cs">
       <SubType>Form</SubType>
@@ -104,6 +116,7 @@
     <Compile Include="UI\frmWorkOrder.designer.cs">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Supplier.cs" />
     <EmbeddedResource Include="LoginUI\frmRegistration.resx">
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,8 +138,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\frmCompanyRegistration.resx">
+      <DependentUpon>frmCompanyRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmMainUI.resx">
       <DependentUpon>frmMainUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSupplierRegistration.resx">
+      <DependentUpon>frmSupplierRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>

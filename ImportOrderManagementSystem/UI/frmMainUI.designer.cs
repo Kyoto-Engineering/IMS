@@ -44,6 +44,8 @@
             this.requisitionApproval = new System.Windows.Forms.Button();
             this.setPriceButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.SupplierRegistrationbutton = new System.Windows.Forms.Button();
+            this.CompanyCreationbutton = new System.Windows.Forms.Button();
             this.toolStripContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,9 +80,9 @@
             // 
             this.registerButton.BackColor = System.Drawing.Color.Olive;
             this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(10, 525);
+            this.registerButton.Location = new System.Drawing.Point(32, 355);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(142, 60);
+            this.registerButton.Size = new System.Drawing.Size(284, 50);
             this.registerButton.TabIndex = 6;
             this.registerButton.Text = "User Management";
             this.registerButton.UseVisualStyleBackColor = false;
@@ -146,6 +148,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.SupplierRegistrationbutton);
+            this.groupBox1.Controls.Add(this.CompanyCreationbutton);
             this.groupBox1.Controls.Add(this.deliveryOrderButton);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.localStoreRoomButton);
@@ -155,9 +159,9 @@
             this.groupBox1.Controls.Add(this.btnReceiveOrder);
             this.groupBox1.Controls.Add(this.lcButton);
             this.groupBox1.Controls.Add(this.registerButton);
-            this.groupBox1.Location = new System.Drawing.Point(36, 33);
+            this.groupBox1.Location = new System.Drawing.Point(30, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(166, 646);
+            this.groupBox1.Size = new System.Drawing.Size(374, 428);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
@@ -165,7 +169,7 @@
             // 
             this.deliveryOrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.deliveryOrderButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deliveryOrderButton.Location = new System.Drawing.Point(17, 443);
+            this.deliveryOrderButton.Location = new System.Drawing.Point(197, 194);
             this.deliveryOrderButton.Name = "deliveryOrderButton";
             this.deliveryOrderButton.Size = new System.Drawing.Size(132, 62);
             this.deliveryOrderButton.TabIndex = 8;
@@ -177,7 +181,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(17, 376);
+            this.button2.Location = new System.Drawing.Point(197, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 64);
             this.button2.TabIndex = 7;
@@ -201,9 +205,8 @@
             // requisitionApproval
             // 
             this.requisitionApproval.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            //this.requisitionApproval.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.invertor_Management_System;
             this.requisitionApproval.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requisitionApproval.Location = new System.Drawing.Point(18, 315);
+            this.requisitionApproval.Location = new System.Drawing.Point(198, 67);
             this.requisitionApproval.Name = "requisitionApproval";
             this.requisitionApproval.Size = new System.Drawing.Size(134, 55);
             this.requisitionApproval.TabIndex = 5;
@@ -215,7 +218,7 @@
             // 
             this.setPriceButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.setPriceButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setPriceButton.Location = new System.Drawing.Point(19, 264);
+            this.setPriceButton.Location = new System.Drawing.Point(199, 17);
             this.setPriceButton.Name = "setPriceButton";
             this.setPriceButton.Size = new System.Drawing.Size(129, 45);
             this.setPriceButton.TabIndex = 4;
@@ -235,13 +238,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // SupplierRegistrationbutton
+            // 
+            this.SupplierRegistrationbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.SupplierRegistrationbutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupplierRegistrationbutton.Location = new System.Drawing.Point(199, 271);
+            this.SupplierRegistrationbutton.Name = "SupplierRegistrationbutton";
+            this.SupplierRegistrationbutton.Size = new System.Drawing.Size(132, 62);
+            this.SupplierRegistrationbutton.TabIndex = 10;
+            this.SupplierRegistrationbutton.Text = "Supplier Registration";
+            this.SupplierRegistrationbutton.UseVisualStyleBackColor = false;
+            this.SupplierRegistrationbutton.Click += new System.EventHandler(this.SupplierRegistrationbutton_Click);
+            // 
+            // CompanyCreationbutton
+            // 
+            this.CompanyCreationbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CompanyCreationbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyCreationbutton.ForeColor = System.Drawing.Color.Blue;
+            this.CompanyCreationbutton.Location = new System.Drawing.Point(17, 277);
+            this.CompanyCreationbutton.Name = "CompanyCreationbutton";
+            this.CompanyCreationbutton.Size = new System.Drawing.Size(131, 56);
+            this.CompanyCreationbutton.TabIndex = 9;
+            this.CompanyCreationbutton.Text = "Company Creation";
+            this.CompanyCreationbutton.UseVisualStyleBackColor = false;
+            this.CompanyCreationbutton.Click += new System.EventHandler(this.CompanyCreationbutton_Click);
+            // 
             // frmMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            //this.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.ims99;
             this.ClientSize = new System.Drawing.Size(1122, 733);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblUser);
@@ -280,5 +307,7 @@
         private System.Windows.Forms.Button localStoreRoomButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button deliveryOrderButton;
+        private System.Windows.Forms.Button SupplierRegistrationbutton;
+        private System.Windows.Forms.Button CompanyCreationbutton;
     }
 }
