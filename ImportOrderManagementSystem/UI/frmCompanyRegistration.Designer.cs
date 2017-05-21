@@ -57,7 +57,7 @@
             this.groupBox1.Location = new System.Drawing.Point(127, 97);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(603, 217);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // AddressrichTextBox
@@ -66,8 +66,10 @@
             this.AddressrichTextBox.Location = new System.Drawing.Point(175, 89);
             this.AddressrichTextBox.Name = "AddressrichTextBox";
             this.AddressrichTextBox.Size = new System.Drawing.Size(399, 96);
-            this.AddressrichTextBox.TabIndex = 6;
+            this.AddressrichTextBox.TabIndex = 2;
             this.AddressrichTextBox.Text = "";
+            this.AddressrichTextBox.TextChanged += new System.EventHandler(this.AddressrichTextBox_TextChanged);
+            this.AddressrichTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressrichTextBox_KeyDown);
             // 
             // CompanyNametextBox
             // 
@@ -75,7 +77,8 @@
             this.CompanyNametextBox.Location = new System.Drawing.Point(175, 46);
             this.CompanyNametextBox.Name = "CompanyNametextBox";
             this.CompanyNametextBox.Size = new System.Drawing.Size(399, 29);
-            this.CompanyNametextBox.TabIndex = 5;
+            this.CompanyNametextBox.TabIndex = 1;
+            this.CompanyNametextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CompanyNametextBox_KeyDown);
             // 
             // label3
             // 
@@ -83,19 +86,19 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 19);
+            this.label3.Size = new System.Drawing.Size(167, 19);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Registration Address :";
+            this.label3.Text = "Registration Address   :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 50);
+            this.label2.Location = new System.Drawing.Point(10, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 19);
+            this.label2.Size = new System.Drawing.Size(165, 19);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Company Name :";
+            this.label2.Text = "Company Name           :";
             // 
             // saveButton
             // 
@@ -105,7 +108,7 @@
             this.saveButton.Location = new System.Drawing.Point(436, 333);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(118, 62);
-            this.saveButton.TabIndex = 71;
+            this.saveButton.TabIndex = 1;
             this.saveButton.Text = "Register";
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
