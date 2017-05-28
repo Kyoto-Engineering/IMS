@@ -31,18 +31,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWorkOrder));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.currencyComboBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.incoCombobox = new System.Windows.Forms.ComboBox();
             this.BrandcomboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.importOrderDate = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.txtImportOrderNo = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.submitButton = new System.Windows.Forms.Button();
             this.SupliercomboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,10 +69,8 @@
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.k = new System.Windows.Forms.Label();
             this.g = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.incoCombobox = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.eDADateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtOrderPrice = new System.Windows.Forms.TextBox();
@@ -78,8 +80,7 @@
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.currencyComboBox = new System.Windows.Forms.ComboBox();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -112,14 +113,57 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Import Order Information";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label12.Location = new System.Drawing.Point(46, 187);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 22);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Currency";
+            // 
+            // currencyComboBox
+            // 
+            this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.currencyComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currencyComboBox.FormattingEnabled = true;
+            this.currencyComboBox.Location = new System.Drawing.Point(221, 182);
+            this.currencyComboBox.Name = "currencyComboBox";
+            this.currencyComboBox.Size = new System.Drawing.Size(274, 32);
+            this.currencyComboBox.TabIndex = 44;
+            this.currencyComboBox.SelectedIndexChanged += new System.EventHandler(this.currencyComboBox_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label6.Location = new System.Drawing.Point(44, 141);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 22);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "IncoTerms";
+            // 
+            // incoCombobox
+            // 
+            this.incoCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.incoCombobox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incoCombobox.FormattingEnabled = true;
+            this.incoCombobox.Location = new System.Drawing.Point(221, 139);
+            this.incoCombobox.Name = "incoCombobox";
+            this.incoCombobox.Size = new System.Drawing.Size(274, 32);
+            this.incoCombobox.TabIndex = 42;
+            this.incoCombobox.SelectedIndexChanged += new System.EventHandler(this.incoCombobox_SelectedIndexChanged);
             // 
             // BrandcomboBox
             // 
             this.BrandcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BrandcomboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BrandcomboBox.FormattingEnabled = true;
-            this.BrandcomboBox.Location = new System.Drawing.Point(215, 24);
+            this.BrandcomboBox.Location = new System.Drawing.Point(221, 58);
             this.BrandcomboBox.Name = "BrandcomboBox";
             this.BrandcomboBox.Size = new System.Drawing.Size(274, 32);
             this.BrandcomboBox.TabIndex = 40;
@@ -130,7 +174,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(38, 29);
+            this.label3.Location = new System.Drawing.Point(44, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 22);
             this.label3.TabIndex = 41;
@@ -141,7 +185,7 @@
             this.importOrderDate.Enabled = false;
             this.importOrderDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.importOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.importOrderDate.Location = new System.Drawing.Point(215, 193);
+            this.importOrderDate.Location = new System.Drawing.Point(225, 19);
             this.importOrderDate.Name = "importOrderDate";
             this.importOrderDate.Size = new System.Drawing.Size(274, 32);
             this.importOrderDate.TabIndex = 28;
@@ -151,7 +195,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label14.Location = new System.Drawing.Point(44, 193);
+            this.label14.Location = new System.Drawing.Point(46, 29);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(104, 22);
             this.label14.TabIndex = 35;
@@ -160,7 +204,7 @@
             // txtImportOrderNo
             // 
             this.txtImportOrderNo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportOrderNo.Location = new System.Drawing.Point(214, 236);
+            this.txtImportOrderNo.Location = new System.Drawing.Point(221, 230);
             this.txtImportOrderNo.Name = "txtImportOrderNo";
             this.txtImportOrderNo.ReadOnly = true;
             this.txtImportOrderNo.Size = new System.Drawing.Size(274, 32);
@@ -171,11 +215,42 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label15.Location = new System.Drawing.Point(38, 75);
+            this.label15.Location = new System.Drawing.Point(44, 109);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 22);
             this.label15.TabIndex = 34;
             this.label15.Text = "Supplier";
+            // 
+            // SupliercomboBox
+            // 
+            this.SupliercomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SupliercomboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupliercomboBox.FormattingEnabled = true;
+            this.SupliercomboBox.Location = new System.Drawing.Point(221, 96);
+            this.SupliercomboBox.Name = "SupliercomboBox";
+            this.SupliercomboBox.Size = new System.Drawing.Size(274, 32);
+            this.SupliercomboBox.TabIndex = 0;
+            this.SupliercomboBox.SelectedIndexChanged += new System.EventHandler(this.cmbWorkOrderNo_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(2, 711);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 22);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "label3";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Lime;
+            this.label1.Location = new System.Drawing.Point(44, 234);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Import Order No";
             // 
             // removeButton
             // 
@@ -203,26 +278,6 @@
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // SupliercomboBox
-            // 
-            this.SupliercomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SupliercomboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SupliercomboBox.FormattingEnabled = true;
-            this.SupliercomboBox.Location = new System.Drawing.Point(215, 62);
-            this.SupliercomboBox.Name = "SupliercomboBox";
-            this.SupliercomboBox.Size = new System.Drawing.Size(274, 32);
-            this.SupliercomboBox.TabIndex = 0;
-            this.SupliercomboBox.SelectedIndexChanged += new System.EventHandler(this.cmbWorkOrderNo_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 711);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 22);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "label3";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -236,17 +291,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(31, 240);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Import Order No";
-            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -254,14 +298,15 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader2});
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(10, 362);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(577, 288);
+            this.listView1.Size = new System.Drawing.Size(618, 288);
             this.listView1.TabIndex = 17;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -274,7 +319,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Product Id";
-            this.columnHeader3.Width = 153;
+            this.columnHeader3.Width = 120;
             // 
             // columnHeader4
             // 
@@ -455,31 +500,9 @@
             this.g.Text = "g";
             this.g.Visible = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label6.Location = new System.Drawing.Point(38, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 22);
-            this.label6.TabIndex = 43;
-            this.label6.Text = "IncoTerms";
-            // 
-            // incoCombobox
-            // 
-            this.incoCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.incoCombobox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incoCombobox.FormattingEnabled = true;
-            this.incoCombobox.Location = new System.Drawing.Point(215, 105);
-            this.incoCombobox.Name = "incoCombobox";
-            this.incoCombobox.Size = new System.Drawing.Size(274, 32);
-            this.incoCombobox.TabIndex = 42;
-            this.incoCombobox.SelectedIndexChanged += new System.EventHandler(this.incoCombobox_SelectedIndexChanged);
-            // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.dateTimePicker1);
+            this.groupBox6.Controls.Add(this.eDADateTimePicker);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.txtOrderPrice);
@@ -500,15 +523,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Product Information";
             // 
-            // dateTimePicker1
+            // eDADateTimePicker
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(244, 229);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(219, 32);
-            this.dateTimePicker1.TabIndex = 54;
+            this.eDADateTimePicker.Enabled = false;
+            this.eDADateTimePicker.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eDADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.eDADateTimePicker.Location = new System.Drawing.Point(244, 229);
+            this.eDADateTimePicker.Name = "eDADateTimePicker";
+            this.eDADateTimePicker.Size = new System.Drawing.Size(219, 32);
+            this.eDADateTimePicker.TabIndex = 54;
             // 
             // label11
             // 
@@ -526,7 +549,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Lime;
-            this.label10.Location = new System.Drawing.Point(21, 182);
+            this.label10.Location = new System.Drawing.Point(21, 130);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(162, 22);
             this.label10.TabIndex = 53;
@@ -535,7 +558,7 @@
             // txtOrderPrice
             // 
             this.txtOrderPrice.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderPrice.Location = new System.Drawing.Point(188, 176);
+            this.txtOrderPrice.Location = new System.Drawing.Point(189, 125);
             this.txtOrderPrice.Name = "txtOrderPrice";
             this.txtOrderPrice.Size = new System.Drawing.Size(275, 32);
             this.txtOrderPrice.TabIndex = 49;
@@ -543,7 +566,7 @@
             // txtOrderAmount
             // 
             this.txtOrderAmount.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderAmount.Location = new System.Drawing.Point(188, 130);
+            this.txtOrderAmount.Location = new System.Drawing.Point(189, 177);
             this.txtOrderAmount.Name = "txtOrderAmount";
             this.txtOrderAmount.Size = new System.Drawing.Size(275, 32);
             this.txtOrderAmount.TabIndex = 48;
@@ -553,7 +576,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Lime;
-            this.label9.Location = new System.Drawing.Point(39, 130);
+            this.label9.Location = new System.Drawing.Point(45, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 22);
             this.label9.TabIndex = 52;
@@ -599,26 +622,10 @@
             this.label4.TabIndex = 50;
             this.label4.Text = "Product Id";
             // 
-            // label12
+            // columnHeader2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label12.Location = new System.Drawing.Point(40, 153);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 22);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Currency";
-            // 
-            // currencyComboBox
-            // 
-            this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.currencyComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currencyComboBox.FormattingEnabled = true;
-            this.currencyComboBox.Location = new System.Drawing.Point(215, 148);
-            this.currencyComboBox.Name = "currencyComboBox";
-            this.currencyComboBox.Size = new System.Drawing.Size(274, 32);
-            this.currencyComboBox.TabIndex = 44;
+            this.columnHeader2.Text = "ETD";
+            this.columnHeader2.Width = 100;
             // 
             // frmWorkOrder
             // 
@@ -698,7 +705,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox incoCombobox;
         private System.Windows.Forms.GroupBox groupBox6;
-        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.DateTimePicker eDADateTimePicker;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtOrderPrice;
@@ -710,5 +717,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox currencyComboBox;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
