@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResetPassword));
             this.cmbUserName = new System.Windows.Forms.ComboBox();
             this.Label4 = new System.Windows.Forms.Label();
             this.btnChangePassword = new System.Windows.Forms.Button();
@@ -101,6 +102,7 @@
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.Label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ResetPassword";

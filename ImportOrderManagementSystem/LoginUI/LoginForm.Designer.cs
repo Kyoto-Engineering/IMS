@@ -112,7 +112,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.IMS0404;
             this.ClientSize = new System.Drawing.Size(788, 498);
             this.Controls.Add(this.txtUserType);
             this.Controls.Add(this.btnSignIn);

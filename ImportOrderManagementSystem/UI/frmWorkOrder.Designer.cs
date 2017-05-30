@@ -217,9 +217,9 @@
             this.label15.ForeColor = System.Drawing.Color.Chartreuse;
             this.label15.Location = new System.Drawing.Point(44, 109);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(203, 22);
+            this.label15.Size = new System.Drawing.Size(178, 22);
             this.label15.TabIndex = 34;
-            this.label15.Text = "Supplier                        :";
+            this.label15.Text = "Supplier                   :";
             // 
             // SupliercomboBox
             // 

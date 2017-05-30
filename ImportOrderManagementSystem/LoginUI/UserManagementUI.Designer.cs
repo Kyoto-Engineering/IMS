@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagementUI));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonResetPassword = new System.Windows.Forms.Button();
             this.buttonCreateNewUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 56);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Changed Password";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // buttonResetPassword
             // 
             this.buttonResetPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,15 +89,6 @@
             this.buttonCreateNewUser.UseVisualStyleBackColor = true;
             this.buttonCreateNewUser.Click += new System.EventHandler(this.buttonCreateNewUser_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 56);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Changed Password";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // UserManagementUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +98,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Purple;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserManagementUI";

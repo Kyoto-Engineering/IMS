@@ -38,14 +38,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnReceiveOrder = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SupplierRegistrationbutton = new System.Windows.Forms.Button();
+            this.CompanyCreationbutton = new System.Windows.Forms.Button();
             this.deliveryOrderButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.localStoreRoomButton = new System.Windows.Forms.Button();
             this.requisitionApproval = new System.Windows.Forms.Button();
             this.setPriceButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.SupplierRegistrationbutton = new System.Windows.Forms.Button();
-            this.CompanyCreationbutton = new System.Windows.Forms.Button();
             this.toolStripContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -165,6 +165,31 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
+            // SupplierRegistrationbutton
+            // 
+            this.SupplierRegistrationbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.SupplierRegistrationbutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupplierRegistrationbutton.Location = new System.Drawing.Point(199, 271);
+            this.SupplierRegistrationbutton.Name = "SupplierRegistrationbutton";
+            this.SupplierRegistrationbutton.Size = new System.Drawing.Size(132, 62);
+            this.SupplierRegistrationbutton.TabIndex = 10;
+            this.SupplierRegistrationbutton.Text = "Supplier Registration";
+            this.SupplierRegistrationbutton.UseVisualStyleBackColor = false;
+            this.SupplierRegistrationbutton.Click += new System.EventHandler(this.SupplierRegistrationbutton_Click);
+            // 
+            // CompanyCreationbutton
+            // 
+            this.CompanyCreationbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CompanyCreationbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyCreationbutton.ForeColor = System.Drawing.Color.Blue;
+            this.CompanyCreationbutton.Location = new System.Drawing.Point(17, 277);
+            this.CompanyCreationbutton.Name = "CompanyCreationbutton";
+            this.CompanyCreationbutton.Size = new System.Drawing.Size(131, 56);
+            this.CompanyCreationbutton.TabIndex = 9;
+            this.CompanyCreationbutton.Text = "Company Creation";
+            this.CompanyCreationbutton.UseVisualStyleBackColor = false;
+            this.CompanyCreationbutton.Click += new System.EventHandler(this.CompanyCreationbutton_Click);
+            // 
             // deliveryOrderButton
             // 
             this.deliveryOrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -237,31 +262,6 @@
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // SupplierRegistrationbutton
-            // 
-            this.SupplierRegistrationbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.SupplierRegistrationbutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SupplierRegistrationbutton.Location = new System.Drawing.Point(199, 271);
-            this.SupplierRegistrationbutton.Name = "SupplierRegistrationbutton";
-            this.SupplierRegistrationbutton.Size = new System.Drawing.Size(132, 62);
-            this.SupplierRegistrationbutton.TabIndex = 10;
-            this.SupplierRegistrationbutton.Text = "Supplier Registration";
-            this.SupplierRegistrationbutton.UseVisualStyleBackColor = false;
-            this.SupplierRegistrationbutton.Click += new System.EventHandler(this.SupplierRegistrationbutton_Click);
-            // 
-            // CompanyCreationbutton
-            // 
-            this.CompanyCreationbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CompanyCreationbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompanyCreationbutton.ForeColor = System.Drawing.Color.Blue;
-            this.CompanyCreationbutton.Location = new System.Drawing.Point(17, 277);
-            this.CompanyCreationbutton.Name = "CompanyCreationbutton";
-            this.CompanyCreationbutton.Size = new System.Drawing.Size(131, 56);
-            this.CompanyCreationbutton.TabIndex = 9;
-            this.CompanyCreationbutton.Text = "Company Creation";
-            this.CompanyCreationbutton.UseVisualStyleBackColor = false;
-            this.CompanyCreationbutton.Click += new System.EventHandler(this.CompanyCreationbutton_Click);
             // 
             // frmMainUI
             // 
