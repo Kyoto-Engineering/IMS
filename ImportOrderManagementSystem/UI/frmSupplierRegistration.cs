@@ -1038,5 +1038,105 @@ namespace ImportOrderManagementSystem.UI
                 e.Handled = true;
             }
         }
+
+        private void CustomerCodetextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cFlatNoTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void cFlatNoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cHouseNoTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void cHouseNoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cRoadNoTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void cRoadNoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                blocktextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void blocktextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                cAreaTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void cAreaTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LandmarktextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void LandmarktextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                cContactNoTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void cContactNoTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void cContactNoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void StreettextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                StatetextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void StatetextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                PostalCodetextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void PostalCodetextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                saveButton_Click(this, new EventArgs());
+            }
+        }
     }
 }

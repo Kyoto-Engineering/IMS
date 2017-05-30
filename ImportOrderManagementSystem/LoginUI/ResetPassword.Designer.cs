@@ -43,7 +43,7 @@
             this.cmbUserName.Location = new System.Drawing.Point(168, 26);
             this.cmbUserName.Name = "cmbUserName";
             this.cmbUserName.Size = new System.Drawing.Size(245, 32);
-            this.cmbUserName.TabIndex = 43;
+            this.cmbUserName.TabIndex = 1;
             // 
             // Label4
             // 
@@ -65,7 +65,7 @@
             this.btnChangePassword.Location = new System.Drawing.Point(216, 131);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(164, 59);
-            this.btnChangePassword.TabIndex = 41;
+            this.btnChangePassword.TabIndex = 3;
             this.btnChangePassword.Text = "&Reset Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
@@ -77,7 +77,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(245, 29);
-            this.txtPassword.TabIndex = 40;
+            this.txtPassword.TabIndex = 2;
             // 
             // Label1
             // 

@@ -112,5 +112,27 @@ namespace ImportOrderManagementSystem.UI
             frmMainUI frm = new frmMainUI();
             frm.Show();
         }
+
+        private void CompanyNametextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                AddressrichTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void AddressrichTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddressrichTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                saveButton_Click(this, new EventArgs());
+            }
+        }
     }
 }
