@@ -487,7 +487,10 @@ namespace ImportOrderManagementSystem.UI
 
         private void frmWorkOrder_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            this.Visible = false;
+            dynamic frm = new frmMainUI();
+            frm.ShowDialog();
+            this.Visible = true;  
         }
 
 
@@ -756,7 +759,7 @@ namespace ImportOrderManagementSystem.UI
                     else
                     {
                         MessageBox.Show(@"You Can Not Import in this Method Right Now" + "\n" +
-                                        @"Please Contact Wth Developer");
+                                        @"Please Contact With Developer");
                     }
                 }
                 
