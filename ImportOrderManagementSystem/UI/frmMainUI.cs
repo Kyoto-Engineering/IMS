@@ -68,9 +68,14 @@ namespace ImportOrderManagementSystem.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm frm=new LoginForm();
-             frm.Show();
+            //this.Hide();
+            //LoginForm frm=new LoginForm();
+            // frm.Show();
+
+            this.Visible = false;
+            dynamic afrm = new LoginForm();
+            afrm.ShowDialog();
+            this.Visible = true;
         }
 
         private void localStoreRoomButton_Click(object sender, EventArgs e)
@@ -128,6 +133,22 @@ namespace ImportOrderManagementSystem.UI
             this.Hide();
             frmSupplierRegistration frmS = new frmSupplierRegistration();
             frmS.Show();
+        }
+
+        private void WorkOrderbutton_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            dynamic frm = new frmWorkOrder();
+            frm.ShowDialog();
+            this.Visible = true;  
+        }
+
+        private void frmMainUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //this.Visible = false;
+            //dynamic afrm = new LoginForm();
+            //afrm.ShowDialog();
+            //this.Visible = true;
         }
     }
 }
