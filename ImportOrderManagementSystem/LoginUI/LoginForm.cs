@@ -248,5 +248,10 @@ namespace ImportOrderManagementSystem.LoginUI
                 btnSignIn_Click(this, new EventArgs());
             }
         }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

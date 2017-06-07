@@ -143,9 +143,9 @@
             this.label6.ForeColor = System.Drawing.Color.Chartreuse;
             this.label6.Location = new System.Drawing.Point(11, 151);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(202, 22);
+            this.label6.Size = new System.Drawing.Size(167, 22);
             this.label6.TabIndex = 43;
-            this.label6.Text = "IncoTerms                    :";
+            this.label6.Text = "IncoTerms             :";
             // 
             // incoCombobox
             // 
@@ -182,7 +182,6 @@
             // 
             // importOrderDate
             // 
-            this.importOrderDate.Enabled = false;
             this.importOrderDate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.importOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.importOrderDate.Location = new System.Drawing.Point(225, 19);
@@ -215,11 +214,11 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label15.Location = new System.Drawing.Point(44, 109);
+            this.label15.Location = new System.Drawing.Point(20, 101);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(203, 22);
+            this.label15.Size = new System.Drawing.Size(158, 22);
             this.label15.TabIndex = 34;
-            this.label15.Text = "Supplier                        :";
+            this.label15.Text = "Supplier               :";
             // 
             // SupliercomboBox
             // 
@@ -303,7 +302,7 @@
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(10, 362);
+            this.listView1.Location = new System.Drawing.Point(6, 346);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(618, 288);
@@ -364,7 +363,6 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.UseCompatibleTextRendering = true;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label5
             // 
@@ -530,7 +528,6 @@
             // 
             // eDADateTimePicker
             // 
-            this.eDADateTimePicker.Enabled = false;
             this.eDADateTimePicker.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eDADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.eDADateTimePicker.Location = new System.Drawing.Point(244, 229);
@@ -556,14 +553,14 @@
             this.label10.ForeColor = System.Drawing.Color.Lime;
             this.label10.Location = new System.Drawing.Point(21, 130);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(232, 22);
+            this.label10.Size = new System.Drawing.Size(177, 22);
             this.label10.TabIndex = 53;
-            this.label10.Text = "Order Unit Price                :";
+            this.label10.Text = "Order Unit Price     :";
             // 
             // txtOrderPrice
             // 
             this.txtOrderPrice.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderPrice.Location = new System.Drawing.Point(189, 125);
+            this.txtOrderPrice.Location = new System.Drawing.Point(244, 125);
             this.txtOrderPrice.Name = "txtOrderPrice";
             this.txtOrderPrice.Size = new System.Drawing.Size(219, 32);
             this.txtOrderPrice.TabIndex = 4;
@@ -571,7 +568,7 @@
             // txtOrderAmount
             // 
             this.txtOrderAmount.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderAmount.Location = new System.Drawing.Point(189, 177);
+            this.txtOrderAmount.Location = new System.Drawing.Point(244, 177);
             this.txtOrderAmount.Name = "txtOrderAmount";
             this.txtOrderAmount.Size = new System.Drawing.Size(219, 32);
             this.txtOrderAmount.TabIndex = 3;
@@ -594,9 +591,9 @@
             this.label8.ForeColor = System.Drawing.Color.Lime;
             this.label8.Location = new System.Drawing.Point(11, 79);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(230, 22);
+            this.label8.Size = new System.Drawing.Size(205, 22);
             this.label8.TabIndex = 51;
-            this.label8.Text = "Item Code                          :";
+            this.label8.Text = "Item Code                     :";
             // 
             // txtItemCode
             // 

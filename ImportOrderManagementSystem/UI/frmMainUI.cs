@@ -20,9 +20,10 @@ namespace ImportOrderManagementSystem.UI
 
         private void btnWorkOrder_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //PreviousOrderList frm = new PreviousOrderList();
-            //frm.Show();
+            this.Visible = false;
+            dynamic afrm = new frmWorkOrder();
+            afrm.ShowDialog();
+            this.Visible = true;
         }
 
         private void registerButton_Click(object sender, EventArgs e)
@@ -37,10 +38,7 @@ namespace ImportOrderManagementSystem.UI
 
         private void lcButton_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
-            //dynamic afrm = new frmWorkOrder();
-            //afrm.ShowDialog();
-            //this.Visible = true;
+    
 
         }
 

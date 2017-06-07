@@ -104,7 +104,8 @@ namespace ImportOrderManagementSystem.UI
                 SaveSTatus();
                 MessageBox.Show("Successfully Submitted.", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 listView1.Items.Clear();
-                dataGridViewk.Enabled = false;               
+                dataGridViewk.Enabled = false;
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -202,53 +203,57 @@ namespace ImportOrderManagementSystem.UI
             {
                 if (listView1.Items.Count == 0)
                 {
-                    ListViewItem lst = new ListViewItem();                   
+                    ListViewItem lst = new ListViewItem();
                     lst.SubItems.Add(txtProductId.Text);
                     lst.SubItems.Add(txtItemCode.Text);
                     lst.SubItems.Add(txtOrderAmount.Text);
                     lst.SubItems.Add(txtOrderPrice.Text);
-                    lst.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().ToString());
-                    listView1.Items.Add(lst);                   
-                    txtProductId.Text = "";
-                    txtItemCode.Text = "";
-                    txtOrderAmount.Text = "";
-                    txtOrderPrice.Text = "";
-                    eDADateTimePicker.Value = DateTime.Now;
-                    return;
+                    lst.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
+                    listView1.Items.Add(lst);
+                    ClearProducts();
                 }
-                  String csVal = txtProductId.Text;
+                else
+                {
 
-                if (listView1.FindItemWithText(csVal) == null)
+
+                    String csVal = txtProductId.Text;
+
+                    if (listView1.FindItemWithText(csVal) == null)
                     {
-                    ListViewItem lst1 = new ListViewItem();
-                    lst1.SubItems.Add(txtProductId.Text);
-                    lst1.SubItems.Add(txtItemCode.Text);
-                    lst1.SubItems.Add(txtOrderAmount.Text);
-                    lst1.SubItems.Add(txtOrderPrice.Text);
-                    lst1.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().ToString());
-                    listView1.Items.Add(lst1);
-                    txtProductId.Text = "";
-                    txtItemCode.Text = "";
-                    txtOrderAmount.Text = "";
-                    txtOrderPrice.Text = "";
-                        eDADateTimePicker.Value=DateTime.Now;
-                    return;
+                        ListViewItem lst1 = new ListViewItem();
+                        lst1.SubItems.Add(txtProductId.Text);
+                        lst1.SubItems.Add(txtItemCode.Text);
+                        lst1.SubItems.Add(txtOrderAmount.Text);
+                        lst1.SubItems.Add(txtOrderPrice.Text);
+                        lst1.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
+                        listView1.Items.Add(lst1);
+                        ClearProducts();
+
                     }
-                  else
-                   {
-                   MessageBox.Show("You Can Not Add Same Item More than one times", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                  return;
+                    else
+                    {
+                        MessageBox.Show("You Can Not Add Same Item More than one times", "error", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        ClearProducts();
+                    }
 
-                   }
 
-
-              
+                }
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ClearProducts()
+        {
+            txtProductId.Text = "";
+            txtItemCode.Text = "";
+            txtOrderAmount.Text = "";
+            txtOrderPrice.Text = "";
+            eDADateTimePicker.Value = DateTime.Now;
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
@@ -336,14 +341,9 @@ namespace ImportOrderManagementSystem.UI
                     }
                 }
             }
-            
 
 
-           
-        }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
 
         }
 
@@ -493,8 +493,10 @@ namespace ImportOrderManagementSystem.UI
 
         private void dataGridViewk_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            try
+            if (dataGridViewk.SelectedRows.Count>0)
+            { try
             {
+                groupBox1.Enabled = false;
                 //cmbWorkOrderNo.Enabled = false;
                 DataGridViewRow dr = dataGridViewk.CurrentRow;
                 ProductId = Convert.ToInt32(dr.Cells[0].Value.ToString().Trim());
@@ -510,7 +512,7 @@ namespace ImportOrderManagementSystem.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }}
         }
 
         private bool GetProductPrice()
