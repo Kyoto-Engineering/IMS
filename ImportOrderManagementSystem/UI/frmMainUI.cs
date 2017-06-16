@@ -150,5 +150,13 @@ namespace ImportOrderManagementSystem.UI
             //afrm.ShowDialog();
             //this.Visible = true;
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            RecieveOrderedProduct f2=new RecieveOrderedProduct();
+            this.Visible = false;
+            f2.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

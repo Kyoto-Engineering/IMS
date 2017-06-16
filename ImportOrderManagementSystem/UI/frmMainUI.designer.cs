@@ -39,6 +39,7 @@
             this.SupplierRegistrationbutton = new System.Windows.Forms.Button();
             this.CompanyCreationbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.toolStripContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.SupplierRegistrationbutton);
             this.groupBox1.Controls.Add(this.CompanyCreationbutton);
             this.groupBox1.Controls.Add(this.btnWorkOrder);
@@ -162,6 +164,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(18, 221);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 50);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Supply Order";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // frmMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button SupplierRegistrationbutton;
         private System.Windows.Forms.Button CompanyCreationbutton;
+        private System.Windows.Forms.Button button2;
     }
 }
