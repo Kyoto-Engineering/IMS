@@ -13,7 +13,7 @@ using ImportOrderManagementSystem.LoginUI;
 
 namespace ImportOrderManagementSystem.UI
 {
-    public partial class RecieveOrderedProduct : Form
+    public partial class ShipAcknowledgement : Form
     {
         private SqlCommand cmd;
         ConnectionString Cs=new ConnectionString();
@@ -22,7 +22,7 @@ namespace ImportOrderManagementSystem.UI
         private string impOd;
         private DataGridViewRow dr;
         private int checkvalue,smId;
-        public RecieveOrderedProduct()
+        public ShipAcknowledgement()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
-        private void RecieveOrderedProduct_Load(object sender, EventArgs e)
+        private void ShipAcknowledgement_Load(object sender, EventArgs e)
         {
             con = new SqlConnection(Cs.DBConn);
             string qry =
@@ -59,16 +59,7 @@ namespace ImportOrderManagementSystem.UI
                 comboBox1.Items.Add(rdr[0]);
             }
             con.Close();
-            string qry2 =
-                "SELECT ShippingMood FROM ShipMood";
-            cmd = new SqlCommand(qry2, con);
-            con.Open();
-            rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                comboBox2.Items.Add(rdr[0]);
-            }
-            con.Close();
+            
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -128,8 +119,7 @@ namespace ImportOrderManagementSystem.UI
                             l2.Text = impOd;
                             l2.SubItems.Add(textBox4.Text);
                             l2.SubItems.Add(textBox1.Text);
-                            l2.SubItems.Add(textBox3
-                                .Text);
+                            l2.SubItems.Add(textBox3.Text);
                             l2.SubItems.Add(textBox2.Text);
                             listView1.Items.Add(l2);
                             ClearselectedProduct();
