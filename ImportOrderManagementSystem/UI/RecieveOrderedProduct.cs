@@ -22,6 +22,10 @@ namespace ImportOrderManagementSystem.UI
         private string impOd;
         private DataGridViewRow dr;
         private int checkvalue,smId;
+        private int SupplierId;
+        private int Sio;
+        private string shipmentOrderNo;
+
         public RecieveOrderedProduct()
         {
             InitializeComponent();
@@ -43,6 +47,62 @@ namespace ImportOrderManagementSystem.UI
                     dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
                 }
                 con.Close();
+            }
+            GetShimpentOredrNo();
+        }
+
+        private void GetShimpentOredrNo()
+        {
+            if (comboBox1.SelectedIndex != -1)
+            {
+                try
+                {
+                    con = new SqlConnection(Cs.DBConn);
+                    con.Open();
+                    string cty4 = "SELECT SupplierId FROM Supplier WHERE SupplierName ='" + comboBox1.Text + "'";
+                    cmd = new SqlCommand(cty4);
+                    cmd.Connection = con;
+                    rdr = cmd.ExecuteReader();
+                    if (rdr.Read())
+                    {
+                        SupplierId = (rdr.GetInt32(0));
+                    }
+                    con.Close();
+                    con = new SqlConnection(Cs.DBConn);
+                    con.Open();
+                    //string q2 = "Select SQN From RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
+                    //string qr2 = "SELECT MAX(RefNumForQuotation.SQN) FROM RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
+                    string qr2 = "SELECT   MAX(SSO) FROM ShipmentOrder where SupplierId=" + SupplierId +
+                                 " and YEAR(ExpectedShipmentDate)=" + dateTimePicker1.Value.Year;
+                    cmd = new SqlCommand(qr2, con);
+                    rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        if (!rdr.IsDBNull(0))
+                        {
+                            Sio = (rdr.GetInt32(0));
+                            Sio = Sio + 1;
+                            shipmentOrderNo = SupplierId + dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
+
+
+
+                        }
+
+                        else
+                        {
+                            Sio = 1;
+                            shipmentOrderNo = SupplierId + dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
+
+                        }
+                    }
+                    textBox5.Text = shipmentOrderNo;
+                    
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -166,13 +226,16 @@ namespace ImportOrderManagementSystem.UI
 
                     con = new SqlConnection(Cs.DBConn);
                     string q1 =
-                        "INSERT INTO ShipmentOrder (ExpectedShipmentDate,ExpectedDateOfDelivery,SMId,UserId,EntryDate) VALUES (@d1,@d2,@d3,@d4,@d5)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                        "INSERT INTO ShipmentOrder (ExpectedShipmentDate,ExpectedDateOfDelivery,SMId,UserId,EntryDate,ShipmentOrderNo,SSO,SupplierId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                     cmd=new SqlCommand(q1,con);
                     cmd.Parameters.AddWithValue("@d1", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@d2", dateTimePicker2.Value);
                     cmd.Parameters.AddWithValue("@d3",smId);
                     cmd.Parameters.AddWithValue("@d4", LoginForm.uId2);
                     cmd.Parameters.AddWithValue("@d5", DateTime.UtcNow.ToLocalTime());
+                    cmd.Parameters.AddWithValue("@d6",shipmentOrderNo );
+                    cmd.Parameters.AddWithValue("@d3", Sio);
+                    cmd.Parameters.AddWithValue("@d3", SupplierId);
                     con.Open();
                     string ShID=cmd.ExecuteScalar().ToString();
                     con.Close();
