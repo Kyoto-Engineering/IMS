@@ -149,12 +149,6 @@
     <Compile Include="UI\RecieveOrderedProduct.Designer.cs">
       <DependentUpon>RecieveOrderedProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ShipAcknowledgement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\ShipAcknowledgement.designer.cs">
-      <DependentUpon>ShipAcknowledgement.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Supplier.cs" />
     <EmbeddedResource Include="LoginUI\frmRegistration.resx">
       <DependentUpon>frmRegistration.cs</DependentUpon>
@@ -191,9 +185,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RecieveOrderedProduct.resx">
       <DependentUpon>RecieveOrderedProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ShipAcknowledgement.resx">
-      <DependentUpon>ShipAcknowledgement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ImportOrderManagementSystem_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
