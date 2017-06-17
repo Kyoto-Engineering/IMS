@@ -82,7 +82,7 @@ namespace ImportOrderManagementSystem.UI
                         {
                             Sio = (rdr.GetInt32(0));
                             Sio = Sio + 1;
-                            shipmentOrderNo = SupplierId + dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
+                            shipmentOrderNo = SupplierId +"-"+ dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
 
 
 
@@ -91,7 +91,7 @@ namespace ImportOrderManagementSystem.UI
                         else
                         {
                             Sio = 1;
-                            shipmentOrderNo = SupplierId + dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
+                            shipmentOrderNo = SupplierId + "-" + dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
 
                         }
                     }
@@ -188,8 +188,7 @@ namespace ImportOrderManagementSystem.UI
                             l2.Text = impOd;
                             l2.SubItems.Add(textBox4.Text);
                             l2.SubItems.Add(textBox1.Text);
-                            l2.SubItems.Add(textBox3
-                                .Text);
+                            l2.SubItems.Add(textBox3.Text);
                             l2.SubItems.Add(textBox2.Text);
                             listView1.Items.Add(l2);
                             ClearselectedProduct();
@@ -221,7 +220,7 @@ namespace ImportOrderManagementSystem.UI
         {
             if (string.IsNullOrEmpty(textBox1.Text))
             {
-                if (listView1.Items.Count>1)
+                if (listView1.Items.Count>0)
                 {
 
                     con = new SqlConnection(Cs.DBConn);
@@ -234,8 +233,8 @@ namespace ImportOrderManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d4", LoginForm.uId2);
                     cmd.Parameters.AddWithValue("@d5", DateTime.UtcNow.ToLocalTime());
                     cmd.Parameters.AddWithValue("@d6",shipmentOrderNo );
-                    cmd.Parameters.AddWithValue("@d3", Sio);
-                    cmd.Parameters.AddWithValue("@d3", SupplierId);
+                    cmd.Parameters.AddWithValue("@d7", Sio);
+                    cmd.Parameters.AddWithValue("@d8", SupplierId);
                     con.Open();
                     string ShID=cmd.ExecuteScalar().ToString();
                     con.Close();

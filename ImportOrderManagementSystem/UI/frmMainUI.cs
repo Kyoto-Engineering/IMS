@@ -158,5 +158,13 @@ namespace ImportOrderManagementSystem.UI
             f2.ShowDialog();
             this.Visible = true;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ShipAcknowledgement f2 =new ShipAcknowledgement();
+            this.Visible = false;
+            f2.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
