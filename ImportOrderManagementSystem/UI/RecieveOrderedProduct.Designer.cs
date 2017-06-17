@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.DeliveryDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.ShippingDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.ShippingModeCombobox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SupplierCombobox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.DoneButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ProductDesTextBox = new System.Windows.Forms.TextBox();
+            this.ProductNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.ShippingQtyTextBox = new System.Windows.Forms.TextBox();
+            this.ProductCodeTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,13 +80,13 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.DeliveryDateTimePicker);
+            this.groupBox1.Controls.Add(this.ShippingDateTimePicker);
+            this.groupBox1.Controls.Add(this.ShippingModeCombobox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 7);
+            this.groupBox1.Controls.Add(this.SupplierCombobox);
+            this.groupBox1.Location = new System.Drawing.Point(8, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(414, 143);
             this.groupBox1.TabIndex = 0;
@@ -111,32 +111,32 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Probable Shipping Date";
             // 
-            // dateTimePicker2
+            // DeliveryDateTimePicker
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy hh:mm tt";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(214, 109);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(141, 20);
-            this.dateTimePicker2.TabIndex = 5;
+            this.DeliveryDateTimePicker.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.DeliveryDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DeliveryDateTimePicker.Location = new System.Drawing.Point(214, 109);
+            this.DeliveryDateTimePicker.Name = "DeliveryDateTimePicker";
+            this.DeliveryDateTimePicker.Size = new System.Drawing.Size(141, 20);
+            this.DeliveryDateTimePicker.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // ShippingDateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm tt";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(214, 83);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(141, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.ShippingDateTimePicker.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.ShippingDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ShippingDateTimePicker.Location = new System.Drawing.Point(214, 83);
+            this.ShippingDateTimePicker.Name = "ShippingDateTimePicker";
+            this.ShippingDateTimePicker.Size = new System.Drawing.Size(141, 20);
+            this.ShippingDateTimePicker.TabIndex = 3;
             // 
-            // comboBox2
+            // ShippingModeCombobox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(214, 55);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(141, 21);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.ShippingModeCombobox.FormattingEnabled = true;
+            this.ShippingModeCombobox.Location = new System.Drawing.Point(214, 55);
+            this.ShippingModeCombobox.Name = "ShippingModeCombobox";
+            this.ShippingModeCombobox.Size = new System.Drawing.Size(141, 21);
+            this.ShippingModeCombobox.TabIndex = 2;
+            this.ShippingModeCombobox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -153,48 +153,48 @@
             this.label1.Location = new System.Drawing.Point(82, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Select Supplier";
             // 
-            // comboBox1
+            // SupplierCombobox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(214, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.SupplierCombobox.FormattingEnabled = true;
+            this.SupplierCombobox.Location = new System.Drawing.Point(214, 20);
+            this.SupplierCombobox.Name = "SupplierCombobox";
+            this.SupplierCombobox.Size = new System.Drawing.Size(141, 21);
+            this.SupplierCombobox.TabIndex = 1;
+            this.SupplierCombobox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.DoneButton);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.ProductDesTextBox);
+            this.groupBox2.Controls.Add(this.ProductNameTextBox);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 157);
+            this.groupBox2.Controls.Add(this.RemoveButton);
+            this.groupBox2.Controls.Add(this.AddButton);
+            this.groupBox2.Controls.Add(this.ShippingQtyTextBox);
+            this.groupBox2.Controls.Add(this.ProductCodeTextBox);
+            this.groupBox2.Location = new System.Drawing.Point(8, 165);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(414, 165);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Product Info";
             // 
-            // button3
+            // DoneButton
             // 
-            this.button3.Location = new System.Drawing.Point(333, 123);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Done";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.DoneButton.Location = new System.Drawing.Point(333, 123);
+            this.DoneButton.Name = "DoneButton";
+            this.DoneButton.Size = new System.Drawing.Size(75, 23);
+            this.DoneButton.TabIndex = 7;
+            this.DoneButton.Text = "Done";
+            this.DoneButton.UseVisualStyleBackColor = true;
+            this.DoneButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -211,24 +211,24 @@
             this.label6.Location = new System.Drawing.Point(6, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Product Name";
             // 
-            // textBox3
+            // ProductDesTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(108, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(191, 20);
-            this.textBox3.TabIndex = 8;
+            this.ProductDesTextBox.Location = new System.Drawing.Point(108, 48);
+            this.ProductDesTextBox.Name = "ProductDesTextBox";
+            this.ProductDesTextBox.ReadOnly = true;
+            this.ProductDesTextBox.Size = new System.Drawing.Size(191, 20);
+            this.ProductDesTextBox.TabIndex = 2;
             // 
-            // textBox4
+            // ProductNameTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(108, 22);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(191, 20);
-            this.textBox4.TabIndex = 7;
+            this.ProductNameTextBox.Location = new System.Drawing.Point(108, 22);
+            this.ProductNameTextBox.Name = "ProductNameTextBox";
+            this.ProductNameTextBox.ReadOnly = true;
+            this.ProductNameTextBox.Size = new System.Drawing.Size(191, 20);
+            this.ProductNameTextBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -248,46 +248,46 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Product Code";
             // 
-            // button2
+            // RemoveButton
             // 
-            this.button2.Location = new System.Drawing.Point(333, 46);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
+            this.RemoveButton.Location = new System.Drawing.Point(333, 46);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(75, 23);
+            this.RemoveButton.TabIndex = 6;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // AddButton
             // 
-            this.button1.Location = new System.Drawing.Point(333, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddButton.Location = new System.Drawing.Point(333, 20);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.TabIndex = 5;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // ShippingQtyTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            this.ShippingQtyTextBox.Location = new System.Drawing.Point(110, 111);
+            this.ShippingQtyTextBox.Name = "ShippingQtyTextBox";
+            this.ShippingQtyTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ShippingQtyTextBox.TabIndex = 4;
+            this.ShippingQtyTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
-            // textBox1
+            // ProductCodeTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(191, 20);
-            this.textBox1.TabIndex = 0;
+            this.ProductCodeTextBox.Location = new System.Drawing.Point(108, 74);
+            this.ProductCodeTextBox.Name = "ProductCodeTextBox";
+            this.ProductCodeTextBox.ReadOnly = true;
+            this.ProductCodeTextBox.Size = new System.Drawing.Size(191, 20);
+            this.ProductCodeTextBox.TabIndex = 3;
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(433, 2);
+            this.groupBox3.Location = new System.Drawing.Point(435, 10);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(721, 209);
             this.groupBox3.TabIndex = 2;
@@ -312,8 +312,8 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(705, 188);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -366,9 +366,9 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column8.HeaderText = "EDA";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -377,7 +377,7 @@
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox4.Controls.Add(this.listView1);
-            this.groupBox4.Location = new System.Drawing.Point(436, 227);
+            this.groupBox4.Location = new System.Drawing.Point(438, 235);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(702, 201);
             this.groupBox4.TabIndex = 3;
@@ -430,7 +430,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 444);
+            this.ClientSize = new System.Drawing.Size(1198, 461);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -456,7 +456,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SupplierCombobox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -465,28 +465,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox ShippingModeCombobox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button RemoveButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.TextBox ShippingQtyTextBox;
+        private System.Windows.Forms.TextBox ProductCodeTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox ProductDesTextBox;
+        private System.Windows.Forms.TextBox ProductNameTextBox;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button DoneButton;
+        private System.Windows.Forms.DateTimePicker DeliveryDateTimePicker;
+        private System.Windows.Forms.DateTimePicker ShippingDateTimePicker;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
     }
