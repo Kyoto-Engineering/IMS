@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
-using ImportOrderManagementSystem.Models;
+using ImportOrderManagementSystem.LoginUI;
+//using ImportOrderManagementSystem.Models;
 
 namespace ImportOrderManagementSystem.UI
 {
@@ -19,7 +20,11 @@ namespace ImportOrderManagementSystem.UI
         SqlCommand _cmd;
         ConnectionString _cs = new ConnectionString();
         SqlDataReader rdr;
-        public int SupplierId;      
+        public string ReturnValue1 { get; set; }
+        public string ReturnValue2 { get; set; }
+        public int SupplierId;
+        public string nUserId;
+        public int attnid;
         public Attention()
         {
             InitializeComponent();
@@ -27,6 +32,7 @@ namespace ImportOrderManagementSystem.UI
 
         private void Attention_Load(object sender, EventArgs e)
         {
+            nUserId = LoginForm.uId2.ToString();
             GetSuplier();
         }
 
@@ -91,7 +97,7 @@ namespace ImportOrderManagementSystem.UI
 
                 EmailtextBox.Focus();
             }
-            else if (!string.IsNullOrWhiteSpace(SupliercomboBox.Text))
+            else if (string.IsNullOrWhiteSpace(SupliercomboBox.Text))
             {
 
                 MessageBox.Show(@"Please Select Supplier", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,16 +111,24 @@ namespace ImportOrderManagementSystem.UI
 
                     _con = new SqlConnection(_cs.DBConn);
                     _con.Open();
-                    string query1 = "insert into AttentionDetails(Attention,Email,SupplierId) values (@d1,@d2,@d3)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                    string query1 = "insert into AttentionDetails(Attention,Email,SupplierId,UserId,CreationDate) values (@d1,@d2,@d3,@d4,@d5)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                     _cmd = new SqlCommand(query1, _con);
                     _cmd.Parameters.AddWithValue("@d1", AttntextBox.Text);
                     _cmd.Parameters.AddWithValue("@d2", EmailtextBox.Text);
                     _cmd.Parameters.AddWithValue("@d3", SupplierId);
+                    _cmd.Parameters.AddWithValue("@d4", nUserId);
+                    _cmd.Parameters.AddWithValue("@d5", DateTime.UtcNow.ToLocalTime());
                     _cmd.ExecuteNonQuery();
+                    attnid = (int)_cmd.ExecuteScalar();
                     _con.Close();
                     MessageBox.Show("Saved successfully", "Record", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    Clear();
+                    //Clear();
+                    this.ReturnValue1 = AttntextBox.Text;
+                    this.ReturnValue2 = attnid.ToString();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                    //this.ReturnValue1 = AttntextBox.Text;
                 }
                 catch (Exception ex)
                 {

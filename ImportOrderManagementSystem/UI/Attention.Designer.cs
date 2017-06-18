@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.AttntextBox = new System.Windows.Forms.TextBox();
+            this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.SupliercomboBox = new System.Windows.Forms.ComboBox();
+            this.AttntextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Savebutton = new System.Windows.Forms.Button();
-            this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,35 +53,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // EmailtextBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(84, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 22);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Attention :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(10, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 22);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Respondent Email :";
-            // 
-            // AttntextBox
-            // 
-            this.AttntextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttntextBox.Location = new System.Drawing.Point(203, 26);
-            this.AttntextBox.Name = "AttntextBox";
-            this.AttntextBox.Size = new System.Drawing.Size(274, 32);
-            this.AttntextBox.TabIndex = 41;
+            this.EmailtextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailtextBox.Location = new System.Drawing.Point(203, 78);
+            this.EmailtextBox.Name = "EmailtextBox";
+            this.EmailtextBox.Size = new System.Drawing.Size(274, 32);
+            this.EmailtextBox.TabIndex = 45;
             // 
             // label15
             // 
@@ -105,6 +83,36 @@
             this.SupliercomboBox.TabIndex = 43;
             this.SupliercomboBox.SelectedIndexChanged += new System.EventHandler(this.SupliercomboBox_SelectedIndexChanged_1);
             // 
+            // AttntextBox
+            // 
+            this.AttntextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AttntextBox.Location = new System.Drawing.Point(203, 26);
+            this.AttntextBox.Name = "AttntextBox";
+            this.AttntextBox.Size = new System.Drawing.Size(274, 32);
+            this.AttntextBox.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(10, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 22);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Respondent Email :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(84, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 22);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Attention :";
+            // 
             // Savebutton
             // 
             this.Savebutton.Location = new System.Drawing.Point(388, 271);
@@ -115,19 +123,11 @@
             this.Savebutton.UseVisualStyleBackColor = true;
             this.Savebutton.Click += new System.EventHandler(this.Savebutton_Click);
             // 
-            // EmailtextBox
-            // 
-            this.EmailtextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailtextBox.Location = new System.Drawing.Point(203, 78);
-            this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(274, 32);
-            this.EmailtextBox.TabIndex = 45;
-            // 
             // Attention
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 422);
+            this.ClientSize = new System.Drawing.Size(631, 422);
             this.Controls.Add(this.Savebutton);
             this.Controls.Add(this.groupBox1);
             this.Name = "Attention";

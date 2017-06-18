@@ -81,6 +81,8 @@
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.AttentioncomboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -93,6 +95,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Olive;
+            this.groupBox1.Controls.Add(this.AttentioncomboBox);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.currencyComboBox);
             this.groupBox1.Controls.Add(this.label6);
@@ -624,6 +628,29 @@
             this.label4.TabIndex = 50;
             this.label4.Text = "Product Id                          :";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Lime;
+            this.label13.Location = new System.Drawing.Point(8, 277);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(165, 22);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Attention               :";
+            // 
+            // AttentioncomboBox
+            // 
+            this.AttentioncomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.AttentioncomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.AttentioncomboBox.FormattingEnabled = true;
+            this.AttentioncomboBox.Location = new System.Drawing.Point(221, 269);
+            this.AttentioncomboBox.Name = "AttentioncomboBox";
+            this.AttentioncomboBox.Size = new System.Drawing.Size(272, 30);
+            this.AttentioncomboBox.TabIndex = 47;
+            this.AttentioncomboBox.SelectedIndexChanged += new System.EventHandler(this.AttentioncomboBox_SelectedIndexChanged);
+            this.AttentioncomboBox.Leave += new System.EventHandler(this.AttentioncomboBox_Leave);
+            // 
             // frmWorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -715,5 +742,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox currencyComboBox;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox AttentioncomboBox;
     }
 }

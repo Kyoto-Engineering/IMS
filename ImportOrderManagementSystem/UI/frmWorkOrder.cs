@@ -24,7 +24,7 @@ namespace ImportOrderManagementSystem.UI
         SqlCommand _cmd;
         ConnectionString _cs = new ConnectionString();
         SqlDataReader rdr;
-        public string SubmittedBy, FullName, BrandCode,ImpOrderNo;
+        public string SubmittedBy, FullName, BrandCode,ImpOrderNo,attentionid=null;
         public int SupplierId, Brandid, Sio, IncoId, CurrencyId,ProductId,ImpId;
         public decimal Price;
         public bool BrandSelected, SupplierSelected, IncoTermsSelected, CurrencySelected,Exists;
@@ -70,7 +70,7 @@ namespace ImportOrderManagementSystem.UI
             }
             
                 _con = new SqlConnection(_cs.DBConn);
-                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 _cmd = new SqlCommand(cd1,_con);                   
                 _cmd.Parameters.AddWithValue("@d1", Brandid);                  
                 _cmd.Parameters.AddWithValue("@d2",SupplierId) ;                    
@@ -79,6 +79,7 @@ namespace ImportOrderManagementSystem.UI
                 _cmd.Parameters.AddWithValue("@d5", ImpOrderNo);
             _cmd.Parameters.AddWithValue("@d6", IncoId);
             _cmd.Parameters.AddWithValue("@d7", CurrencyId);
+            _cmd.Parameters.AddWithValue("@d8", attentionid);
                 _con.Open();
             ImpId = (int)_cmd.ExecuteScalar();
               
@@ -155,6 +156,30 @@ namespace ImportOrderManagementSystem.UI
             GetIncoTerms();
             GetCurrency();
             SubmittedBy = LoginForm.uId2.ToString();
+            //GetAttention();
+        }
+
+        private void GetAttention()
+        {
+
+            try
+            {
+                _con = new SqlConnection(_cs.DBConn);
+                _con.Open();
+                string ctt = "SELECT AttentionDetails.Attention FROM AttentionDetails WHERE AttentionDetails.SupplierId ='" + SupplierId + "' Order by AttentionDetails.Attention asc";
+                _cmd = new SqlCommand(ctt);
+                _cmd.Connection = _con;
+                rdr = _cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    AttentioncomboBox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                AttentioncomboBox.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -398,8 +423,11 @@ namespace ImportOrderManagementSystem.UI
 
         private void cmbWorkOrderNo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AttentioncomboBox.Items.Clear();
+            AttentioncomboBox.ResetText();
             if(SupliercomboBox.SelectedIndex!=-1)
-            {try
+            {
+                try
             {
                 _con = new SqlConnection(_cs.DBConn);
                 _con.Open();
@@ -439,6 +467,22 @@ namespace ImportOrderManagementSystem.UI
                 }}
                 txtImportOrderNo.Text = ImpOrderNo;
                 SupplierSelected = true;
+
+
+                //_con = new SqlConnection(_cs.DBConn);
+                //_con.Open();
+                //string cty5 = "SELECT AttentionDetails.Attention FROM AttentionDetails WHERE AttentionDetails.SupplierId ='" + SupplierId + "' Order by AttentionDetails.Attention asc";
+                //_cmd = new SqlCommand(cty5);
+                //_cmd.Connection = _con;
+                //rdr = _cmd.ExecuteReader();
+                //while (rdr.Read())
+                //{
+                //    AttentioncomboBox.Items.Add(rdr[0]);
+                //}
+                //AttentioncomboBox.Items.Add("Not In The List");
+                //_con.Close();
+                GetAttention();
+             
             }
             catch (Exception ex)
             {
@@ -789,6 +833,121 @@ namespace ImportOrderManagementSystem.UI
                     }
                 }
                 
+            }
+        }
+
+        private void AttentioncomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (AttentioncomboBox.Text == "Not In The List")
+            {
+                using (var form = new Attention())
+                {
+                    this.Visible = false;
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        string val = form.ReturnValue1; //values preserved after close
+                        attentionid = form.ReturnValue2;
+                        AttentioncomboBox.Items.Clear();
+                        GetAttention();
+                        this.AttentioncomboBox.Text = val;
+                    }
+                    this.Visible = true;
+                }
+            }
+            //{
+            //    Attention atn = new Attention();
+            //    this.Visible = false;
+            //    atn.ShowDialog();
+            //    this.Visible = true;
+            //}
+
+            //string inputp = Microsoft.VisualBasic.Interaction.InputBox("Please Input Profession  Here", "Input Here", "", -1, -1);
+                //string inputp = null;
+                //InputBox.Show("Please Input Profession Here", "Inpute Here", ref inputp);
+                //if (string.IsNullOrWhiteSpace(inputp))
+                //{
+                //    cmbProfession.SelectedIndex = -1;
+                //}
+
+                //else
+                //{
+                //    con = new SqlConnection(cs.DBConn);
+                //    con.Open();
+                //    string ct2 = "select ProfessionName from Profession where ProfessionName='" + inputp + "'";
+                //    cmd = new SqlCommand(ct2, con);
+                //    rdr = cmd.ExecuteReader();
+                //    if (rdr.Read() && !rdr.IsDBNull(0))
+                //    {
+                //        MessageBox.Show("This Profession  Already Exists,Please Select From List", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //        con.Close();
+                //        cmbProfession.SelectedIndex = -1;
+                //    }
+                //    else
+                //    {
+                //        try
+                //        {
+
+                //            con = new SqlConnection(cs.DBConn);
+                //            con.Open();
+                //            string query1 = "insert into Profession(ProfessionName,UserId,DateAndTime) values (@d1,@d2,@d3)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                //            cmd = new SqlCommand(query1, con);
+                //            cmd.Parameters.AddWithValue("@d1", inputp);
+                //            cmd.Parameters.AddWithValue("@d2", nUserId);
+                //            cmd.Parameters.AddWithValue("@d3", DateTime.UtcNow.ToLocalTime());
+                //            cmd.ExecuteNonQuery();
+
+                //            con.Close();
+                //            cmbProfession.Items.Clear();
+                //            FillProfession();
+                //            cmbProfession.SelectedText = inputp;
+
+                //        }
+                //        catch (Exception ex)
+                //        {
+                //            MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //        }
+                //    }
+                //}
+            //}
+            //else
+            //{
+            //    try
+            //    {
+
+            //        con = new SqlConnection(cs.DBConn);
+            //        con.Open();
+            //        string ct = "select ProfessionId from Profession  where  Profession.ProfessionName='" + cmbProfession.Text + "' ";
+            //        cmd = new SqlCommand(ct);
+            //        cmd.Connection = con;
+            //        rdr = cmd.ExecuteReader();
+
+            //        if (rdr.Read())
+            //        {
+            //            professionId = Convert.ToInt64(rdr["ProfessionId"]);
+            //        }
+            //        con.Close();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+        }
+
+        private void AttentioncomboBox_Leave(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(AttentioncomboBox.Text) && (!AttentioncomboBox.Items.Contains(AttentioncomboBox.Text)) || AttentioncomboBox.Text=="Not In The List"))
+            {
+                MessageBox.Show(@"Please Select Attention From List", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                AttentioncomboBox.ResetText();
+                //this.BeginInvoke(new ChangeFocusDelegate(changeFocus), cmbJobTitle);
+                AttentioncomboBox.Focus();
+            }
+
+            if (string.IsNullOrWhiteSpace(AttentioncomboBox.Text))
+            {
+                attentionid = null;
             }
         }
     }
