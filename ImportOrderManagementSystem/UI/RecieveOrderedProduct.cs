@@ -33,12 +33,12 @@ namespace ImportOrderManagementSystem.UI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex != -1)
+            if (SupplierComboBox.SelectedIndex != -1)
             {
                 con = new SqlConnection(Cs.DBConn);
                 string qry =
                     "SELECT ImportOrderProduct.ImportOrderProductId, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemCode, ProductListSummary.ItemDescription,ImportOrderProduct.OrderQty, ImportOrderProduct.BacklogQty, ImportOrders.ImportOrderNo, ImportOrderProduct.ExpectedDateOfArrival FROM ImportOrders INNER JOIN ImportOrderProduct ON ImportOrders.ImpId = ImportOrderProduct.ImpId INNER JOIN ProductListSummary ON ImportOrderProduct.Sl = ProductListSummary.Sl inner join Supplier on ImportOrders.SupplierId=Supplier.SupplierId WHERE BacklogQty>0 and Supplier.SupplierName='" +
-                    comboBox1.Text+"'";
+                    SupplierComboBox.Text+"'";
                 cmd = new SqlCommand(qry, con);
                 con.Open();
                 rdr = cmd.ExecuteReader();
@@ -53,13 +53,13 @@ namespace ImportOrderManagementSystem.UI
 
         private void GetShimpentOredrNo()
         {
-            if (comboBox1.SelectedIndex != -1)
+            if (SupplierComboBox.SelectedIndex != -1)
             {
                 try
                 {
                     con = new SqlConnection(Cs.DBConn);
                     con.Open();
-                    string cty4 = "SELECT SupplierId FROM Supplier WHERE SupplierName ='" + comboBox1.Text + "'";
+                    string cty4 = "SELECT SupplierId FROM Supplier WHERE SupplierName ='" + SupplierComboBox.Text + "'";
                     cmd = new SqlCommand(cty4);
                     cmd.Connection = con;
                     rdr = cmd.ExecuteReader();
@@ -73,7 +73,7 @@ namespace ImportOrderManagementSystem.UI
                     //string q2 = "Select SQN From RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
                     //string qr2 = "SELECT MAX(RefNumForQuotation.SQN) FROM RefNumForQuotation where SClientId='" + sClientIdForRefNum + "'";
                     string qr2 = "SELECT   MAX(SSO) FROM ShipmentOrder where SupplierId=" + SupplierId +
-                                 " and YEAR(ExpectedShipmentDate)=" + dateTimePicker1.Value.Year;
+                                 " and YEAR(ExpectedShipmentDate)=" + ShippingDateTimePicker.Value.Year;
                     cmd = new SqlCommand(qr2, con);
                     rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -82,7 +82,7 @@ namespace ImportOrderManagementSystem.UI
                         {
                             Sio = (rdr.GetInt32(0));
                             Sio = Sio + 1;
-                            shipmentOrderNo = SupplierId +"-"+ dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
+                            shipmentOrderNo = SupplierId +"-"+ ShippingDateTimePicker.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
 
 
 
@@ -91,11 +91,11 @@ namespace ImportOrderManagementSystem.UI
                         else
                         {
                             Sio = 1;
-                            shipmentOrderNo = SupplierId + "-" + dateTimePicker1.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
+                            shipmentOrderNo = SupplierId + "-" + ShippingDateTimePicker.Value.Year.ToString().Substring(2) + "-SO-" + Sio;
 
                         }
                     }
-                    textBox5.Text = shipmentOrderNo;
+                    ShipmentOrderNoTextBox.Text = shipmentOrderNo;
                     
                 }
                 catch (Exception ex)
@@ -116,7 +116,7 @@ namespace ImportOrderManagementSystem.UI
             rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                comboBox1.Items.Add(rdr[0]);
+                SupplierComboBox.Items.Add(rdr[0]);
             }
             con.Close();
             string qry2 =
@@ -126,7 +126,7 @@ namespace ImportOrderManagementSystem.UI
             rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                comboBox2.Items.Add(rdr[0]);
+                ShippingModeComboBox.Items.Add(rdr[0]);
             }
             con.Close();
         }
@@ -137,10 +137,10 @@ namespace ImportOrderManagementSystem.UI
             {
                dr = dataGridView1.SelectedRows[0];
                 impOd = dr.Cells[0].Value.ToString();
-                textBox1.Text = dr.Cells[2].Value.ToString();
-                textBox2.Text = dr.Cells[5].Value.ToString();
-                textBox4.Text = dr.Cells[1].Value.ToString();
-                textBox3.Text = dr.Cells[3].Value.ToString();
+                ProductCodeTextBox.Text = dr.Cells[2].Value.ToString();
+                ShipingQtyTextBox.Text = dr.Cells[5].Value.ToString();
+                ProductNameTextBox.Text = dr.Cells[1].Value.ToString();
+                ProductDesTextBox.Text = dr.Cells[3].Value.ToString();
                 checkvalue =Convert.ToInt32( dr.Cells[5].Value.ToString());
             }
             else
@@ -151,17 +151,17 @@ namespace ImportOrderManagementSystem.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(comboBox2.Text))
+            if (!string.IsNullOrWhiteSpace(ShippingModeComboBox.Text))
             {
-                if (string.IsNullOrEmpty(textBox1.Text))
+                if (string.IsNullOrEmpty(ProductCodeTextBox.Text))
                 {
                     MessageBox.Show("Select A Product First");
                 }
-                else if (string.IsNullOrWhiteSpace(textBox2.Text) || Convert.ToInt32(textBox2.Text)<1)
+                else if (string.IsNullOrWhiteSpace(ShipingQtyTextBox.Text) || Convert.ToInt32(ShipingQtyTextBox.Text)<1)
                 {
                     MessageBox.Show("Product With Zero , MInus or Empty Quantity Can Not Be Added");
                 }
-                else if (Convert.ToInt32(textBox2.Text)>checkvalue)
+                else if (Convert.ToInt32(ShipingQtyTextBox.Text)>checkvalue)
                 {
                     MessageBox.Show("Receive Amount Cannot Be greater Than the Backloq Quantity");
                 }
@@ -173,10 +173,10 @@ namespace ImportOrderManagementSystem.UI
                     {
                         ListViewItem l1 = new ListViewItem();
                         l1.Text = impOd;
-                        l1.SubItems.Add(textBox4.Text);
-                        l1.SubItems.Add(textBox1.Text);
-                        l1.SubItems.Add(textBox3.Text);
-                        l1.SubItems.Add(textBox2.Text);
+                        l1.SubItems.Add(ProductNameTextBox.Text);
+                        l1.SubItems.Add(ProductCodeTextBox.Text);
+                        l1.SubItems.Add(ProductDesTextBox.Text);
+                        l1.SubItems.Add(ShipingQtyTextBox.Text);
                         listView1.Items.Add(l1);
                         ClearselectedProduct();
                     }
@@ -186,10 +186,10 @@ namespace ImportOrderManagementSystem.UI
                         {
                             ListViewItem l2 = new ListViewItem();
                             l2.Text = impOd;
-                            l2.SubItems.Add(textBox4.Text);
-                            l2.SubItems.Add(textBox1.Text);
-                            l2.SubItems.Add(textBox3.Text);
-                            l2.SubItems.Add(textBox2.Text);
+                            l2.SubItems.Add(ProductNameTextBox.Text);
+                            l2.SubItems.Add(ProductCodeTextBox.Text);
+                            l2.SubItems.Add(ProductDesTextBox.Text);
+                            l2.SubItems.Add(ShipingQtyTextBox.Text);
                             listView1.Items.Add(l2);
                             ClearselectedProduct();
                         }
@@ -207,18 +207,18 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
-        private void ClearselectedProduct()
+     private void ClearselectedProduct()
         {
             impOd = null;
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
+            ProductCodeTextBox.Clear();
+            ShipingQtyTextBox.Clear();
+            ProductDesTextBox.Clear();
+            ProductNameTextBox.Clear();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (string.IsNullOrEmpty(ProductCodeTextBox.Text))
             {
                 if (listView1.Items.Count>0)
                 {
@@ -227,8 +227,8 @@ namespace ImportOrderManagementSystem.UI
                     string q1 =
                         "INSERT INTO ShipmentOrder (ExpectedShipmentDate,ExpectedDateOfDelivery,SMId,UserId,EntryDate,ShipmentOrderNo,SSO,SupplierId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                     cmd=new SqlCommand(q1,con);
-                    cmd.Parameters.AddWithValue("@d1", dateTimePicker1.Value);
-                    cmd.Parameters.AddWithValue("@d2", dateTimePicker2.Value);
+                    cmd.Parameters.AddWithValue("@d1", ShippingDateTimePicker.Value);
+                    cmd.Parameters.AddWithValue("@d2", DeliveryDateTimePicker.Value);
                     cmd.Parameters.AddWithValue("@d3",smId);
                     cmd.Parameters.AddWithValue("@d4", LoginForm.uId2);
                     cmd.Parameters.AddWithValue("@d5", DateTime.UtcNow.ToLocalTime());
@@ -277,7 +277,7 @@ namespace ImportOrderManagementSystem.UI
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             con=new SqlConnection(Cs.DBConn);
-            string query = "SELECT SMId FROM ShipMood where ShippingMood='" + comboBox2.Text + "'";
+            string query = "SELECT SMId FROM ShipMood where ShippingMood='" + ShippingModeComboBox.Text + "'";
             cmd=new SqlCommand(query,con);
             con.Open();
             rdr=cmd.ExecuteReader();
@@ -290,7 +290,10 @@ namespace ImportOrderManagementSystem.UI
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
     }
 }
