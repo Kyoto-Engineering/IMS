@@ -158,6 +158,12 @@
     <Compile Include="UI\frmWorkOrder.designer.cs">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ProductAddedEXWPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ProductAddedEXWPrice.Designer.cs">
+      <DependentUpon>ProductAddedEXWPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\RecieveOrderedProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProductAddedEXWPrice.resx">
+      <DependentUpon>ProductAddedEXWPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RecieveOrderedProduct.resx">
       <DependentUpon>RecieveOrderedProduct.cs</DependentUpon>
