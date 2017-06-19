@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attention));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -130,6 +131,7 @@
             this.ClientSize = new System.Drawing.Size(631, 422);
             this.Controls.Add(this.Savebutton);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Attention";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Attention";

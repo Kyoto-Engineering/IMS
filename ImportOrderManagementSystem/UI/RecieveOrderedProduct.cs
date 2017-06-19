@@ -295,5 +295,10 @@ namespace ImportOrderManagementSystem.UI
                 button1_Click(this, new EventArgs());
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
