@@ -36,11 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SupplierRegistrationbutton = new System.Windows.Forms.Button();
             this.CompanyCreationbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.InsertPricebutton = new System.Windows.Forms.Button();
             this.toolStripContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             this.registerButton.BackColor = System.Drawing.Color.Olive;
             this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(32, 355);
+            this.registerButton.Location = new System.Drawing.Point(18, 355);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(284, 50);
             this.registerButton.TabIndex = 6;
@@ -117,6 +118,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.InsertPricebutton);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.SupplierRegistrationbutton);
@@ -125,9 +127,21 @@
             this.groupBox1.Controls.Add(this.registerButton);
             this.groupBox1.Location = new System.Drawing.Point(30, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 428);
+            this.groupBox1.Size = new System.Drawing.Size(357, 428);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkOrange;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(18, 293);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(198, 56);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Shipment Acknowledgement";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -178,17 +192,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // InsertPricebutton
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkOrange;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(18, 293);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(198, 56);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Shipment Acknowledgement";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.InsertPricebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.InsertPricebutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertPricebutton.Location = new System.Drawing.Point(206, 19);
+            this.InsertPricebutton.Name = "InsertPricebutton";
+            this.InsertPricebutton.Size = new System.Drawing.Size(109, 62);
+            this.InsertPricebutton.TabIndex = 13;
+            this.InsertPricebutton.Text = "Insert Price";
+            this.InsertPricebutton.UseVisualStyleBackColor = false;
+            this.InsertPricebutton.Click += new System.EventHandler(this.InsertPricebutton_Click);
             // 
             // frmMainUI
             // 
@@ -231,5 +245,6 @@
         private System.Windows.Forms.Button CompanyCreationbutton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button InsertPricebutton;
     }
 }

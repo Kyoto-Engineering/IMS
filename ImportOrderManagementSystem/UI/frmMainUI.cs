@@ -166,5 +166,13 @@ namespace ImportOrderManagementSystem.UI
             f2.ShowDialog();
             this.Visible = true;
         }
+
+        private void InsertPricebutton_Click(object sender, EventArgs e)
+        {
+            InsertPrice f3 = new InsertPrice();
+            this.Visible = false;
+            f3.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
