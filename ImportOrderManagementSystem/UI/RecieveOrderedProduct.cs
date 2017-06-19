@@ -179,6 +179,7 @@ namespace ImportOrderManagementSystem.UI
                         l1.SubItems.Add(ShipingQtyTextBox.Text);
                         listView1.Items.Add(l1);
                         ClearselectedProduct();
+                        groupBox1.Enabled = false;
                     }
                     else
                     {
@@ -192,6 +193,7 @@ namespace ImportOrderManagementSystem.UI
                             l2.SubItems.Add(ShipingQtyTextBox.Text);
                             listView1.Items.Add(l2);
                             ClearselectedProduct();
+                            //groupBox1.Enabled = false;
                         }
                         else
                         {
@@ -201,10 +203,14 @@ namespace ImportOrderManagementSystem.UI
                     }
                 }
             }
-            else
+            else 
             {
                 MessageBox.Show("Select Shipment Method");
             }
+
+            
+           
+           
         }
 
      private void ClearselectedProduct()
@@ -215,6 +221,20 @@ namespace ImportOrderManagementSystem.UI
             ProductDesTextBox.Clear();
             ProductNameTextBox.Clear();
         }
+
+     private void ClearShipmentandgridsinfo() 
+     {
+         SupplierComboBox.SelectedIndex = -1;
+         ShippingModeComboBox.SelectedIndex = -1;
+         ShipmentOrderNoTextBox.Clear();
+
+         SupplierComboBox.ResetText();
+         ShippingModeComboBox.ResetText();
+
+         listView1.Items.Clear();
+         dataGridView1.Rows.Clear();
+         dataGridView1.Refresh();
+     } 
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -272,6 +292,10 @@ namespace ImportOrderManagementSystem.UI
             {
                 MessageBox.Show("May be You forgot to add Last Selected Product\r\n Add The Product");
             }
+
+            ClearselectedProduct();
+            ClearShipmentandgridsinfo();
+            groupBox1.Enabled = true;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -296,6 +320,9 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
+       
+        
+         
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -304,6 +331,27 @@ namespace ImportOrderManagementSystem.UI
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+          
+        
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count < 1)
+            {
+                MessageBox.Show("Please Select a row from the list which you  want to remove", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    if (listView1.Items[i].Selected)
+                    {
+                        listView1.Items[i].Remove();
+                    }
+                }
+            }
         }
     }
 }

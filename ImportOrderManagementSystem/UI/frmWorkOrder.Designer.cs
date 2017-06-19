@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWorkOrder));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AttentioncomboBox = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.currencyComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -81,8 +83,6 @@
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.AttentioncomboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -118,6 +118,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Import Order Information";
             // 
+            // AttentioncomboBox
+            // 
+            this.AttentioncomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.AttentioncomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.AttentioncomboBox.FormattingEnabled = true;
+            this.AttentioncomboBox.Location = new System.Drawing.Point(221, 269);
+            this.AttentioncomboBox.Name = "AttentioncomboBox";
+            this.AttentioncomboBox.Size = new System.Drawing.Size(272, 30);
+            this.AttentioncomboBox.TabIndex = 6;
+            this.AttentioncomboBox.SelectedIndexChanged += new System.EventHandler(this.AttentioncomboBox_SelectedIndexChanged);
+            this.AttentioncomboBox.Leave += new System.EventHandler(this.AttentioncomboBox_Leave);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Lime;
+            this.label13.Location = new System.Drawing.Point(8, 277);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(165, 22);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Attention               :";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -137,7 +160,7 @@
             this.currencyComboBox.Location = new System.Drawing.Point(221, 191);
             this.currencyComboBox.Name = "currencyComboBox";
             this.currencyComboBox.Size = new System.Drawing.Size(272, 32);
-            this.currencyComboBox.TabIndex = 44;
+            this.currencyComboBox.TabIndex = 4;
             this.currencyComboBox.SelectedIndexChanged += new System.EventHandler(this.currencyComboBox_SelectedIndexChanged);
             // 
             // label6
@@ -191,7 +214,7 @@
             this.importOrderDate.Location = new System.Drawing.Point(221, 19);
             this.importOrderDate.Name = "importOrderDate";
             this.importOrderDate.Size = new System.Drawing.Size(274, 32);
-            this.importOrderDate.TabIndex = 5;
+            this.importOrderDate.TabIndex = 0;
             // 
             // label14
             // 
@@ -211,7 +234,7 @@
             this.txtImportOrderNo.Name = "txtImportOrderNo";
             this.txtImportOrderNo.ReadOnly = true;
             this.txtImportOrderNo.Size = new System.Drawing.Size(274, 32);
-            this.txtImportOrderNo.TabIndex = 6;
+            this.txtImportOrderNo.TabIndex = 5;
             // 
             // label15
             // 
@@ -232,7 +255,7 @@
             this.SupliercomboBox.Location = new System.Drawing.Point(221, 101);
             this.SupliercomboBox.Name = "SupliercomboBox";
             this.SupliercomboBox.Size = new System.Drawing.Size(274, 32);
-            this.SupliercomboBox.TabIndex = 0;
+            this.SupliercomboBox.TabIndex = 2;
             this.SupliercomboBox.SelectedIndexChanged += new System.EventHandler(this.cmbWorkOrderNo_SelectedIndexChanged);
             // 
             // label7
@@ -263,7 +286,7 @@
             this.removeButton.Location = new System.Drawing.Point(484, 106);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(113, 56);
-            this.removeButton.TabIndex = 7;
+            this.removeButton.TabIndex = 6;
             this.removeButton.Text = "Remove From Chart";
             this.removeButton.UseVisualStyleBackColor = false;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
@@ -276,7 +299,7 @@
             this.submitButton.Location = new System.Drawing.Point(484, 204);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(111, 55);
-            this.submitButton.TabIndex = 8;
+            this.submitButton.TabIndex = 7;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
@@ -289,7 +312,7 @@
             this.button1.Location = new System.Drawing.Point(484, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 63);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Add To Chart    ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -537,7 +560,7 @@
             this.eDADateTimePicker.Location = new System.Drawing.Point(244, 229);
             this.eDADateTimePicker.Name = "eDADateTimePicker";
             this.eDADateTimePicker.Size = new System.Drawing.Size(219, 32);
-            this.eDADateTimePicker.TabIndex = 54;
+            this.eDADateTimePicker.TabIndex = 4;
             // 
             // label11
             // 
@@ -567,7 +590,7 @@
             this.txtOrderPrice.Location = new System.Drawing.Point(244, 125);
             this.txtOrderPrice.Name = "txtOrderPrice";
             this.txtOrderPrice.Size = new System.Drawing.Size(219, 32);
-            this.txtOrderPrice.TabIndex = 4;
+            this.txtOrderPrice.TabIndex = 2;
             // 
             // txtOrderAmount
             // 
@@ -606,7 +629,7 @@
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.ReadOnly = true;
             this.txtItemCode.Size = new System.Drawing.Size(219, 32);
-            this.txtItemCode.TabIndex = 2;
+            this.txtItemCode.TabIndex = 1;
             // 
             // txtProductId
             // 
@@ -615,7 +638,7 @@
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.ReadOnly = true;
             this.txtProductId.Size = new System.Drawing.Size(219, 32);
-            this.txtProductId.TabIndex = 1;
+            this.txtProductId.TabIndex = 0;
             // 
             // label4
             // 
@@ -627,29 +650,6 @@
             this.label4.Size = new System.Drawing.Size(232, 22);
             this.label4.TabIndex = 50;
             this.label4.Text = "Product Id                          :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Lime;
-            this.label13.Location = new System.Drawing.Point(8, 277);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(165, 22);
-            this.label13.TabIndex = 46;
-            this.label13.Text = "Attention               :";
-            // 
-            // AttentioncomboBox
-            // 
-            this.AttentioncomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.AttentioncomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.AttentioncomboBox.FormattingEnabled = true;
-            this.AttentioncomboBox.Location = new System.Drawing.Point(221, 269);
-            this.AttentioncomboBox.Name = "AttentioncomboBox";
-            this.AttentioncomboBox.Size = new System.Drawing.Size(272, 30);
-            this.AttentioncomboBox.TabIndex = 47;
-            this.AttentioncomboBox.SelectedIndexChanged += new System.EventHandler(this.AttentioncomboBox_SelectedIndexChanged);
-            this.AttentioncomboBox.Leave += new System.EventHandler(this.AttentioncomboBox_Leave);
             // 
             // frmWorkOrder
             // 
