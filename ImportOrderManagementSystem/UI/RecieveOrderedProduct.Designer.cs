@@ -397,7 +397,7 @@
             this.groupBox4.Controls.Add(this.listView1);
             this.groupBox4.Location = new System.Drawing.Point(444, 247);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(598, 220);
+            this.groupBox4.Size = new System.Drawing.Size(611, 220);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
@@ -413,7 +413,7 @@
             this.columnHeader5});
             this.listView1.Location = new System.Drawing.Point(7, 20);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(584, 194);
+            this.listView1.Size = new System.Drawing.Size(597, 194);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -442,7 +442,7 @@
             // 
             this.columnHeader5.Text = "Receieved Quantity";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader5.Width = 100;
+            this.columnHeader5.Width = 112;
             // 
             // RecieveOrderedProduct
             // 
