@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
@@ -142,6 +143,61 @@ namespace ImportOrderManagementSystem.UI
             AttntextBox.Clear();
             EmailtextBox.Clear();
             SupliercomboBox.SelectedIndex = -1;
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AttntextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EmailtextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void EmailtextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SupliercomboBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void SupliercomboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Savebutton_Click(this, new EventArgs());
+            }
+        }
+
+        private void EmailtextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(EmailtextBox.Text))
+            {
+
+
+                string emailId = EmailtextBox.Text.Trim();
+                Regex mRegxExpression;
+                mRegxExpression =
+                    new Regex(
+                        @"^([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$");
+                if (!mRegxExpression.IsMatch(emailId))
+                {
+
+                    MessageBox.Show("Please type a valid email Address.", "MojoCRM", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    EmailtextBox.Clear(); 
+                    EmailtextBox.ResetText();
+                    EmailtextBox.Focus();
+
+                }
+            }
         }
     }
 
