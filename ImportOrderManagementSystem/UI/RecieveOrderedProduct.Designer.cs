@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecieveOrderedProduct));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ShipmentOrderNoTextBox = new System.Windows.Forms.TextBox();
@@ -95,6 +96,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shipment Info";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label9
             // 
@@ -305,7 +307,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(433, 12);
+            this.groupBox3.Location = new System.Drawing.Point(441, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(717, 219);
             this.groupBox3.TabIndex = 2;
@@ -393,12 +395,13 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.listView1);
-            this.groupBox4.Location = new System.Drawing.Point(433, 250);
+            this.groupBox4.Location = new System.Drawing.Point(444, 247);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(717, 220);
+            this.groupBox4.Size = new System.Drawing.Size(611, 220);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // listView1
             // 
@@ -410,7 +413,7 @@
             this.columnHeader5});
             this.listView1.Location = new System.Drawing.Point(7, 20);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(704, 194);
+            this.listView1.Size = new System.Drawing.Size(597, 194);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -439,17 +442,18 @@
             // 
             this.columnHeader5.Text = "Receieved Quantity";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader5.Width = 100;
+            this.columnHeader5.Width = 112;
             // 
             // RecieveOrderedProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 482);
+            this.ClientSize = new System.Drawing.Size(1170, 483);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecieveOrderedProduct";
             this.Text = "RecieveOrderedProduct";
             this.Load += new System.EventHandler(this.RecieveOrderedProduct_Load);

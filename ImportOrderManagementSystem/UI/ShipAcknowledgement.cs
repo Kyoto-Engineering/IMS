@@ -34,12 +34,12 @@ namespace ImportOrderManagementSystem.UI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex != -1)
+            if (SupplierComboBox.SelectedIndex != -1)
             {
                 con = new SqlConnection(Cs.DBConn);
                 string qry =
                     "SELECT ShipmentProduct.ShipmentProductId, ImportOrderProduct.ImportOrderProductId, ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemCode,ProductListSummary.ItemDescription, ShipmentProduct.ShipmentProductQty, ImportOrderProduct.BacklogQty, ImportOrders.ImportOrderNo FROM ShipmentProduct INNER JOIN ImportOrderProduct ON ShipmentProduct.ImportOrderProductId = ImportOrderProduct.ImportOrderProductId INNER JOIN ProductListSummary ON ImportOrderProduct.Sl = ProductListSummary.Sl INNER JOIN ImportOrders ON ImportOrderProduct.ImpId = ImportOrders.ImpId INNER JOIN ShipmentOrder ON ShipmentProduct.ShipmentId = ShipmentOrder.ShipmentId where ShipmentOrder.ShipmentOrderNo='" +
-                    comboBox1.Text+"'";
+                    SupplierComboBox.Text+"'";
                 cmd = new SqlCommand(qry, con);
                 con.Open();
                 rdr = cmd.ExecuteReader();
@@ -61,7 +61,7 @@ namespace ImportOrderManagementSystem.UI
             rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                comboBox1.Items.Add(rdr[0]);
+                SupplierComboBox.Items.Add(rdr[0]);
             }
             con.Close();
             
@@ -74,11 +74,11 @@ namespace ImportOrderManagementSystem.UI
                dr = dataGridView1.SelectedRows[0];
                 ShipmentProductId = dr.Cells[0].Value.ToString();
                 Sl = dr.Cells[2].Value.ToString();
-                textBox3.Text = dr.Cells[5].Value.ToString();
+                ProductDesTextBox.Text = dr.Cells[5].Value.ToString();
                 ImportOrderProductId = dr.Cells[1].Value.ToString();
-                textBox4.Text = dr.Cells[3].Value.ToString();
-                textBox1.Text = dr.Cells[4].Value.ToString();
-                textBox2.Text = dr.Cells[6].Value.ToString();
+                ProductNameTextBox.Text = dr.Cells[3].Value.ToString();
+                ProductCodeTextBox.Text = dr.Cells[4].Value.ToString();
+                ShipingQtyTextBox.Text = dr.Cells[6].Value.ToString();
                 checkvalue =dr.Cells[6].Value.ToString();
                 backlogQty = dr.Cells[7].Value.ToString();
             }
@@ -91,15 +91,15 @@ namespace ImportOrderManagementSystem.UI
         private void button1_Click(object sender, EventArgs e)
         {
           
-                if (string.IsNullOrEmpty(textBox1.Text))
+                if (string.IsNullOrEmpty(ProductCodeTextBox.Text))
                 {
                     MessageBox.Show("Select A Product First");
                 }
-                else if (string.IsNullOrWhiteSpace(textBox2.Text) || Convert.ToInt32(textBox2.Text)<1)
+                else if (string.IsNullOrWhiteSpace(ShipingQtyTextBox.Text) || Convert.ToInt32(ShipingQtyTextBox.Text)<1)
                 {
                     MessageBox.Show("Product With Zero , MInus or Empty Quantity Can Not Be Added");
                 }
-                else if (Convert.ToInt32(textBox2.Text)>Convert.ToInt32(checkvalue))
+                else if (Convert.ToInt32(ShipingQtyTextBox.Text)>Convert.ToInt32(checkvalue))
                 {
                     MessageBox.Show("Receive Amount Cannot Be greater Than the Order Quantity");
                 }
@@ -113,10 +113,10 @@ namespace ImportOrderManagementSystem.UI
                         l1.Text = ShipmentProductId;
                         l1.SubItems.Add(ImportOrderProductId);
                         l1.SubItems.Add(Sl);
-                        l1.SubItems.Add(textBox4.Text);
-                        l1.SubItems.Add(textBox1.Text);
-                        l1.SubItems.Add(textBox3.Text);
-                        l1.SubItems.Add(textBox2.Text);
+                        l1.SubItems.Add(ProductNameTextBox.Text);
+                        l1.SubItems.Add(ProductCodeTextBox.Text);
+                        l1.SubItems.Add(ProductDesTextBox.Text);
+                        l1.SubItems.Add(ShipingQtyTextBox.Text);
                         l1.SubItems.Add(backlogQty);
                         l1.SubItems.Add(checkvalue);
                         listView1.Items.Add(l1);
@@ -131,10 +131,10 @@ namespace ImportOrderManagementSystem.UI
                             l2.Text = ShipmentProductId;
                             l2.SubItems.Add(ImportOrderProductId);
                             l2.SubItems.Add(Sl);
-                            l2.SubItems.Add(textBox4.Text);
-                            l2.SubItems.Add(textBox1.Text);
-                            l2.SubItems.Add(textBox3.Text);
-                            l2.SubItems.Add(textBox2.Text);
+                            l2.SubItems.Add(ProductNameTextBox.Text);
+                            l2.SubItems.Add(ProductCodeTextBox.Text);
+                            l2.SubItems.Add(ProductDesTextBox.Text);
+                            l2.SubItems.Add(ShipingQtyTextBox.Text);
                             l2.SubItems.Add(backlogQty);
                             l2.SubItems.Add(checkvalue);
                             listView1.Items.Add(l2);
@@ -171,22 +171,22 @@ namespace ImportOrderManagementSystem.UI
             Sl = null;
             checkvalue = null;
             backlogQty = null;
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
+            ProductCodeTextBox.Clear();
+            ShipingQtyTextBox.Clear();
+            ProductDesTextBox.Clear();
+            ProductNameTextBox.Clear();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (string.IsNullOrEmpty(ProductCodeTextBox.Text))
             {
                 if (listView1.Items.Count > 0)
                 {
                     string Sid=null;
                     con = new SqlConnection(Cs.DBConn);
                     string qry =
-                        "SELECT  ShipmentId  FROM ShipmentOrder where ShipmentOrderNo='"+comboBox1.Text+"'";
+                        "SELECT  ShipmentId  FROM ShipmentOrder where ShipmentOrderNo='"+SupplierComboBox.Text+"'";
                     cmd = new SqlCommand(qry, con);
                     con.Open();
                     rdr = cmd.ExecuteReader();
@@ -235,7 +235,7 @@ namespace ImportOrderManagementSystem.UI
                         }
                         con = new SqlConnection(Cs.DBConn);
                         string Sqry =
-                            "SELECT Sl FROM Warehouse where Sl='" + comboBox1.Text + "'";
+                            "SELECT Sl FROM Warehouse where Sl='" + SupplierComboBox.Text + "'";
                         cmd = new SqlCommand(Sqry, con);
                         con.Open();
                         rdr = cmd.ExecuteReader();
@@ -331,6 +331,14 @@ namespace ImportOrderManagementSystem.UI
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void ShipingQtyTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
