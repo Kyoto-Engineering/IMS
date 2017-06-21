@@ -236,7 +236,7 @@ namespace ImportOrderManagementSystem.UI
                         }
                         con = new SqlConnection(Cs.DBConn);
                         string Sqry =
-                            "SELECT Sl FROM Warehouse where Sl='" + SupplierComboBox.Text + "'";
+                            "SELECT Sl FROM MasterStocks where Sl='" + Pno + "'";
                         cmd = new SqlCommand(Sqry, con);
                         con.Open();
                         rdr = cmd.ExecuteReader();
@@ -244,7 +244,7 @@ namespace ImportOrderManagementSystem.UI
                         {
                             con.Close();
                             string query2 =
-                                "UPDATE Warehouse SET Stock = Stock+@d1 WHERE (Sl = @d2)";
+                                "UPDATE MasterStocks SET MQuantity = MQuantity+@d1 WHERE (Sl = @d2)";
                             cmd = new SqlCommand(query2, con);
                             cmd.Parameters.AddWithValue("@d1",  qty);
                             cmd.Parameters.AddWithValue("@d2", Pno);
@@ -257,7 +257,7 @@ namespace ImportOrderManagementSystem.UI
                         {
                             con.Close();
                             string inquery =
-                                "INSERT INTO Warehouse (Stock, Sl) VALUES (@d1,@d2)";
+                                "INSERT INTO MasterStocks (MQuantity, Sl) VALUES (@d1,@d2)";
                             cmd = new SqlCommand(inquery, con);
                             cmd.Parameters.AddWithValue("@d1", qty);
                             cmd.Parameters.AddWithValue("@d2", Pno );
