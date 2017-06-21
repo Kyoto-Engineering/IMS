@@ -36,6 +36,7 @@ namespace ImportOrderManagementSystem.UI
         {
             if (SupplierComboBox.SelectedIndex != -1)
             {
+                dataGridView1.Rows.Clear();
                 con = new SqlConnection(Cs.DBConn);
                 string qry =
                     "SELECT ShipmentProduct.ShipmentProductId, ImportOrderProduct.ImportOrderProductId, ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemCode,ProductListSummary.ItemDescription, ShipmentProduct.ShipmentProductQty, ImportOrderProduct.BacklogQty, ImportOrders.ImportOrderNo FROM ShipmentProduct INNER JOIN ImportOrderProduct ON ShipmentProduct.ImportOrderProductId = ImportOrderProduct.ImportOrderProductId INNER JOIN ProductListSummary ON ImportOrderProduct.Sl = ProductListSummary.Sl INNER JOIN ImportOrders ON ImportOrderProduct.ImpId = ImportOrders.ImpId INNER JOIN ShipmentOrder ON ShipmentProduct.ShipmentId = ShipmentOrder.ShipmentId where ShipmentOrder.ShipmentOrderNo='" +
