@@ -97,6 +97,7 @@ namespace ImportOrderManagementSystem.UI
                     _cmd.Parameters.AddWithValue("d4", listView1.Items[i].SubItems[4].Text);
                     _cmd.Parameters.AddWithValue("d5", listView1.Items[i].SubItems[5].Text);
                     _cmd.Parameters.AddWithValue("d6", listView1.Items[i].SubItems[3].Text);
+                    _cmd.Parameters.AddWithValue("d7", string.IsNullOrWhiteSpace(listView1.Items[i].SubItems[6].Text) ? (object)DBNull.Value : listView1.Items[i].SubItems[6].Text);
                     _con.Open();
                     _cmd.ExecuteNonQuery();
                     _con.Close();
@@ -234,6 +235,7 @@ namespace ImportOrderManagementSystem.UI
                     lst.SubItems.Add(txtOrderAmount.Text);
                     lst.SubItems.Add(txtOrderPrice.Text);
                     lst.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
+                    lst.SubItems.Add(textBox1.Text);
                     listView1.Items.Add(lst);
                     ClearProducts();
                 }
@@ -251,6 +253,7 @@ namespace ImportOrderManagementSystem.UI
                         lst1.SubItems.Add(txtOrderAmount.Text);
                         lst1.SubItems.Add(txtOrderPrice.Text);
                         lst1.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
+                        lst1.SubItems.Add(textBox1.Text);
                         listView1.Items.Add(lst1);
                         ClearProducts();
 

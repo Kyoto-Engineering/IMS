@@ -83,6 +83,9 @@
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -325,7 +328,8 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader7});
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -532,6 +536,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.eDADateTimePicker);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.label10);
@@ -578,7 +584,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Lime;
-            this.label10.Location = new System.Drawing.Point(12, 130);
+            this.label10.Location = new System.Drawing.Point(12, 105);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(232, 22);
             this.label10.TabIndex = 53;
@@ -587,7 +593,7 @@
             // txtOrderPrice
             // 
             this.txtOrderPrice.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderPrice.Location = new System.Drawing.Point(244, 125);
+            this.txtOrderPrice.Location = new System.Drawing.Point(244, 100);
             this.txtOrderPrice.Name = "txtOrderPrice";
             this.txtOrderPrice.Size = new System.Drawing.Size(219, 32);
             this.txtOrderPrice.TabIndex = 2;
@@ -595,7 +601,7 @@
             // txtOrderAmount
             // 
             this.txtOrderAmount.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderAmount.Location = new System.Drawing.Point(244, 177);
+            this.txtOrderAmount.Location = new System.Drawing.Point(244, 138);
             this.txtOrderAmount.Name = "txtOrderAmount";
             this.txtOrderAmount.Size = new System.Drawing.Size(219, 32);
             this.txtOrderAmount.TabIndex = 3;
@@ -605,7 +611,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Lime;
-            this.label9.Location = new System.Drawing.Point(12, 182);
+            this.label9.Location = new System.Drawing.Point(12, 143);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(238, 22);
             this.label9.TabIndex = 52;
@@ -616,7 +622,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Lime;
-            this.label8.Location = new System.Drawing.Point(12, 79);
+            this.label8.Location = new System.Drawing.Point(12, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 22);
             this.label8.TabIndex = 51;
@@ -625,7 +631,7 @@
             // txtItemCode
             // 
             this.txtItemCode.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemCode.Location = new System.Drawing.Point(244, 74);
+            this.txtItemCode.Location = new System.Drawing.Point(244, 64);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.ReadOnly = true;
             this.txtItemCode.Size = new System.Drawing.Size(219, 32);
@@ -650,6 +656,30 @@
             this.label4.Size = new System.Drawing.Size(232, 22);
             this.label4.TabIndex = 50;
             this.label4.Text = "Product Id                          :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(244, 186);
+            this.textBox1.MaxLength = 100;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(219, 32);
+            this.textBox1.TabIndex = 56;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Lime;
+            this.label16.Location = new System.Drawing.Point(12, 191);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(235, 22);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "Remarks                             :";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Remarks";
             // 
             // frmWorkOrder
             // 
@@ -744,5 +774,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox AttentioncomboBox;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label16;
     }
 }
