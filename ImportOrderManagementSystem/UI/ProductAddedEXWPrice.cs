@@ -184,5 +184,18 @@ namespace ImportOrderManagementSystem.UI
                 }
             }
         }
+
+        private void PricetextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PricetextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Addbutton_Click(this, new EventArgs());
+            }
+        }
     }
 }
