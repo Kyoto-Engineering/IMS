@@ -70,7 +70,7 @@ namespace ImportOrderManagementSystem.UI
             }
             
                 _con = new SqlConnection(_cs.DBConn);
-                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d9)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 _cmd = new SqlCommand(cd1,_con);                   
                 _cmd.Parameters.AddWithValue("@d1", Brandid);                  
                 _cmd.Parameters.AddWithValue("@d2",SupplierId) ;                    
@@ -79,7 +79,13 @@ namespace ImportOrderManagementSystem.UI
                 _cmd.Parameters.AddWithValue("@d5", ImpOrderNo);
             _cmd.Parameters.AddWithValue("@d6", IncoId);
             _cmd.Parameters.AddWithValue("@d7", CurrencyId);
-            _cmd.Parameters.AddWithValue("@d8", attentionid);
+            _cmd.Parameters.AddWithValue("@d9", attentionid);
+            string debugSQL = _cmd.CommandText;
+
+            foreach (SqlParameter param in _cmd.Parameters)
+            {
+                debugSQL = debugSQL.Replace(param.ParameterName, param.Value.ToString());
+            }
                 _con.Open();
             ImpId = (int)_cmd.ExecuteScalar();
               
@@ -281,7 +287,7 @@ namespace ImportOrderManagementSystem.UI
             txtItemCode.Text = "";
             txtOrderAmount.Text = "";
             txtOrderPrice.Text = "";
-            eDADateTimePicker.Value = DateTime.Now;
+            //eDADateTimePicker.Value = DateTime.Now;
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
@@ -858,6 +864,17 @@ namespace ImportOrderManagementSystem.UI
                     this.Visible = true;
                 }
             }
+            _con = new SqlConnection(_cs.DBConn);
+            _con.Open();
+            string cty4 = "SELECT AttnId FROM AttentionDetails WHERE Attention ='" + AttentioncomboBox.Text + "'";
+            _cmd = new SqlCommand(cty4);
+            _cmd.Connection = _con;
+            rdr = _cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                attentionid = (rdr.GetInt32(0).ToString());
+            }
+            _con.Close();
             //{
             //    Attention atn = new Attention();
             //    this.Visible = false;
