@@ -64,7 +64,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.AddedProductGroupBox = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,7 +75,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.AddedProductGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -393,16 +393,16 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
-            // groupBox4
+            // AddedProductGroupBox
             // 
-            this.groupBox4.Controls.Add(this.listView1);
-            this.groupBox4.Location = new System.Drawing.Point(444, 247);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(611, 220);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            this.AddedProductGroupBox.Controls.Add(this.listView1);
+            this.AddedProductGroupBox.Location = new System.Drawing.Point(444, 247);
+            this.AddedProductGroupBox.Name = "AddedProductGroupBox";
+            this.AddedProductGroupBox.Size = new System.Drawing.Size(611, 220);
+            this.AddedProductGroupBox.TabIndex = 3;
+            this.AddedProductGroupBox.TabStop = false;
+            this.AddedProductGroupBox.Text = "Added Product";
+            this.AddedProductGroupBox.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // listView1
             // 
@@ -412,6 +412,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(7, 20);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(597, 194);
@@ -450,7 +451,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 483);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.AddedProductGroupBox);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -464,7 +465,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
+            this.AddedProductGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -475,7 +476,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox AddedProductGroupBox;
         private System.Windows.Forms.ComboBox SupplierComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
