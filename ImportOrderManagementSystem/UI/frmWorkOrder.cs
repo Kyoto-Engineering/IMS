@@ -70,7 +70,7 @@ namespace ImportOrderManagementSystem.UI
             }
             
                 _con = new SqlConnection(_cs.DBConn);
-                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d9)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId,Ancillary,CFRFrieght,UserId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d9,@d10,@d11,@d12)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 _cmd = new SqlCommand(cd1,_con);                   
                 _cmd.Parameters.AddWithValue("@d1", Brandid);                  
                 _cmd.Parameters.AddWithValue("@d2",SupplierId) ;                    
@@ -80,6 +80,9 @@ namespace ImportOrderManagementSystem.UI
             _cmd.Parameters.AddWithValue("@d6", IncoId);
             _cmd.Parameters.AddWithValue("@d7", CurrencyId);
             _cmd.Parameters.AddWithValue("@d9", attentionid);
+            _cmd.Parameters.AddWithValue("@d10", string.IsNullOrWhiteSpace(textBox3.Text)?(object)DBNull.Value:textBox3.Text);
+            _cmd.Parameters.AddWithValue("@d11", string.IsNullOrWhiteSpace(textBox2.Text)?(object)DBNull.Value:textBox2.Text);
+            _cmd.Parameters.AddWithValue("@d12", LoginForm.uId2);
             string debugSQL = _cmd.CommandText;
 
             foreach (SqlParameter param in _cmd.Parameters)
@@ -125,33 +128,7 @@ namespace ImportOrderManagementSystem.UI
         {
            
         }
-        //public void FillWOrderCombo()
-        //{
-        //    try
-        //    {
-
-        //        _con = new SqlConnection(_cs.DBConn);
-        //        _con.Open();
-        //        string ct = "select RTRIM(ImportOrders.ImportOrderNo) from ImportOrders where ImportOrders.OrderStatus!='OrderComplete' order by ImportOrderNo";
-        //        _cmd = new SqlCommand(ct);
-        //        _cmd.Connection = _con;
-        //        rdr = _cmd.ExecuteReader();
-
-        //        while (rdr.Read())
-        //        {
-        //            SupliercomboBox.Items.Add(rdr[0]);
-        //        }
-        //        _con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-        private void temp()
-        {
-           
-        }
+       
         private void frmWorkOrder_Load(object sender, EventArgs e)
         {
             groupBox2.Enabled = false;
@@ -752,41 +729,7 @@ namespace ImportOrderManagementSystem.UI
        
        
 
-        //private void SaveImportOrder()
-        //{
-        //    if (Convert.ToInt32(txtClientId.Text) == sClientIdForRefNum)
-        //    {
-        //        _con = new SqlConnection(_cs.DBConn);
-        //        string cb =
-        //            "insert into ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId) VALUES (@d1,@d2,@d3,@d4,@d5)";
-        //        _cmd = new SqlCommand(cb);
-        //        _cmd.Connection = _con;
-        //        _cmd.Parameters.AddWithValue("d1", BrandCode);
-        //        _cmd.Parameters.AddWithValue("d2", sClientIdForRefNum);
-        //        _cmd.Parameters.AddWithValue("d3", Sio);
-        //        _cmd.Parameters.AddWithValue("d4", quotationId);
-        //        _cmd.Parameters.AddWithValue("d5", referenceNo);
-        //        _con.Open();
-        //        _cmd.ExecuteNonQuery();
-        //        _con.Close();
-        //    }
-        //    else
-        //    {
-        //        _con = new SqlConnection(_cs.DBConn);
-        //        string cb =
-        //            "insert into RefNumForQuotation(BrandCode,SClientId,SQN,QuotationId,ReferenceNo) VALUES (@d1,@d2,@d3,@d4,@d5)";
-        //        _cmd = new SqlCommand(cb);
-        //        _cmd.Connection = _con;
-        //        _cmd.Parameters.AddWithValue("d1", BrandCode);
-        //        _cmd.Parameters.AddWithValue("d2", txtClientId.Text);
-        //        _cmd.Parameters.AddWithValue("d3", Sio);
-        //        _cmd.Parameters.AddWithValue("d4", quotationId);
-        //        _cmd.Parameters.AddWithValue("d5", referenceNo);
-        //        _con.Open();
-        //        _cmd.ExecuteNonQuery();
-        //        _con.Close();
-        //    }
-        //}
+       
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -875,84 +818,7 @@ namespace ImportOrderManagementSystem.UI
                 attentionid = (rdr.GetInt32(0).ToString());
             }
             _con.Close();
-            //{
-            //    Attention atn = new Attention();
-            //    this.Visible = false;
-            //    atn.ShowDialog();
-            //    this.Visible = true;
-            //}
-
-            //string inputp = Microsoft.VisualBasic.Interaction.InputBox("Please Input Profession  Here", "Input Here", "", -1, -1);
-                //string inputp = null;
-                //InputBox.Show("Please Input Profession Here", "Inpute Here", ref inputp);
-                //if (string.IsNullOrWhiteSpace(inputp))
-                //{
-                //    cmbProfession.SelectedIndex = -1;
-                //}
-
-                //else
-                //{
-                //    con = new SqlConnection(cs.DBConn);
-                //    con.Open();
-                //    string ct2 = "select ProfessionName from Profession where ProfessionName='" + inputp + "'";
-                //    cmd = new SqlCommand(ct2, con);
-                //    rdr = cmd.ExecuteReader();
-                //    if (rdr.Read() && !rdr.IsDBNull(0))
-                //    {
-                //        MessageBox.Show("This Profession  Already Exists,Please Select From List", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //        con.Close();
-                //        cmbProfession.SelectedIndex = -1;
-                //    }
-                //    else
-                //    {
-                //        try
-                //        {
-
-                //            con = new SqlConnection(cs.DBConn);
-                //            con.Open();
-                //            string query1 = "insert into Profession(ProfessionName,UserId,DateAndTime) values (@d1,@d2,@d3)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
-                //            cmd = new SqlCommand(query1, con);
-                //            cmd.Parameters.AddWithValue("@d1", inputp);
-                //            cmd.Parameters.AddWithValue("@d2", nUserId);
-                //            cmd.Parameters.AddWithValue("@d3", DateTime.UtcNow.ToLocalTime());
-                //            cmd.ExecuteNonQuery();
-
-                //            con.Close();
-                //            cmbProfession.Items.Clear();
-                //            FillProfession();
-                //            cmbProfession.SelectedText = inputp;
-
-                //        }
-                //        catch (Exception ex)
-                //        {
-                //            MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //        }
-                //    }
-                //}
-            //}
-            //else
-            //{
-            //    try
-            //    {
-
-            //        con = new SqlConnection(cs.DBConn);
-            //        con.Open();
-            //        string ct = "select ProfessionId from Profession  where  Profession.ProfessionName='" + cmbProfession.Text + "' ";
-            //        cmd = new SqlCommand(ct);
-            //        cmd.Connection = con;
-            //        rdr = cmd.ExecuteReader();
-
-            //        if (rdr.Read())
-            //        {
-            //            professionId = Convert.ToInt64(rdr["ProfessionId"]);
-            //        }
-            //        con.Close();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
+            
         }
 
         private void AttentioncomboBox_Leave(object sender, EventArgs e)
