@@ -31,6 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWorkOrder));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.AttentioncomboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -86,10 +90,6 @@
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -128,6 +128,46 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Import Order Information";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(221, 341);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ShortcutsEnabled = false;
+            this.textBox3.Size = new System.Drawing.Size(272, 32);
+            this.textBox3.TabIndex = 55;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Lime;
+            this.label18.Location = new System.Drawing.Point(10, 346);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(182, 22);
+            this.label18.TabIndex = 56;
+            this.label18.Text = "Anciliary Cost          :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(221, 303);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ShortcutsEnabled = false;
+            this.textBox2.Size = new System.Drawing.Size(272, 32);
+            this.textBox2.TabIndex = 53;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Lime;
+            this.label17.Location = new System.Drawing.Point(11, 311);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(211, 22);
+            this.label17.TabIndex = 54;
+            this.label17.Text = "CFR Freight Charge\t     :";
             // 
             // AttentioncomboBox
             // 
@@ -646,9 +686,9 @@
             this.label9.ForeColor = System.Drawing.Color.Lime;
             this.label9.Location = new System.Drawing.Point(12, 143);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(238, 22);
+            this.label9.Size = new System.Drawing.Size(236, 22);
             this.label9.TabIndex = 52;
-            this.label9.Text = "Order Amount                     :";
+            this.label9.Text = "Order Quantity                   :";
             // 
             // label8
             // 
@@ -689,46 +729,6 @@
             this.label4.Size = new System.Drawing.Size(232, 22);
             this.label4.TabIndex = 50;
             this.label4.Text = "Product Id                          :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(221, 303);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ShortcutsEnabled = false;
-            this.textBox2.Size = new System.Drawing.Size(272, 32);
-            this.textBox2.TabIndex = 53;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Lime;
-            this.label17.Location = new System.Drawing.Point(11, 311);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(211, 22);
-            this.label17.TabIndex = 54;
-            this.label17.Text = "CFR Freight Charge\t     :";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(221, 341);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ShortcutsEnabled = false;
-            this.textBox3.Size = new System.Drawing.Size(272, 32);
-            this.textBox3.TabIndex = 55;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Lime;
-            this.label18.Location = new System.Drawing.Point(10, 346);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(182, 22);
-            this.label18.TabIndex = 56;
-            this.label18.Text = "Anciliary Cost          :";
             // 
             // frmWorkOrder
             // 

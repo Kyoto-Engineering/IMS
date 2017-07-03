@@ -184,7 +184,7 @@ namespace ImportOrderManagementSystem.UI
                     }
                     else
                     {
-                        if (listView1.FindItemWithText(impOd) == null)
+                        if (GetValue())
                         {
                             ListViewItem l2 = new ListViewItem();
                             l2.Text = impOd;
@@ -208,12 +208,20 @@ namespace ImportOrderManagementSystem.UI
             {
                 MessageBox.Show("Select Shipment Method");
             }
-
-            
-           
-           
         }
-
+        private bool GetValue()
+        {
+            bool x = true;
+            foreach (ListViewItem z in listView1.Items)
+            {
+                if (z.Text == impOd)
+                {
+                    x = false;
+                    break;
+                }
+            }
+            return x;
+        }
      private void ClearselectedProduct()
         {
             impOd = null;

@@ -224,11 +224,7 @@ namespace ImportOrderManagementSystem.UI
                 }
                 else
                 {
-
-
-                    String csVal = txtProductId.Text;
-
-                    if (listView1.FindItemWithText(csVal) == null)
+                    if (GetValue())
                     {
                         ListViewItem lst1 = new ListViewItem();
                         lst1.SubItems.Add(txtProductId.Text);
@@ -257,7 +253,19 @@ namespace ImportOrderManagementSystem.UI
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private bool GetValue()
+        {
+            bool x = true;
+            foreach (ListViewItem z in listView1.Items)
+            {
+                if (z.Text == txtProductId.Text)
+                {
+                    x = false;
+                    break;
+                }
+            }
+            return x;
+        }
         private void ClearProducts()
         {
             txtProductId.Text = "";
