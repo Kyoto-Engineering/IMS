@@ -101,12 +101,12 @@ namespace ImportOrderManagementSystem.UI
                     string cd = "INSERT INTO ImportOrderProduct (ImpId,Sl,OrderQty,Price,ExpectedDateOfArrival,BacklogQty) VALUES (@d1,@d2,@d3,@d4,@d5,@d6)";
                     _cmd = new SqlCommand(cd,_con);                   
                     _cmd.Parameters.AddWithValue("@d1",ImpId);                  
-                    _cmd.Parameters.AddWithValue("d2", listView1.Items[i].SubItems[1].Text);                    
-                    _cmd.Parameters.AddWithValue("d3", listView1.Items[i].SubItems[3].Text);
-                    _cmd.Parameters.AddWithValue("d4", listView1.Items[i].SubItems[4].Text);
-                    _cmd.Parameters.AddWithValue("d5", listView1.Items[i].SubItems[5].Text);
-                    _cmd.Parameters.AddWithValue("d6", listView1.Items[i].SubItems[3].Text);
-                    _cmd.Parameters.AddWithValue("d7", string.IsNullOrWhiteSpace(listView1.Items[i].SubItems[6].Text) ? (object)DBNull.Value : listView1.Items[i].SubItems[6].Text);
+                    _cmd.Parameters.AddWithValue("d2", listView1.Items[i].Text);                    
+                    _cmd.Parameters.AddWithValue("d3", listView1.Items[i].SubItems[1].Text);
+                    _cmd.Parameters.AddWithValue("d4", listView1.Items[i].SubItems[2].Text);
+                    _cmd.Parameters.AddWithValue("d5", listView1.Items[i].SubItems[3].Text);
+                    _cmd.Parameters.AddWithValue("d6", listView1.Items[i].SubItems[4].Text);
+                    _cmd.Parameters.AddWithValue("d7", string.IsNullOrWhiteSpace(listView1.Items[i].SubItems[5].Text) ? (object)DBNull.Value : listView1.Items[i].SubItems[5].Text);
                     _con.Open();
                     _cmd.ExecuteNonQuery();
                     _con.Close();
@@ -213,7 +213,7 @@ namespace ImportOrderManagementSystem.UI
                 if (listView1.Items.Count == 0)
                 {
                     ListViewItem lst = new ListViewItem();
-                    lst.SubItems.Add(txtProductId.Text);
+                    lst.Text=txtProductId.Text;
                     lst.SubItems.Add(txtItemCode.Text);
                     lst.SubItems.Add(txtOrderAmount.Text);
                     lst.SubItems.Add(txtOrderPrice.Text);
@@ -227,7 +227,7 @@ namespace ImportOrderManagementSystem.UI
                     if (GetValue())
                     {
                         ListViewItem lst1 = new ListViewItem();
-                        lst1.SubItems.Add(txtProductId.Text);
+                        lst1.Text=txtProductId.Text;
                         lst1.SubItems.Add(txtItemCode.Text);
                         lst1.SubItems.Add(txtOrderAmount.Text);
                         lst1.SubItems.Add(txtOrderPrice.Text);
