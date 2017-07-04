@@ -116,13 +116,15 @@ namespace ImportOrderManagementSystem.UI
                 MessageBox.Show("Successfully Submitted.", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 listView1.Items.Clear();
                 dataGridViewk.Enabled = false;
-                this.Close();
+                clear_textbox();
+                //this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            
         }
         public void GetData()
         {
@@ -178,7 +180,7 @@ namespace ImportOrderManagementSystem.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SupliercomboBox.Enabled = false;
+            //SupliercomboBox.Enabled = false;
 
             if (txtProductId.Text == "")
             {
@@ -246,6 +248,8 @@ namespace ImportOrderManagementSystem.UI
 
 
                 }
+
+                textBox1.Clear();
             }
 
             catch (Exception ex)
@@ -808,7 +812,7 @@ namespace ImportOrderManagementSystem.UI
                     {
                         string val = form.ReturnValue1; //values preserved after close
                         attentionid = form.ReturnValue2;
-                        AttentioncomboBox.Items.Clear();
+                        AttentioncomboBox.Items.Clear();        
                         GetAttention();
                         this.AttentioncomboBox.Text = val;
                     }
@@ -843,6 +847,196 @@ namespace ImportOrderManagementSystem.UI
             {
                 attentionid = null;
             }
+        }
+
+        private void importOrderDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtImportOrderNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        private void AttentioncomboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                textBox2.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                textBox3.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                txtProductId.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtProductId_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                txtItemCode.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtItemCode_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                txtOrderPrice.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtOrderPrice_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                txtOrderAmount.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtOrderAmount_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                textBox1.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txtOrderAmount_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if(!(char.IsDigit(e.KeyChar)) || e.KeyChar==(char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOrderPrice_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(txtOrderPrice.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(textBox3.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(textBox2.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        public void clear_textbox()
+        {
+            txtImportOrderNo.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            txtProductId.Clear();
+            txtItemCode.Clear();
+            txtOrderPrice.Clear();
+            txtOrderAmount.Clear();
+            textBox1.Clear();
+            productNameTextBox.Clear();
+            itemDescriptionTextBox.Clear();
+            txtProduct.Clear();
+            //BrandcomboBox.Items.Clear();
+            BrandcomboBox.SelectedIndex = -1;
+            //SupliercomboBox.Items.Clear();
+            SupliercomboBox.SelectedIndex = -1;
+            //incoCombobox.Items.Clear();
+            incoCombobox.SelectedIndex = -1;
+            //currencyComboBox.Items.Clear();
+            currencyComboBox.SelectedIndex = -1;
+            //AttentioncomboBox.Items.Clear();
+            AttentioncomboBox.SelectedIndex = -1;
+            importOrderDate.ResetText();
+            eDADateTimePicker.ResetText();
+            dataGridViewk.Rows.Clear();
+            dataGridViewk.Refresh();
+            groupBox1.Enabled = true;
+            groupBox2.Enabled = false;
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtItemCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewk_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

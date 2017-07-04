@@ -124,9 +124,10 @@
             this.groupBox1.Location = new System.Drawing.Point(13, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(604, 385);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Import Order Information";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // textBox3
             // 
@@ -135,7 +136,10 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.ShortcutsEnabled = false;
             this.textBox3.Size = new System.Drawing.Size(272, 32);
-            this.textBox3.TabIndex = 55;
+            this.textBox3.TabIndex = 8;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label18
             // 
@@ -155,7 +159,10 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ShortcutsEnabled = false;
             this.textBox2.Size = new System.Drawing.Size(272, 32);
-            this.textBox2.TabIndex = 53;
+            this.textBox2.TabIndex = 7;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label17
             // 
@@ -178,6 +185,7 @@
             this.AttentioncomboBox.Size = new System.Drawing.Size(272, 30);
             this.AttentioncomboBox.TabIndex = 6;
             this.AttentioncomboBox.SelectedIndexChanged += new System.EventHandler(this.AttentioncomboBox_SelectedIndexChanged);
+            this.AttentioncomboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AttentioncomboBox_KeyDown);
             this.AttentioncomboBox.Leave += new System.EventHandler(this.AttentioncomboBox_Leave);
             // 
             // label13
@@ -265,6 +273,8 @@
             this.importOrderDate.Name = "importOrderDate";
             this.importOrderDate.Size = new System.Drawing.Size(274, 32);
             this.importOrderDate.TabIndex = 0;
+            this.importOrderDate.ValueChanged += new System.EventHandler(this.importOrderDate_ValueChanged);
+            this.importOrderDate.Enter += new System.EventHandler(this.txtImportOrderNo_TextChanged);
             // 
             // label14
             // 
@@ -285,6 +295,7 @@
             this.txtImportOrderNo.ReadOnly = true;
             this.txtImportOrderNo.Size = new System.Drawing.Size(274, 32);
             this.txtImportOrderNo.TabIndex = 5;
+            this.txtImportOrderNo.TextChanged += new System.EventHandler(this.txtImportOrderNo_TextChanged);
             // 
             // label15
             // 
@@ -294,7 +305,7 @@
             this.label15.Location = new System.Drawing.Point(10, 106);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(208, 22);
-            this.label15.TabIndex = 34;
+            this.label15.TabIndex = 10;
             this.label15.Text = "Supplier                         :";
             // 
             // SupliercomboBox
@@ -336,7 +347,7 @@
             this.removeButton.Location = new System.Drawing.Point(484, 106);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(113, 56);
-            this.removeButton.TabIndex = 6;
+            this.removeButton.TabIndex = 7;
             this.removeButton.Text = "Remove From Chart";
             this.removeButton.UseVisualStyleBackColor = false;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
@@ -349,7 +360,7 @@
             this.submitButton.Location = new System.Drawing.Point(484, 204);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(111, 55);
-            this.submitButton.TabIndex = 7;
+            this.submitButton.TabIndex = 8;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
@@ -362,7 +373,7 @@
             this.button1.Location = new System.Drawing.Point(484, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 63);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Add To Chart    ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -436,9 +447,10 @@
             this.groupBox2.Location = new System.Drawing.Point(635, 8);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(628, 656);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.UseCompatibleTextRendering = true;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label5
             // 
@@ -470,7 +482,8 @@
             this.dataGridViewk.Location = new System.Drawing.Point(10, 109);
             this.dataGridViewk.Name = "dataGridViewk";
             this.dataGridViewk.Size = new System.Drawing.Size(609, 211);
-            this.dataGridViewk.TabIndex = 121;
+            this.dataGridViewk.TabIndex = 0;
+            this.dataGridViewk.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewk_CellContentClick);
             this.dataGridViewk.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewk_CellMouseClick);
             // 
             // Column1
@@ -600,7 +613,7 @@
             this.groupBox6.Location = new System.Drawing.Point(12, 399);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(603, 285);
-            this.groupBox6.TabIndex = 2;
+            this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Product Information";
             // 
@@ -611,7 +624,7 @@
             this.textBox1.MaxLength = 100;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(219, 32);
-            this.textBox1.TabIndex = 56;
+            this.textBox1.TabIndex = 4;
             // 
             // label16
             // 
@@ -631,7 +644,7 @@
             this.eDADateTimePicker.Location = new System.Drawing.Point(244, 229);
             this.eDADateTimePicker.Name = "eDADateTimePicker";
             this.eDADateTimePicker.Size = new System.Drawing.Size(219, 32);
-            this.eDADateTimePicker.TabIndex = 4;
+            this.eDADateTimePicker.TabIndex = 5;
             // 
             // label11
             // 
@@ -662,6 +675,8 @@
             this.txtOrderPrice.Name = "txtOrderPrice";
             this.txtOrderPrice.Size = new System.Drawing.Size(219, 32);
             this.txtOrderPrice.TabIndex = 2;
+            this.txtOrderPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOrderPrice_KeyDown_1);
+            this.txtOrderPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrderPrice_KeyPress_1);
             // 
             // txtOrderAmount
             // 
@@ -671,6 +686,8 @@
             this.txtOrderAmount.ShortcutsEnabled = false;
             this.txtOrderAmount.Size = new System.Drawing.Size(219, 32);
             this.txtOrderAmount.TabIndex = 3;
+            this.txtOrderAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOrderAmount_KeyDown_1);
+            this.txtOrderAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrderAmount_KeyPress_1);
             // 
             // label9
             // 
@@ -702,6 +719,8 @@
             this.txtItemCode.ReadOnly = true;
             this.txtItemCode.Size = new System.Drawing.Size(219, 32);
             this.txtItemCode.TabIndex = 1;
+            this.txtItemCode.TextChanged += new System.EventHandler(this.txtItemCode_TextChanged);
+            this.txtItemCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemCode_KeyDown_1);
             // 
             // txtProductId
             // 
@@ -711,6 +730,8 @@
             this.txtProductId.ReadOnly = true;
             this.txtProductId.Size = new System.Drawing.Size(219, 32);
             this.txtProductId.TabIndex = 0;
+            this.txtProductId.TextChanged += new System.EventHandler(this.txtProductId_TextChanged);
+            this.txtProductId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProductId_KeyDown_1);
             // 
             // label4
             // 
@@ -740,7 +761,6 @@
             this.MinimizeBox = false;
             this.Name = "frmWorkOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmWorkOrder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmWorkOrder_FormClosed);
             this.Load += new System.EventHandler(this.frmWorkOrder_Load);
             this.groupBox1.ResumeLayout(false);
