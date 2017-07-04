@@ -199,11 +199,16 @@ namespace ImportOrderManagementSystem.UI
                     con.Close();
                     con = new SqlConnection(Cs.DBConn);
                     string q1 =
-                        "INSERT INTO ShipmentAcknowledgement(ShipmentId,UserId,EntryDate)VALUES (@d1,@d4,@d5)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                        "INSERT INTO ShipmentAcknowledgement (ShipmentId,UserId,EntryDate,AirWayBill,BillofLadding,TruckChallan,CIN,PL) VALUES(@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                     cmd = new SqlCommand(q1, con);
                     cmd.Parameters.AddWithValue("@d1", Sid);
-                    cmd.Parameters.AddWithValue("@d4", LoginForm.uId2);
-                    cmd.Parameters.AddWithValue("@d5", DateTime.UtcNow.ToLocalTime());
+                    cmd.Parameters.AddWithValue("@d2", LoginForm.uId2);
+                    cmd.Parameters.AddWithValue("@d3", DateTime.UtcNow.ToLocalTime());
+                    cmd.Parameters.AddWithValue("@d4", string.IsNullOrWhiteSpace(textBox1.Text)?(object)DBNull.Value:textBox1.Text);
+                    cmd.Parameters.AddWithValue("@d5", string.IsNullOrWhiteSpace(textBox2.Text) ? (object)DBNull.Value : textBox2.Text);
+                    cmd.Parameters.AddWithValue("@d6", string.IsNullOrWhiteSpace(textBox3.Text) ? (object)DBNull.Value : textBox3.Text);
+                    cmd.Parameters.AddWithValue("@d7", string.IsNullOrWhiteSpace(textBox4.Text) ? (object)DBNull.Value : textBox4.Text);
+                    cmd.Parameters.AddWithValue("@d8", string.IsNullOrWhiteSpace(textBox5.Text) ? (object)DBNull.Value : textBox5.Text);
                     con.Open();
                     string ShID = cmd.ExecuteScalar().ToString();
                     con.Close();
@@ -345,6 +350,11 @@ namespace ImportOrderManagementSystem.UI
             {
                 button1_Click(this, new EventArgs());
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
   }
