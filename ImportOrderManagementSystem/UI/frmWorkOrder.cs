@@ -102,10 +102,10 @@ namespace ImportOrderManagementSystem.UI
                     _cmd = new SqlCommand(cd,_con);                   
                     _cmd.Parameters.AddWithValue("@d1",ImpId);                  
                     _cmd.Parameters.AddWithValue("d2", listView1.Items[i].Text);                    
-                    _cmd.Parameters.AddWithValue("d3", listView1.Items[i].SubItems[1].Text);
-                    _cmd.Parameters.AddWithValue("d4", listView1.Items[i].SubItems[2].Text);
-                    _cmd.Parameters.AddWithValue("d5", listView1.Items[i].SubItems[3].Text);
-                    _cmd.Parameters.AddWithValue("d6", listView1.Items[i].SubItems[4].Text);
+                    _cmd.Parameters.AddWithValue("d3", listView1.Items[i].SubItems[2].Text);
+                    _cmd.Parameters.AddWithValue("d4", listView1.Items[i].SubItems[3].Text);
+                    _cmd.Parameters.AddWithValue("d5", listView1.Items[i].SubItems[4].Text);
+                    _cmd.Parameters.AddWithValue("d6", listView1.Items[i].SubItems[2].Text);
                     _cmd.Parameters.AddWithValue("d7", string.IsNullOrWhiteSpace(listView1.Items[i].SubItems[5].Text) ? (object)DBNull.Value : listView1.Items[i].SubItems[5].Text);
                     _con.Open();
                     _cmd.ExecuteNonQuery();
