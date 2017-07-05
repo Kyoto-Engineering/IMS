@@ -693,6 +693,7 @@
             this.txtOrderAmount.ShortcutsEnabled = false;
             this.txtOrderAmount.Size = new System.Drawing.Size(219, 32);
             this.txtOrderAmount.TabIndex = 3;
+            this.txtOrderAmount.TextChanged += new System.EventHandler(this.txtOrderAmount_TextChanged);
             this.txtOrderAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOrderAmount_KeyDown_1);
             this.txtOrderAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrderAmount_KeyPress_1);
             // 
@@ -754,7 +755,7 @@
             // totalPriceLabel
             // 
             this.totalPriceLabel.AutoSize = true;
-            this.totalPriceLabel.Location = new System.Drawing.Point(638, 668);
+            this.totalPriceLabel.Location = new System.Drawing.Point(990, 667);
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(58, 13);
             this.totalPriceLabel.TabIndex = 28;
@@ -762,7 +763,7 @@
             // 
             // totalPriceTextBox
             // 
-            this.totalPriceTextBox.Location = new System.Drawing.Point(702, 664);
+            this.totalPriceTextBox.Location = new System.Drawing.Point(1054, 663);
             this.totalPriceTextBox.Name = "totalPriceTextBox";
             this.totalPriceTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalPriceTextBox.TabIndex = 29;
@@ -788,7 +789,7 @@
             // totalItemlabel
             // 
             this.totalItemlabel.AutoSize = true;
-            this.totalItemlabel.Location = new System.Drawing.Point(999, 668);
+            this.totalItemlabel.Location = new System.Drawing.Point(642, 668);
             this.totalItemlabel.Name = "totalItemlabel";
             this.totalItemlabel.Size = new System.Drawing.Size(54, 13);
             this.totalItemlabel.TabIndex = 32;
@@ -797,7 +798,7 @@
             // 
             // totalItemTextBox
             // 
-            this.totalItemTextBox.Location = new System.Drawing.Point(1059, 664);
+            this.totalItemTextBox.Location = new System.Drawing.Point(702, 664);
             this.totalItemTextBox.Name = "totalItemTextBox";
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 33;

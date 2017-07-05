@@ -89,6 +89,8 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
+        public int totalQuantity = 0, totalItem=0;
+
         private void button1_Click(object sender, EventArgs e)
         {
           
@@ -121,6 +123,16 @@ namespace ImportOrderManagementSystem.UI
                         l1.SubItems.Add(backlogQty);
                         l1.SubItems.Add(checkvalue);
                         listView1.Items.Add(l1);
+
+                        //tawhidul
+                        //total item calculation
+                        totalItem = ++totalItem;
+                        totalItemTextBox.Text = totalItem.ToString();
+
+                        //total quantity calculation
+                        totalQuantity = Convert.ToInt32(totalQuantity + ShipingQtyTextBox.Text);
+                        totalQuantityTextBox.Text=totalQuantity.ToString();
+
                         ClearselectedProduct();
                     }
                     else
@@ -139,6 +151,16 @@ namespace ImportOrderManagementSystem.UI
                             l2.SubItems.Add(backlogQty);
                             l2.SubItems.Add(checkvalue);
                             listView1.Items.Add(l2);
+
+                            //tawhidul
+                            //total item calculation
+                            totalItem = ++totalItem;
+                            totalItemTextBox.Text = totalItem.ToString();
+                            
+                            //total quantity calculation
+                            totalQuantity = totalQuantity+Convert.ToInt32(ShipingQtyTextBox.Text);
+                            totalQuantityTextBox.Text = totalQuantity.ToString();
+
                             ClearselectedProduct();
                         }
                         else
@@ -355,6 +377,24 @@ namespace ImportOrderManagementSystem.UI
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void ShipingQtyTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShipingQtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar)) || e.KeyChar==(char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            
         }
 
   }
