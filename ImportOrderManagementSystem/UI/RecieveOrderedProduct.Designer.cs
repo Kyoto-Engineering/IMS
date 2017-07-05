@@ -71,11 +71,25 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.prNmSrchBx = new System.Windows.Forms.TextBox();
+            this.itmCdSrchBx = new System.Windows.Forms.TextBox();
+            this.itmDscrptnSrchBx = new System.Windows.Forms.TextBox();
+            this.iOSrchBx = new System.Windows.Forms.TextBox();
+            this.pNCheckBox = new System.Windows.Forms.CheckBox();
+            this.pCCheckBox = new System.Windows.Forms.CheckBox();
+            this.pDCheckBox = new System.Windows.Forms.CheckBox();
+            this.iOCheckBox = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.AddedProductGroupBox.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -308,7 +322,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(441, 12);
+            this.groupBox3.Location = new System.Drawing.Point(457, 102);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(717, 219);
             this.groupBox3.TabIndex = 2;
@@ -396,7 +410,7 @@
             // AddedProductGroupBox
             // 
             this.AddedProductGroupBox.Controls.Add(this.listView1);
-            this.AddedProductGroupBox.Location = new System.Drawing.Point(444, 247);
+            this.AddedProductGroupBox.Location = new System.Drawing.Point(457, 324);
             this.AddedProductGroupBox.Name = "AddedProductGroupBox";
             this.AddedProductGroupBox.Size = new System.Drawing.Size(611, 220);
             this.AddedProductGroupBox.TabIndex = 3;
@@ -446,11 +460,145 @@
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader5.Width = 112;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.iOCheckBox);
+            this.groupBox4.Controls.Add(this.pDCheckBox);
+            this.groupBox4.Controls.Add(this.pCCheckBox);
+            this.groupBox4.Controls.Add(this.pNCheckBox);
+            this.groupBox4.Controls.Add(this.iOSrchBx);
+            this.groupBox4.Controls.Add(this.itmDscrptnSrchBx);
+            this.groupBox4.Controls.Add(this.itmCdSrchBx);
+            this.groupBox4.Controls.Add(this.prNmSrchBx);
+            this.groupBox4.Location = new System.Drawing.Point(447, 13);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(804, 83);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Search";
+            // 
+            // prNmSrchBx
+            // 
+            this.prNmSrchBx.Location = new System.Drawing.Point(114, 14);
+            this.prNmSrchBx.Name = "prNmSrchBx";
+            this.prNmSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.prNmSrchBx.TabIndex = 5;
+            this.prNmSrchBx.TextChanged += new System.EventHandler(this.prNmSrchBx_TextChanged);
+            // 
+            // itmCdSrchBx
+            // 
+            this.itmCdSrchBx.Location = new System.Drawing.Point(508, 16);
+            this.itmCdSrchBx.Name = "itmCdSrchBx";
+            this.itmCdSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.itmCdSrchBx.TabIndex = 6;
+            this.itmCdSrchBx.TextChanged += new System.EventHandler(this.itmCdSrchBx_TextChanged);
+            // 
+            // itmDscrptnSrchBx
+            // 
+            this.itmDscrptnSrchBx.Location = new System.Drawing.Point(114, 40);
+            this.itmDscrptnSrchBx.Name = "itmDscrptnSrchBx";
+            this.itmDscrptnSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.itmDscrptnSrchBx.TabIndex = 7;
+            this.itmDscrptnSrchBx.TextChanged += new System.EventHandler(this.itmDscrptnSrchBx_TextChanged);
+            // 
+            // iOSrchBx
+            // 
+            this.iOSrchBx.Location = new System.Drawing.Point(508, 42);
+            this.iOSrchBx.Name = "iOSrchBx";
+            this.iOSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.iOSrchBx.TabIndex = 6;
+            this.iOSrchBx.TextChanged += new System.EventHandler(this.iOSrchBx_TextChanged);
+            // 
+            // pNCheckBox
+            // 
+            this.pNCheckBox.AutoSize = true;
+            this.pNCheckBox.Location = new System.Drawing.Point(229, 16);
+            this.pNCheckBox.Name = "pNCheckBox";
+            this.pNCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pNCheckBox.TabIndex = 8;
+            this.pNCheckBox.Text = "Hold Data For Another Search";
+            this.pNCheckBox.UseVisualStyleBackColor = true;
+            this.pNCheckBox.CheckedChanged += new System.EventHandler(this.pNCheckBox_CheckedChanged);
+            // 
+            // pCCheckBox
+            // 
+            this.pCCheckBox.AutoSize = true;
+            this.pCCheckBox.Location = new System.Drawing.Point(614, 16);
+            this.pCCheckBox.Name = "pCCheckBox";
+            this.pCCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pCCheckBox.TabIndex = 9;
+            this.pCCheckBox.Text = "Hold Data For Another Search";
+            this.pCCheckBox.UseVisualStyleBackColor = true;
+            this.pCCheckBox.CheckedChanged += new System.EventHandler(this.pCCheckBox_CheckedChanged);
+            // 
+            // pDCheckBox
+            // 
+            this.pDCheckBox.AutoSize = true;
+            this.pDCheckBox.Location = new System.Drawing.Point(229, 45);
+            this.pDCheckBox.Name = "pDCheckBox";
+            this.pDCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pDCheckBox.TabIndex = 10;
+            this.pDCheckBox.Text = "Hold Data For Another Search";
+            this.pDCheckBox.UseVisualStyleBackColor = true;
+            this.pDCheckBox.CheckedChanged += new System.EventHandler(this.pDCheckBox_CheckedChanged);
+            // 
+            // iOCheckBox
+            // 
+            this.iOCheckBox.AutoSize = true;
+            this.iOCheckBox.Location = new System.Drawing.Point(614, 45);
+            this.iOCheckBox.Name = "iOCheckBox";
+            this.iOCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.iOCheckBox.TabIndex = 11;
+            this.iOCheckBox.Text = "Hold Data For Another Search";
+            this.iOCheckBox.UseVisualStyleBackColor = true;
+            this.iOCheckBox.CheckedChanged += new System.EventHandler(this.iOCheckBox_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Product Name";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(427, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Product Code";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Product Description";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(461, 46);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "I O No";
+            // 
             // RecieveOrderedProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 483);
+            this.ClientSize = new System.Drawing.Size(1263, 556);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.AddedProductGroupBox);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -466,6 +614,8 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.AddedProductGroupBox.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -512,5 +662,18 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox ShipmentOrderNoTextBox;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox itmCdSrchBx;
+        private System.Windows.Forms.TextBox prNmSrchBx;
+        private System.Windows.Forms.TextBox iOSrchBx;
+        private System.Windows.Forms.TextBox itmDscrptnSrchBx;
+        private System.Windows.Forms.CheckBox pDCheckBox;
+        private System.Windows.Forms.CheckBox pCCheckBox;
+        private System.Windows.Forms.CheckBox pNCheckBox;
+        private System.Windows.Forms.CheckBox iOCheckBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }

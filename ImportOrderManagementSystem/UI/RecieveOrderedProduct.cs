@@ -362,5 +362,247 @@ namespace ImportOrderManagementSystem.UI
                 }
             }
         }
+
+        private void prNmSrchBx_TextChanged(object sender, EventArgs e)
+        {
+            if (!iOCheckBox.Checked && !pCCheckBox.Checked && !pDCheckBox.Checked)
+            {
+                iOSrchBx.TextChanged -= iOSrchBx_TextChanged;
+                iOSrchBx.Clear();
+                iOSrchBx.TextChanged += iOSrchBx_TextChanged;
+
+                itmDscrptnSrchBx.TextChanged -= itmDscrptnSrchBx_TextChanged;
+                itmDscrptnSrchBx.Clear();
+                itmDscrptnSrchBx.TextChanged += itmDscrptnSrchBx_TextChanged;
+
+                itmCdSrchBx.TextChanged -= itmCdSrchBx_TextChanged;
+                itmCdSrchBx.Clear();
+                itmCdSrchBx.TextChanged += itmCdSrchBx_TextChanged;
+
+                SearchSingle(prNmSrchBx.Text, prNmSrchBx);
+            }
+            else
+            {
+                SearchMulti();
+            }
+            
+        }
+
+        private void SearchMulti()
+        {
+            string SearchModifier1="", SearchModifier2="", SearchModifier3="", SearchModifier4 = "";
+            if (pNCheckBox.Checked)
+            {
+                SearchModifier1 = " and ProductListSummary.ProductGenericDescription like '"+prNmSrchBx.Text+"%' ";
+            }
+            else
+            {
+                SearchModifier1 = "";
+            }
+            if (pCCheckBox.Checked)
+            {
+                SearchModifier2 = " and ProductListSummary.ItemCode like '" +itmCdSrchBx.Text+ "%' ";
+            }
+            else
+            {
+                SearchModifier2 = "";
+            }
+            if (pDCheckBox.Checked )
+            {
+                SearchModifier3 = "  and ProductListSummary.ItemDescription '" + itmDscrptnSrchBx.Text + "%' ";
+            }
+            else
+            {
+                SearchModifier3 = "";
+            }
+            if (iOCheckBox.Checked )
+            {
+                SearchModifier4 = " and  ImportOrders.ImportOrderNo '"+iOSrchBx.Text+"%' ";
+            }
+            else
+            {
+                SearchModifier4 = "";
+            }
+            if (SupplierComboBox.SelectedIndex != -1)
+            {
+                dataGridView1.Rows.Clear();
+                con = new SqlConnection(Cs.DBConn);
+                string qry =
+                    "SELECT ImportOrderProduct.ImportOrderProductId, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemCode, ProductListSummary.ItemDescription,ImportOrderProduct.OrderQty, ImportOrderProduct.BacklogQty, ImportOrders.ImportOrderNo, ImportOrderProduct.ExpectedDateOfArrival FROM ImportOrders INNER JOIN ImportOrderProduct ON ImportOrders.ImpId = ImportOrderProduct.ImpId INNER JOIN ProductListSummary ON ImportOrderProduct.Sl = ProductListSummary.Sl inner join Supplier on ImportOrders.SupplierId=Supplier.SupplierId WHERE BacklogQty>0 and Supplier.SupplierName='" +
+                    SupplierComboBox.Text +"' "+ SearchModifier1+SearchModifier2+SearchModifier3+SearchModifier4;
+                cmd = new SqlCommand(qry, con);
+                con.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                }
+                con.Close();
+            }
+        }
+        private void SearchSingle(string searchText, Control searchControl)
+        {
+            string SearchModifier=null;
+            if (searchControl == prNmSrchBx)
+            {
+                SearchModifier = "ProductListSummary.ProductGenericDescription";
+            }
+            else if (searchControl == itmCdSrchBx)
+            {
+                SearchModifier = "ProductListSummary.ItemCode";
+            }
+            else if (searchControl ==itmDscrptnSrchBx)
+            {
+                SearchModifier = "ProductListSummary.ItemDescription";
+            }
+            else if (searchControl == iOSrchBx)
+            {
+                SearchModifier = "ImportOrders.ImportOrderNo";
+            }
+            string totalsearchtext = SearchModifier+" like '"+searchText+"%' Order by "+ SearchModifier;
+            if (SupplierComboBox.SelectedIndex != -1)
+            {
+                dataGridView1.Rows.Clear();
+                con = new SqlConnection(Cs.DBConn);
+                string qry =
+                    "SELECT ImportOrderProduct.ImportOrderProductId, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemCode, ProductListSummary.ItemDescription,ImportOrderProduct.OrderQty, ImportOrderProduct.BacklogQty, ImportOrders.ImportOrderNo, ImportOrderProduct.ExpectedDateOfArrival FROM ImportOrders INNER JOIN ImportOrderProduct ON ImportOrders.ImpId = ImportOrderProduct.ImpId INNER JOIN ProductListSummary ON ImportOrderProduct.Sl = ProductListSummary.Sl inner join Supplier on ImportOrders.SupplierId=Supplier.SupplierId WHERE BacklogQty>0 and Supplier.SupplierName='" +
+                    SupplierComboBox.Text + "' and " + totalsearchtext;
+                cmd = new SqlCommand(qry, con);
+                con.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                }
+                con.Close();
+            }
+        }
+
+        private void itmCdSrchBx_TextChanged(object sender, EventArgs e)
+        {
+            if (!iOCheckBox.Checked && !pNCheckBox.Checked && !pDCheckBox.Checked)
+            {
+                iOSrchBx.TextChanged -= iOSrchBx_TextChanged;
+                iOSrchBx.Clear();
+                iOSrchBx.TextChanged += iOSrchBx_TextChanged;
+
+                itmDscrptnSrchBx.TextChanged -= itmDscrptnSrchBx_TextChanged;
+                itmDscrptnSrchBx.Clear();
+                itmDscrptnSrchBx.TextChanged += itmDscrptnSrchBx_TextChanged;
+
+                prNmSrchBx.TextChanged -= prNmSrchBx_TextChanged;
+                prNmSrchBx.Clear();
+                prNmSrchBx.TextChanged += prNmSrchBx_TextChanged;
+
+                SearchSingle(itmCdSrchBx.Text, itmCdSrchBx);
+            }
+            else
+            {
+                SearchMulti();
+            }
+        }
+
+        private void itmDscrptnSrchBx_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!iOCheckBox.Checked && !pNCheckBox.Checked && !pCCheckBox.Checked)
+            {
+                iOSrchBx.TextChanged -= iOSrchBx_TextChanged;
+                iOSrchBx.Clear();
+                iOSrchBx.TextChanged += iOSrchBx_TextChanged;
+
+                itmCdSrchBx.TextChanged -= itmCdSrchBx_TextChanged;
+                itmCdSrchBx.Clear();
+                itmCdSrchBx.TextChanged += itmCdSrchBx_TextChanged;
+
+                prNmSrchBx.TextChanged -= prNmSrchBx_TextChanged;
+                prNmSrchBx.Clear();
+                prNmSrchBx.TextChanged += prNmSrchBx_TextChanged;
+
+                SearchSingle(itmDscrptnSrchBx.Text, itmDscrptnSrchBx);
+            }
+            else
+            {
+                SearchMulti();
+            }
+            
+        }
+
+        private void iOSrchBx_TextChanged(object sender, EventArgs e)
+        {
+            if (!pDCheckBox.Checked && !pNCheckBox.Checked && !pCCheckBox.Checked)
+            {
+                itmDscrptnSrchBx.TextChanged -= itmDscrptnSrchBx_TextChanged;
+                itmDscrptnSrchBx.Clear();
+                itmDscrptnSrchBx.TextChanged += itmDscrptnSrchBx_TextChanged;
+
+                itmCdSrchBx.TextChanged -= itmCdSrchBx_TextChanged;
+                itmCdSrchBx.Clear();
+                itmCdSrchBx.TextChanged += itmCdSrchBx_TextChanged;
+
+                prNmSrchBx.TextChanged -= prNmSrchBx_TextChanged;
+                prNmSrchBx.Clear();
+                prNmSrchBx.TextChanged += prNmSrchBx_TextChanged;
+
+                SearchSingle(iOSrchBx.Text, iOSrchBx);
+            }
+            else
+            {
+                SearchMulti();
+            }
+            
+        }
+
+        private void pNCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(prNmSrchBx.Text)&& !pNCheckBox.Checked)
+            {
+                prNmSrchBx.Clear();
+            }
+            if (string.IsNullOrWhiteSpace(prNmSrchBx.Text) && pNCheckBox.Checked)
+            {
+                MessageBox.Show("Nothing To Hold");
+                pNCheckBox.Checked = false;
+            }
+        }
+
+        private void pCCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(itmCdSrchBx.Text) && !pCCheckBox.Checked)
+            {
+                itmCdSrchBx.Clear();
+            }
+            if (string.IsNullOrWhiteSpace(itmCdSrchBx.Text) && pCCheckBox.Checked)
+            {
+                MessageBox.Show("Nothing To Hold");
+                pCCheckBox.Checked = false;
+            }
+        }
+
+        private void pDCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(itmDscrptnSrchBx.Text) && !pDCheckBox.Checked)
+            {
+                itmDscrptnSrchBx.Clear();
+            }
+            if (string.IsNullOrWhiteSpace(itmDscrptnSrchBx.Text) && pDCheckBox.Checked)
+            {
+                MessageBox.Show("Nothing To Hold");
+                pDCheckBox.Checked = false;
+            }
+        }
+
+        private void iOCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(iOSrchBx.Text) && !iOCheckBox.Checked)
+            {
+                iOSrchBx.Clear();
+            }
+            if (string.IsNullOrWhiteSpace(iOSrchBx.Text) && iOCheckBox.Checked)
+            {
+                MessageBox.Show("Nothing To Hold");
+                iOCheckBox.Checked = false;
+            }
+        }
     }
 }
