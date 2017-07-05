@@ -392,11 +392,6 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
-        private void RemoveButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void RemoveButton_Click_1(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count < 1)
@@ -410,6 +405,15 @@ namespace ImportOrderManagementSystem.UI
                 {
                     if (listView1.Items[i].Selected)
                     {
+                        //tawhidul
+                        //total item calculation
+                        totalItem = --totalItem;
+                        totalItemTextBox.Text = totalItem.ToString();
+
+                        //total quantity calculation
+                        totalQuantity = totalQuantity - Convert.ToInt32(listView1.Items[i].SubItems[6].Text);
+                        totalQuantityTextBox.Text = totalQuantity.ToString();
+
                         listView1.Items[i].Remove();
                     }
                 }
