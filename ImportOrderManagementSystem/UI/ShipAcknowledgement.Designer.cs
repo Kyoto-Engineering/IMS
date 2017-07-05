@@ -77,10 +77,12 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+
             this.totalQuantityLabel = new System.Windows.Forms.Label();
             this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
             this.totalItemLabel = new System.Windows.Forms.Label();
             this.totalItemTextBox = new System.Windows.Forms.TextBox();
+
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -298,7 +300,9 @@
             this.RemoveButton.TabIndex = 6;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
+
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+
             // 
             // AddButton
             // 
@@ -499,6 +503,7 @@
             this.columnHeader9.Text = "Check Quantity";
             this.columnHeader9.Width = 0;
             // 
+
             // totalQuantityLabel
             // 
             this.totalQuantityLabel.AutoSize = true;
@@ -531,6 +536,7 @@
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 7;
             // 
+
             // ShipAcknowledgement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

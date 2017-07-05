@@ -397,5 +397,24 @@ namespace ImportOrderManagementSystem.UI
             
         }
 
+        private void RemoveButton_Click_1(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count < 1)
+            {
+                MessageBox.Show("Please Select a row from the list which you  want to remove", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    if (listView1.Items[i].Selected)
+                    {
+                        listView1.Items[i].Remove();
+                    }
+                }
+            }
+        }
+
   }
 }
