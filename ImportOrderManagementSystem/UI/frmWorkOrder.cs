@@ -98,24 +98,16 @@ namespace ImportOrderManagementSystem.UI
                 for (int i = 0; i <= listView1.Items.Count - 1; i++)
                 {
                     _con = new SqlConnection(_cs.DBConn);
-                    string cd = "INSERT INTO ImportOrderProduct (ImpId,Sl,OrderQty,Price,ExpectedDateOfArrival,BacklogQty,Remarks) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7)";
+                    string cd = "INSERT INTO ImportOrderProduct (ImpId,Sl,OrderQty,Price,ExpectedDateOfArrival,BacklogQty) VALUES (@d1,@d2,@d3,@d4,@d5,@d6)";
                     _cmd = new SqlCommand(cd,_con);                   
                     _cmd.Parameters.AddWithValue("@d1",ImpId);                  
-                    _cmd.Parameters.AddWithValue("@d2", listView1.Items[i].Text);                    
-                    _cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[2].Text);
-                    _cmd.Parameters.AddWithValue("@d4", listView1.Items[i].SubItems[3].Text);
-                    _cmd.Parameters.AddWithValue("@d5", listView1.Items[i].SubItems[4].Text);
-                    _cmd.Parameters.AddWithValue("@d6", listView1.Items[i].SubItems[2].Text);
-                    _cmd.Parameters.AddWithValue("@d7", string.IsNullOrWhiteSpace(listView1.Items[i].SubItems[5].Text) ? (object)DBNull.Value : listView1.Items[i].SubItems[5].Text);
-                    
+                    _cmd.Parameters.AddWithValue("d2", listView1.Items[i].Text);                    
+                    _cmd.Parameters.AddWithValue("d3", listView1.Items[i].SubItems[2].Text);
+                    _cmd.Parameters.AddWithValue("d4", listView1.Items[i].SubItems[3].Text);
+                    _cmd.Parameters.AddWithValue("d5", listView1.Items[i].SubItems[4].Text);
+                    _cmd.Parameters.AddWithValue("d6", listView1.Items[i].SubItems[2].Text);
+                    _cmd.Parameters.AddWithValue("d7", string.IsNullOrWhiteSpace(listView1.Items[i].SubItems[5].Text) ? (object)DBNull.Value : listView1.Items[i].SubItems[5].Text);
                     _con.Open();
-                    string debugSQL1 = _cmd.CommandText;
-
-                    foreach (SqlParameter param in _cmd.Parameters)
-                    {
-                        debugSQL1 = debugSQL1.Replace(param.ParameterName, param.Value.ToString());
-                    }
-
                     _cmd.ExecuteNonQuery();
                     _con.Close();
                    
@@ -186,6 +178,11 @@ namespace ImportOrderManagementSystem.UI
            
         }
 
+        public decimal totalPrice = 0, temp = 0;
+        public int totalQuantity = 0;
+        public int totalItem = 0;
+        public int quantity;
+
         private void button1_Click(object sender, EventArgs e)
         {
             //SupliercomboBox.Enabled = false;
@@ -230,6 +227,22 @@ namespace ImportOrderManagementSystem.UI
                     lst.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
                     lst.SubItems.Add(textBox1.Text);
                     listView1.Items.Add(lst);
+
+                    //tawhidul
+                    //total item calculation
+                    totalItem = ++totalItem;
+                    totalItemTextBox.Text = totalItem.ToString();
+
+                    //total quantity calculation
+                    totalQuantity = totalQuantity + Convert.ToInt32(txtOrderAmount.Text);
+                    totalQuantityTextBox.Text = totalQuantity.ToString();
+
+                    //total price calculation
+                    quantity = Convert.ToInt32(txtOrderAmount.Text);
+                    temp = Convert.ToDecimal(txtOrderPrice.Text) * quantity;
+                    totalPrice = totalPrice + temp;
+                    totalPriceTextBox.Text = totalPrice.ToString();
+
                     ClearProducts();
                 }
                 else
@@ -244,6 +257,21 @@ namespace ImportOrderManagementSystem.UI
                         lst1.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
                         lst1.SubItems.Add(textBox1.Text);
                         listView1.Items.Add(lst1);
+
+                        //tawhidul
+                        //total item calculation
+                        totalItem = ++totalItem;
+                        totalItemTextBox.Text = totalItem.ToString();
+
+                        //total quantity calculation
+                        totalQuantity = totalQuantity + Convert.ToInt32(txtOrderAmount.Text);
+                        totalQuantityTextBox.Text = totalQuantity.ToString();
+
+                        //total price calculation
+                        temp = Convert.ToDecimal(txtOrderPrice.Text) * quantity;
+                        totalPrice = totalPrice + temp;
+                        totalPriceTextBox.Text = totalPrice.ToString();
+
                         ClearProducts();
 
                     }
@@ -258,13 +286,17 @@ namespace ImportOrderManagementSystem.UI
                 }
 
                 textBox1.Clear();
+
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
+
+
         private bool GetValue()
         {
             bool x = true;
@@ -368,6 +400,20 @@ namespace ImportOrderManagementSystem.UI
                 {
                     if (listView1.Items[i].Selected)
                     {
+                        //tawhidul
+                        //total item calculation
+                        totalItem = --totalItem;
+                        totalItemTextBox.Text = totalItem.ToString();
+
+                        //total quantity calculation
+                        totalQuantity = totalQuantity - Convert.ToInt32(listView1.Items[i].SubItems[2].Text);
+                        totalQuantityTextBox.Text = totalQuantity.ToString();
+
+                        //total price calculation
+                        temp = Convert.ToDecimal(listView1.Items[i].SubItems[3].Text) * quantity;
+                        totalPrice = totalPrice - temp;
+                        totalPriceTextBox.Text = totalPrice.ToString();
+
                         listView1.Items[i].Remove();
                     }
                 }
@@ -549,7 +595,7 @@ namespace ImportOrderManagementSystem.UI
             if (dataGridViewk.SelectedRows.Count>0)
             { try
             {
-                groupBox1.Enabled = false;
+                groupBox1.Enabled = false; 
                 //cmbWorkOrderNo.Enabled = false;
                 DataGridViewRow dr = dataGridViewk.CurrentRow;
                 ProductId = Convert.ToInt32(dr.Cells[0].Value.ToString().Trim());
@@ -1014,7 +1060,7 @@ namespace ImportOrderManagementSystem.UI
             dataGridViewk.Rows.Clear();
             dataGridViewk.Refresh();
             groupBox1.Enabled = true;
-            groupBox2.Enabled = false;
+            groupBox2.Enabled = false;       
         }
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
@@ -1043,6 +1089,31 @@ namespace ImportOrderManagementSystem.UI
         }
 
         private void dataGridViewk_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalQuantitylabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalItemlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOrderAmount_TextChanged(object sender, EventArgs e)
         {
 
         }
