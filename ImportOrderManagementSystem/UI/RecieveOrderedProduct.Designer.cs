@@ -72,18 +72,22 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.prNmSrchBx = new System.Windows.Forms.TextBox();
-            this.itmCdSrchBx = new System.Windows.Forms.TextBox();
-            this.itmDscrptnSrchBx = new System.Windows.Forms.TextBox();
-            this.iOSrchBx = new System.Windows.Forms.TextBox();
-            this.pNCheckBox = new System.Windows.Forms.CheckBox();
-            this.pCCheckBox = new System.Windows.Forms.CheckBox();
-            this.pDCheckBox = new System.Windows.Forms.CheckBox();
-            this.iOCheckBox = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.iOCheckBox = new System.Windows.Forms.CheckBox();
+            this.pDCheckBox = new System.Windows.Forms.CheckBox();
+            this.pCCheckBox = new System.Windows.Forms.CheckBox();
+            this.pNCheckBox = new System.Windows.Forms.CheckBox();
+            this.iOSrchBx = new System.Windows.Forms.TextBox();
+            this.itmDscrptnSrchBx = new System.Windows.Forms.TextBox();
+            this.itmCdSrchBx = new System.Windows.Forms.TextBox();
+            this.prNmSrchBx = new System.Windows.Forms.TextBox();
+            this.totalItemLabel = new System.Windows.Forms.Label();
+            this.totalItemTextBox = new System.Windows.Forms.TextBox();
+            this.totalQuantityLabel = new System.Windows.Forms.Label();
+            this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -481,70 +485,41 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Search";
             // 
-            // prNmSrchBx
+            // label13
             // 
-            this.prNmSrchBx.Location = new System.Drawing.Point(114, 14);
-            this.prNmSrchBx.Name = "prNmSrchBx";
-            this.prNmSrchBx.Size = new System.Drawing.Size(100, 20);
-            this.prNmSrchBx.TabIndex = 5;
-            this.prNmSrchBx.TextChanged += new System.EventHandler(this.prNmSrchBx_TextChanged);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(461, 46);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "I O No";
             // 
-            // itmCdSrchBx
+            // label12
             // 
-            this.itmCdSrchBx.Location = new System.Drawing.Point(508, 16);
-            this.itmCdSrchBx.Name = "itmCdSrchBx";
-            this.itmCdSrchBx.Size = new System.Drawing.Size(100, 20);
-            this.itmCdSrchBx.TabIndex = 6;
-            this.itmCdSrchBx.TextChanged += new System.EventHandler(this.itmCdSrchBx_TextChanged);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Product Description";
             // 
-            // itmDscrptnSrchBx
+            // label11
             // 
-            this.itmDscrptnSrchBx.Location = new System.Drawing.Point(114, 40);
-            this.itmDscrptnSrchBx.Name = "itmDscrptnSrchBx";
-            this.itmDscrptnSrchBx.Size = new System.Drawing.Size(100, 20);
-            this.itmDscrptnSrchBx.TabIndex = 7;
-            this.itmDscrptnSrchBx.TextChanged += new System.EventHandler(this.itmDscrptnSrchBx_TextChanged);
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(427, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Product Code";
             // 
-            // iOSrchBx
+            // label10
             // 
-            this.iOSrchBx.Location = new System.Drawing.Point(508, 42);
-            this.iOSrchBx.Name = "iOSrchBx";
-            this.iOSrchBx.Size = new System.Drawing.Size(100, 20);
-            this.iOSrchBx.TabIndex = 6;
-            this.iOSrchBx.TextChanged += new System.EventHandler(this.iOSrchBx_TextChanged);
-            // 
-            // pNCheckBox
-            // 
-            this.pNCheckBox.AutoSize = true;
-            this.pNCheckBox.Location = new System.Drawing.Point(229, 16);
-            this.pNCheckBox.Name = "pNCheckBox";
-            this.pNCheckBox.Size = new System.Drawing.Size(169, 17);
-            this.pNCheckBox.TabIndex = 8;
-            this.pNCheckBox.Text = "Hold Data For Another Search";
-            this.pNCheckBox.UseVisualStyleBackColor = true;
-            this.pNCheckBox.CheckedChanged += new System.EventHandler(this.pNCheckBox_CheckedChanged);
-            // 
-            // pCCheckBox
-            // 
-            this.pCCheckBox.AutoSize = true;
-            this.pCCheckBox.Location = new System.Drawing.Point(614, 16);
-            this.pCCheckBox.Name = "pCCheckBox";
-            this.pCCheckBox.Size = new System.Drawing.Size(169, 17);
-            this.pCCheckBox.TabIndex = 9;
-            this.pCCheckBox.Text = "Hold Data For Another Search";
-            this.pCCheckBox.UseVisualStyleBackColor = true;
-            this.pCCheckBox.CheckedChanged += new System.EventHandler(this.pCCheckBox_CheckedChanged);
-            // 
-            // pDCheckBox
-            // 
-            this.pDCheckBox.AutoSize = true;
-            this.pDCheckBox.Location = new System.Drawing.Point(229, 45);
-            this.pDCheckBox.Name = "pDCheckBox";
-            this.pDCheckBox.Size = new System.Drawing.Size(169, 17);
-            this.pDCheckBox.TabIndex = 10;
-            this.pDCheckBox.Text = "Hold Data For Another Search";
-            this.pDCheckBox.UseVisualStyleBackColor = true;
-            this.pDCheckBox.CheckedChanged += new System.EventHandler(this.pDCheckBox_CheckedChanged);
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Product Name";
             // 
             // iOCheckBox
             // 
@@ -557,47 +532,112 @@
             this.iOCheckBox.UseVisualStyleBackColor = true;
             this.iOCheckBox.CheckedChanged += new System.EventHandler(this.iOCheckBox_CheckedChanged);
             // 
-            // label10
+            // pDCheckBox
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 13);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Product Name";
+            this.pDCheckBox.AutoSize = true;
+            this.pDCheckBox.Location = new System.Drawing.Point(229, 45);
+            this.pDCheckBox.Name = "pDCheckBox";
+            this.pDCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pDCheckBox.TabIndex = 10;
+            this.pDCheckBox.Text = "Hold Data For Another Search";
+            this.pDCheckBox.UseVisualStyleBackColor = true;
+            this.pDCheckBox.CheckedChanged += new System.EventHandler(this.pDCheckBox_CheckedChanged);
             // 
-            // label11
+            // pCCheckBox
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(427, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Product Code";
+            this.pCCheckBox.AutoSize = true;
+            this.pCCheckBox.Location = new System.Drawing.Point(614, 16);
+            this.pCCheckBox.Name = "pCCheckBox";
+            this.pCCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pCCheckBox.TabIndex = 9;
+            this.pCCheckBox.Text = "Hold Data For Another Search";
+            this.pCCheckBox.UseVisualStyleBackColor = true;
+            this.pCCheckBox.CheckedChanged += new System.EventHandler(this.pCCheckBox_CheckedChanged);
             // 
-            // label12
+            // pNCheckBox
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(10, 46);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Product Description";
+            this.pNCheckBox.AutoSize = true;
+            this.pNCheckBox.Location = new System.Drawing.Point(229, 16);
+            this.pNCheckBox.Name = "pNCheckBox";
+            this.pNCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pNCheckBox.TabIndex = 8;
+            this.pNCheckBox.Text = "Hold Data For Another Search";
+            this.pNCheckBox.UseVisualStyleBackColor = true;
+            this.pNCheckBox.CheckedChanged += new System.EventHandler(this.pNCheckBox_CheckedChanged);
             // 
-            // label13
+            // iOSrchBx
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(461, 46);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "I O No";
+            this.iOSrchBx.Location = new System.Drawing.Point(508, 42);
+            this.iOSrchBx.Name = "iOSrchBx";
+            this.iOSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.iOSrchBx.TabIndex = 6;
+            this.iOSrchBx.TextChanged += new System.EventHandler(this.iOSrchBx_TextChanged);
+            // 
+            // itmDscrptnSrchBx
+            // 
+            this.itmDscrptnSrchBx.Location = new System.Drawing.Point(114, 40);
+            this.itmDscrptnSrchBx.Name = "itmDscrptnSrchBx";
+            this.itmDscrptnSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.itmDscrptnSrchBx.TabIndex = 7;
+            this.itmDscrptnSrchBx.TextChanged += new System.EventHandler(this.itmDscrptnSrchBx_TextChanged);
+            // 
+            // itmCdSrchBx
+            // 
+            this.itmCdSrchBx.Location = new System.Drawing.Point(508, 16);
+            this.itmCdSrchBx.Name = "itmCdSrchBx";
+            this.itmCdSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.itmCdSrchBx.TabIndex = 6;
+            this.itmCdSrchBx.TextChanged += new System.EventHandler(this.itmCdSrchBx_TextChanged);
+            // 
+            // prNmSrchBx
+            // 
+            this.prNmSrchBx.Location = new System.Drawing.Point(114, 14);
+            this.prNmSrchBx.Name = "prNmSrchBx";
+            this.prNmSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.prNmSrchBx.TabIndex = 5;
+            this.prNmSrchBx.TextChanged += new System.EventHandler(this.prNmSrchBx_TextChanged);
+            // 
+            // totalItemLabel
+            // 
+            this.totalItemLabel.AutoSize = true;
+            this.totalItemLabel.Location = new System.Drawing.Point(22, 334);
+            this.totalItemLabel.Name = "totalItemLabel";
+            this.totalItemLabel.Size = new System.Drawing.Size(54, 13);
+            this.totalItemLabel.TabIndex = 5;
+            this.totalItemLabel.Text = "Total Item";
+            // 
+            // totalItemTextBox
+            // 
+            this.totalItemTextBox.Location = new System.Drawing.Point(79, 331);
+            this.totalItemTextBox.Name = "totalItemTextBox";
+            this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalItemTextBox.TabIndex = 6;
+            // 
+            // totalQuantityLabel
+            // 
+            this.totalQuantityLabel.AutoSize = true;
+            this.totalQuantityLabel.Location = new System.Drawing.Point(214, 334);
+            this.totalQuantityLabel.Name = "totalQuantityLabel";
+            this.totalQuantityLabel.Size = new System.Drawing.Size(73, 13);
+            this.totalQuantityLabel.TabIndex = 5;
+            this.totalQuantityLabel.Text = "Total Quantity";
+            // 
+            // totalQuantityTextBox
+            // 
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(304, 331);
+            this.totalQuantityTextBox.Name = "totalQuantityTextBox";
+            this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalQuantityTextBox.TabIndex = 6;
             // 
             // RecieveOrderedProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 556);
+            this.Controls.Add(this.totalQuantityTextBox);
+            this.Controls.Add(this.totalQuantityLabel);
+            this.Controls.Add(this.totalItemTextBox);
+            this.Controls.Add(this.totalItemLabel);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.AddedProductGroupBox);
             this.Controls.Add(this.groupBox3);
@@ -617,6 +657,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -675,5 +716,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label totalItemLabel;
+        private System.Windows.Forms.TextBox totalItemTextBox;
+        private System.Windows.Forms.Label totalQuantityLabel;
+        private System.Windows.Forms.TextBox totalQuantityTextBox;
     }
 }
