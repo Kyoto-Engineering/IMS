@@ -89,6 +89,12 @@
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
+            this.totalPriceTextBox = new System.Windows.Forms.TextBox();
+            this.totalQuantitylabel = new System.Windows.Forms.Label();
+            this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.totalItemlabel = new System.Windows.Forms.Label();
+            this.totalItemTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -397,6 +403,7 @@
             this.listView1.TabIndex = 17;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader3
             // 
@@ -744,12 +751,69 @@
             this.label4.TabIndex = 50;
             this.label4.Text = "Product Id                          :";
             // 
+            // totalPriceLabel
+            // 
+            this.totalPriceLabel.AutoSize = true;
+            this.totalPriceLabel.Location = new System.Drawing.Point(638, 668);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(58, 13);
+            this.totalPriceLabel.TabIndex = 28;
+            this.totalPriceLabel.Text = "Total Price";
+            // 
+            // totalPriceTextBox
+            // 
+            this.totalPriceTextBox.Location = new System.Drawing.Point(702, 664);
+            this.totalPriceTextBox.Name = "totalPriceTextBox";
+            this.totalPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalPriceTextBox.TabIndex = 29;
+            this.totalPriceTextBox.TextChanged += new System.EventHandler(this.totalPriceTextBox_TextChanged);
+            // 
+            // totalQuantitylabel
+            // 
+            this.totalQuantitylabel.AutoSize = true;
+            this.totalQuantitylabel.Location = new System.Drawing.Point(808, 668);
+            this.totalQuantitylabel.Name = "totalQuantitylabel";
+            this.totalQuantitylabel.Size = new System.Drawing.Size(73, 13);
+            this.totalQuantitylabel.TabIndex = 30;
+            this.totalQuantitylabel.Text = "Total Quantity";
+            this.totalQuantitylabel.Click += new System.EventHandler(this.totalQuantitylabel_Click);
+            // 
+            // totalQuantityTextBox
+            // 
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(884, 664);
+            this.totalQuantityTextBox.Name = "totalQuantityTextBox";
+            this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalQuantityTextBox.TabIndex = 31;
+            // 
+            // totalItemlabel
+            // 
+            this.totalItemlabel.AutoSize = true;
+            this.totalItemlabel.Location = new System.Drawing.Point(999, 668);
+            this.totalItemlabel.Name = "totalItemlabel";
+            this.totalItemlabel.Size = new System.Drawing.Size(54, 13);
+            this.totalItemlabel.TabIndex = 32;
+            this.totalItemlabel.Text = "Total Item";
+            this.totalItemlabel.Click += new System.EventHandler(this.totalItemlabel_Click);
+            // 
+            // totalItemTextBox
+            // 
+            this.totalItemTextBox.Location = new System.Drawing.Point(1059, 664);
+            this.totalItemTextBox.Name = "totalItemTextBox";
+            this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalItemTextBox.TabIndex = 33;
+            // 
             // frmWorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Olive;
             this.ClientSize = new System.Drawing.Size(1275, 690);
+            this.Controls.Add(this.totalItemTextBox);
+            this.Controls.Add(this.totalItemlabel);
+            this.Controls.Add(this.totalQuantityTextBox);
+            this.Controls.Add(this.totalQuantitylabel);
+            this.Controls.Add(this.totalPriceTextBox);
+            this.Controls.Add(this.totalPriceLabel);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.g);
             this.Controls.Add(this.k);
@@ -842,5 +906,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label totalPriceLabel;
+        private System.Windows.Forms.TextBox totalPriceTextBox;
+        private System.Windows.Forms.Label totalQuantitylabel;
+        private System.Windows.Forms.TextBox totalQuantityTextBox;
+        private System.Windows.Forms.Label totalItemlabel;
+        private System.Windows.Forms.TextBox totalItemTextBox;
     }
 }
