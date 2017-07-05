@@ -88,6 +88,10 @@
             this.totalItemTextBox = new System.Windows.Forms.TextBox();
             this.totalQuantityLabel = new System.Windows.Forms.Label();
             this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -98,6 +102,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.ShipmentOrderNoTextBox);
             this.groupBox1.Controls.Add(this.label8);
@@ -110,7 +118,7 @@
             this.groupBox1.Controls.Add(this.SupplierComboBox);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 144);
+            this.groupBox1.Size = new System.Drawing.Size(414, 224);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shipment Info";
@@ -218,7 +226,7 @@
             this.groupBox2.Controls.Add(this.AddButton);
             this.groupBox2.Controls.Add(this.ShipingQtyTextBox);
             this.groupBox2.Controls.Add(this.ProductCodeTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(13, 162);
+            this.groupBox2.Location = new System.Drawing.Point(13, 242);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(414, 165);
             this.groupBox2.TabIndex = 1;
@@ -600,7 +608,7 @@
             // totalItemLabel
             // 
             this.totalItemLabel.AutoSize = true;
-            this.totalItemLabel.Location = new System.Drawing.Point(22, 334);
+            this.totalItemLabel.Location = new System.Drawing.Point(22, 414);
             this.totalItemLabel.Name = "totalItemLabel";
             this.totalItemLabel.Size = new System.Drawing.Size(54, 13);
             this.totalItemLabel.TabIndex = 5;
@@ -608,7 +616,7 @@
             // 
             // totalItemTextBox
             // 
-            this.totalItemTextBox.Location = new System.Drawing.Point(79, 331);
+            this.totalItemTextBox.Location = new System.Drawing.Point(79, 411);
             this.totalItemTextBox.Name = "totalItemTextBox";
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 6;
@@ -616,7 +624,7 @@
             // totalQuantityLabel
             // 
             this.totalQuantityLabel.AutoSize = true;
-            this.totalQuantityLabel.Location = new System.Drawing.Point(214, 334);
+            this.totalQuantityLabel.Location = new System.Drawing.Point(214, 414);
             this.totalQuantityLabel.Name = "totalQuantityLabel";
             this.totalQuantityLabel.Size = new System.Drawing.Size(73, 13);
             this.totalQuantityLabel.TabIndex = 5;
@@ -624,10 +632,42 @@
             // 
             // totalQuantityTextBox
             // 
-            this.totalQuantityTextBox.Location = new System.Drawing.Point(304, 331);
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(304, 411);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
             this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalQuantityTextBox.TabIndex = 6;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(109, 152);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Shiping Quantity";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(210, 149);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(105, 186);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Shiping Quantity";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(206, 183);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 13;
             // 
             // RecieveOrderedProduct
             // 
@@ -720,5 +760,9 @@
         private System.Windows.Forms.TextBox totalItemTextBox;
         private System.Windows.Forms.Label totalQuantityLabel;
         private System.Windows.Forms.TextBox totalQuantityTextBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

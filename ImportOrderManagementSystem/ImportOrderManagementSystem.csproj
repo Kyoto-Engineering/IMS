@@ -128,6 +128,12 @@
       <DependentUpon>ImportOrder.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\ShipmentOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Attention.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,10 @@
     <EmbeddedResource Include="Reports\ImportOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ImportOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShipmentOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShipmentOrder.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Attention.resx">
       <DependentUpon>Attention.cs</DependentUpon>
