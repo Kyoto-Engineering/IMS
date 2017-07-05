@@ -276,7 +276,7 @@ namespace ImportOrderManagementSystem.UI
 
                     con = new SqlConnection(Cs.DBConn);
                     string q1 =
-                        "INSERT INTO ShipmentOrder (ExpectedShipmentDate,ExpectedDateOfDelivery,SMId,UserId,EntryDate,ShipmentOrderNo,SSO,SupplierId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                        "INSERT INTO ShipmentOrder (ExpectedShipmentDate,ExpectedDateOfDelivery,SMId,UserId,EntryDate,ShipmentOrderNo,SSO,SupplierId,ACost,CFC) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d8,@d9,@d10)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                     cmd=new SqlCommand(q1,con);
                     cmd.Parameters.AddWithValue("@d1", ShippingDateTimePicker.Value);
                     cmd.Parameters.AddWithValue("@d2", DeliveryDateTimePicker.Value);
@@ -286,6 +286,8 @@ namespace ImportOrderManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d6",shipmentOrderNo );
                     cmd.Parameters.AddWithValue("@d7", Sio);
                     cmd.Parameters.AddWithValue("@d8", SupplierId);
+                    cmd.Parameters.AddWithValue("@d9", string.IsNullOrWhiteSpace(textBox1.Text)?(object)DBNull.Value:textBox1.Text);
+                    cmd.Parameters.AddWithValue("@d10", string.IsNullOrWhiteSpace(textBox2.Text) ? (object)DBNull.Value : textBox2.Text);
                     con.Open();
                     string ShID=cmd.ExecuteScalar().ToString();
                     con.Close();

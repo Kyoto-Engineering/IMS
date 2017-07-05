@@ -640,33 +640,33 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(109, 152);
+            this.label14.Location = new System.Drawing.Point(71, 156);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 13);
+            this.label14.Size = new System.Drawing.Size(118, 13);
             this.label14.TabIndex = 10;
-            this.label14.Text = "Shiping Quantity";
+            this.label14.Text = "CFR Freight Charge\t     :";
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(210, 149);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 11;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(105, 186);
+            this.label15.Location = new System.Drawing.Point(82, 186);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 13);
+            this.label15.Size = new System.Drawing.Size(103, 13);
             this.label15.TabIndex = 12;
-            this.label15.Text = "Shiping Quantity";
+            this.label15.Text = "Anciliary Cost          :";
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(206, 183);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(162, 20);
             this.textBox2.TabIndex = 13;
             // 
             // RecieveOrderedProduct
