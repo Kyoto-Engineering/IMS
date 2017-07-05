@@ -150,6 +150,8 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
+        public int totalItem = 0, totalQuantity=0;
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(ShippingModeComboBox.Text))
@@ -179,6 +181,16 @@ namespace ImportOrderManagementSystem.UI
                         l1.SubItems.Add(ProductDesTextBox.Text);
                         l1.SubItems.Add(ShipingQtyTextBox.Text);
                         listView1.Items.Add(l1);
+
+                        //tawhidul
+                        //total item calculation
+                        totalItem = ++totalItem;
+                        totalItemTextBox.Text = totalItem.ToString();
+
+                        //total quantity calculation
+                        totalQuantity = totalQuantity + Convert.ToInt32(ShipingQtyTextBox.Text);
+                        totalQuantityTextBox.Text = totalQuantity.ToString();
+
                         ClearselectedProduct();
                         groupBox1.Enabled = false;
                     }
@@ -193,6 +205,16 @@ namespace ImportOrderManagementSystem.UI
                             l2.SubItems.Add(ProductDesTextBox.Text);
                             l2.SubItems.Add(ShipingQtyTextBox.Text);
                             listView1.Items.Add(l2);
+
+                            //tawhidul
+                            //total item calculation
+                            totalItem = ++totalItem;
+                            totalItemTextBox.Text = totalItem.ToString();
+
+                            //total quantity calculation
+                            totalQuantity = totalQuantity + Convert.ToInt32(ShipingQtyTextBox.Text);
+                            totalQuantityTextBox.Text = totalQuantity.ToString();
+
                             ClearselectedProduct();
                             //groupBox1.Enabled = false;
                         }
@@ -357,6 +379,15 @@ namespace ImportOrderManagementSystem.UI
                 {
                     if (listView1.Items[i].Selected)
                     {
+                        //tawhidul
+                        //total item calculation
+                        totalItem = --totalItem;
+                        totalItemTextBox.Text = totalItem.ToString();
+
+                        //total quantity calculation
+                        totalQuantity = totalQuantity - Convert.ToInt32(listView1.Items[i].SubItems[4].Text);
+                        totalQuantityTextBox.Text = totalQuantity.ToString();
+
                         listView1.Items[i].Remove();
                     }
                 }

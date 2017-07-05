@@ -77,6 +77,12 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+
+            this.totalQuantityLabel = new System.Windows.Forms.Label();
+            this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.totalItemLabel = new System.Windows.Forms.Label();
+            this.totalItemTextBox = new System.Windows.Forms.TextBox();
+
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -294,7 +300,9 @@
             this.RemoveButton.TabIndex = 6;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click_1);
+
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+
             // 
             // AddButton
             // 
@@ -312,7 +320,9 @@
             this.ShipingQtyTextBox.Name = "ShipingQtyTextBox";
             this.ShipingQtyTextBox.Size = new System.Drawing.Size(100, 20);
             this.ShipingQtyTextBox.TabIndex = 4;
+            this.ShipingQtyTextBox.TextChanged += new System.EventHandler(this.ShipingQtyTextBox_TextChanged);
             this.ShipingQtyTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShipingQtyTextBox_KeyDown);
+            this.ShipingQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShipingQtyTextBox_KeyPress);
             // 
             // ProductCodeTextBox
             // 
@@ -493,11 +503,49 @@
             this.columnHeader9.Text = "Check Quantity";
             this.columnHeader9.Width = 0;
             // 
+
+            // totalQuantityLabel
+            // 
+            this.totalQuantityLabel.AutoSize = true;
+            this.totalQuantityLabel.Location = new System.Drawing.Point(202, 391);
+            this.totalQuantityLabel.Name = "totalQuantityLabel";
+            this.totalQuantityLabel.Size = new System.Drawing.Size(73, 13);
+            this.totalQuantityLabel.TabIndex = 4;
+            this.totalQuantityLabel.Text = "Total Quantity";
+            // 
+            // totalQuantityTextBox
+            // 
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(278, 390);
+            this.totalQuantityTextBox.Name = "totalQuantityTextBox";
+            this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalQuantityTextBox.TabIndex = 5;
+            // 
+            // totalItemLabel
+            // 
+            this.totalItemLabel.AutoSize = true;
+            this.totalItemLabel.Location = new System.Drawing.Point(19, 393);
+            this.totalItemLabel.Name = "totalItemLabel";
+            this.totalItemLabel.Size = new System.Drawing.Size(54, 13);
+            this.totalItemLabel.TabIndex = 6;
+            this.totalItemLabel.Text = "Total Item";
+            // 
+            // totalItemTextBox
+            // 
+            this.totalItemTextBox.Location = new System.Drawing.Point(83, 387);
+            this.totalItemTextBox.Name = "totalItemTextBox";
+            this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalItemTextBox.TabIndex = 7;
+            // 
+
             // ShipAcknowledgement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 481);
+            this.Controls.Add(this.totalItemTextBox);
+            this.Controls.Add(this.totalItemLabel);
+            this.Controls.Add(this.totalQuantityTextBox);
+            this.Controls.Add(this.totalQuantityLabel);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -514,6 +562,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -566,5 +615,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label totalQuantityLabel;
+        private System.Windows.Forms.TextBox totalQuantityTextBox;
+        private System.Windows.Forms.Label totalItemLabel;
+        private System.Windows.Forms.TextBox totalItemTextBox;
     }
 }
