@@ -124,7 +124,7 @@
             this.textBox5.Location = new System.Drawing.Point(218, 144);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(137, 20);
-            this.textBox5.TabIndex = 15;
+            this.textBox5.TabIndex = 5;
             // 
             // label9
             // 
@@ -140,7 +140,7 @@
             this.textBox4.Location = new System.Drawing.Point(213, 118);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(142, 20);
-            this.textBox4.TabIndex = 13;
+            this.textBox4.TabIndex = 4;
             // 
             // label8
             // 
@@ -156,7 +156,7 @@
             this.textBox3.Location = new System.Drawing.Point(214, 94);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 20);
-            this.textBox3.TabIndex = 11;
+            this.textBox3.TabIndex = 3;
             // 
             // label7
             // 
@@ -172,7 +172,7 @@
             this.textBox2.Location = new System.Drawing.Point(214, 69);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
@@ -188,7 +188,7 @@
             this.textBox1.Location = new System.Drawing.Point(214, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -205,7 +205,7 @@
             this.SupplierComboBox.Location = new System.Drawing.Point(214, 20);
             this.SupplierComboBox.Name = "SupplierComboBox";
             this.SupplierComboBox.Size = new System.Drawing.Size(141, 21);
-            this.SupplierComboBox.TabIndex = 1;
+            this.SupplierComboBox.TabIndex = 0;
             this.SupplierComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox2
@@ -233,7 +233,7 @@
             this.DoneButton.Location = new System.Drawing.Point(333, 123);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 23);
-            this.DoneButton.TabIndex = 7;
+            this.DoneButton.TabIndex = 6;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
             this.DoneButton.Click += new System.EventHandler(this.button3_Click);
@@ -262,7 +262,7 @@
             this.ProductDesTextBox.Name = "ProductDesTextBox";
             this.ProductDesTextBox.ReadOnly = true;
             this.ProductDesTextBox.Size = new System.Drawing.Size(191, 20);
-            this.ProductDesTextBox.TabIndex = 2;
+            this.ProductDesTextBox.TabIndex = 1;
             // 
             // ProductNameTextBox
             // 
@@ -270,7 +270,7 @@
             this.ProductNameTextBox.Name = "ProductNameTextBox";
             this.ProductNameTextBox.ReadOnly = true;
             this.ProductNameTextBox.Size = new System.Drawing.Size(191, 20);
-            this.ProductNameTextBox.TabIndex = 1;
+            this.ProductNameTextBox.TabIndex = 0;
             // 
             // label4
             // 
@@ -295,17 +295,17 @@
             this.RemoveButton.Location = new System.Drawing.Point(333, 46);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(75, 23);
-            this.RemoveButton.TabIndex = 6;
+            this.RemoveButton.TabIndex = 5;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click_1);
             // 
             // AddButton
             // 
             this.AddButton.Location = new System.Drawing.Point(333, 20);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
-            this.AddButton.TabIndex = 5;
+            this.AddButton.TabIndex = 4;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.button1_Click);
@@ -315,7 +315,7 @@
             this.ShipingQtyTextBox.Location = new System.Drawing.Point(110, 111);
             this.ShipingQtyTextBox.Name = "ShipingQtyTextBox";
             this.ShipingQtyTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ShipingQtyTextBox.TabIndex = 4;
+            this.ShipingQtyTextBox.TabIndex = 3;
             this.ShipingQtyTextBox.TextChanged += new System.EventHandler(this.ShipingQtyTextBox_TextChanged);
             this.ShipingQtyTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ShipingQtyTextBox_KeyDown);
             this.ShipingQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShipingQtyTextBox_KeyPress);
@@ -326,7 +326,7 @@
             this.ProductCodeTextBox.Name = "ProductCodeTextBox";
             this.ProductCodeTextBox.ReadOnly = true;
             this.ProductCodeTextBox.Size = new System.Drawing.Size(191, 20);
-            this.ProductCodeTextBox.TabIndex = 3;
+            this.ProductCodeTextBox.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -431,7 +431,7 @@
             this.groupBox4.Size = new System.Drawing.Size(604, 210);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Text = "Acknowledged Product";
             // 
             // listView1
             // 
