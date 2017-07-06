@@ -57,15 +57,6 @@
             this.ProductCodeTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,11 +72,34 @@
             this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
             this.totalItemLabel = new System.Windows.Forms.Label();
             this.totalItemTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.iOCheckBox = new System.Windows.Forms.CheckBox();
+            this.pDCheckBox = new System.Windows.Forms.CheckBox();
+            this.pCCheckBox = new System.Windows.Forms.CheckBox();
+            this.pNCheckBox = new System.Windows.Forms.CheckBox();
+            this.iOSrchBx = new System.Windows.Forms.TextBox();
+            this.itmDscrptnSrchBx = new System.Windows.Forms.TextBox();
+            this.itmCdSrchBx = new System.Windows.Forms.TextBox();
+            this.prNmSrchBx = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -331,9 +345,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(450, 12);
+            this.groupBox3.Location = new System.Drawing.Point(456, 104);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(557, 219);
+            this.groupBox3.Size = new System.Drawing.Size(718, 211);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ordered Product";
@@ -358,75 +372,14 @@
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(699, 185);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ShipmentProductId";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "ImportOrderProductId";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Sl";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Product Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Product Code";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Description";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 140;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Shipment Qty";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 60;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Backlog Qty";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            this.Column6.Width = 60;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "IO No ";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.listView1);
-            this.groupBox4.Location = new System.Drawing.Point(451, 246);
+            this.groupBox4.Location = new System.Drawing.Point(456, 321);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(604, 210);
             this.groupBox4.TabIndex = 3;
@@ -532,11 +485,209 @@
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 7;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.iOCheckBox);
+            this.groupBox5.Controls.Add(this.pDCheckBox);
+            this.groupBox5.Controls.Add(this.pCCheckBox);
+            this.groupBox5.Controls.Add(this.pNCheckBox);
+            this.groupBox5.Controls.Add(this.iOSrchBx);
+            this.groupBox5.Controls.Add(this.itmDscrptnSrchBx);
+            this.groupBox5.Controls.Add(this.itmCdSrchBx);
+            this.groupBox5.Controls.Add(this.prNmSrchBx);
+            this.groupBox5.Location = new System.Drawing.Point(433, 14);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(804, 83);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Search";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(461, 46);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "I O No";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Product Description";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(427, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Product Code";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Product Name";
+            // 
+            // iOCheckBox
+            // 
+            this.iOCheckBox.AutoSize = true;
+            this.iOCheckBox.Location = new System.Drawing.Point(614, 45);
+            this.iOCheckBox.Name = "iOCheckBox";
+            this.iOCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.iOCheckBox.TabIndex = 11;
+            this.iOCheckBox.Text = "Hold Data For Another Search";
+            this.iOCheckBox.UseVisualStyleBackColor = true;
+            this.iOCheckBox.CheckedChanged += new System.EventHandler(this.iOCheckBox_CheckedChanged);
+            // 
+            // pDCheckBox
+            // 
+            this.pDCheckBox.AutoSize = true;
+            this.pDCheckBox.Location = new System.Drawing.Point(229, 45);
+            this.pDCheckBox.Name = "pDCheckBox";
+            this.pDCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pDCheckBox.TabIndex = 10;
+            this.pDCheckBox.Text = "Hold Data For Another Search";
+            this.pDCheckBox.UseVisualStyleBackColor = true;
+            this.pDCheckBox.CheckedChanged += new System.EventHandler(this.pDCheckBox_CheckedChanged);
+            // 
+            // pCCheckBox
+            // 
+            this.pCCheckBox.AutoSize = true;
+            this.pCCheckBox.Location = new System.Drawing.Point(614, 16);
+            this.pCCheckBox.Name = "pCCheckBox";
+            this.pCCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pCCheckBox.TabIndex = 9;
+            this.pCCheckBox.Text = "Hold Data For Another Search";
+            this.pCCheckBox.UseVisualStyleBackColor = true;
+            this.pCCheckBox.CheckedChanged += new System.EventHandler(this.pCCheckBox_CheckedChanged);
+            // 
+            // pNCheckBox
+            // 
+            this.pNCheckBox.AutoSize = true;
+            this.pNCheckBox.Location = new System.Drawing.Point(229, 16);
+            this.pNCheckBox.Name = "pNCheckBox";
+            this.pNCheckBox.Size = new System.Drawing.Size(169, 17);
+            this.pNCheckBox.TabIndex = 8;
+            this.pNCheckBox.Text = "Hold Data For Another Search";
+            this.pNCheckBox.UseVisualStyleBackColor = true;
+            this.pNCheckBox.CheckedChanged += new System.EventHandler(this.pNCheckBox_CheckedChanged);
+            // 
+            // iOSrchBx
+            // 
+            this.iOSrchBx.Location = new System.Drawing.Point(508, 42);
+            this.iOSrchBx.Name = "iOSrchBx";
+            this.iOSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.iOSrchBx.TabIndex = 6;
+            this.iOSrchBx.TextChanged += new System.EventHandler(this.iOSrchBx_TextChanged);
+            // 
+            // itmDscrptnSrchBx
+            // 
+            this.itmDscrptnSrchBx.Location = new System.Drawing.Point(114, 40);
+            this.itmDscrptnSrchBx.Name = "itmDscrptnSrchBx";
+            this.itmDscrptnSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.itmDscrptnSrchBx.TabIndex = 7;
+            this.itmDscrptnSrchBx.TextChanged += new System.EventHandler(this.itmDscrptnSrchBx_TextChanged);
+            // 
+            // itmCdSrchBx
+            // 
+            this.itmCdSrchBx.Location = new System.Drawing.Point(508, 16);
+            this.itmCdSrchBx.Name = "itmCdSrchBx";
+            this.itmCdSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.itmCdSrchBx.TabIndex = 6;
+            this.itmCdSrchBx.TextChanged += new System.EventHandler(this.itmCdSrchBx_TextChanged);
+            // 
+            // prNmSrchBx
+            // 
+            this.prNmSrchBx.Location = new System.Drawing.Point(114, 14);
+            this.prNmSrchBx.Name = "prNmSrchBx";
+            this.prNmSrchBx.Size = new System.Drawing.Size(100, 20);
+            this.prNmSrchBx.TabIndex = 5;
+            this.prNmSrchBx.TextChanged += new System.EventHandler(this.prNmSrchBx_TextChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ShipmentProductId";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "ImportOrderProductId";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Sl";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Product Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 180;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Product Code";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Description";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 160;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Shipment Qty";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 60;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Backlog Qty";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            this.Column6.Width = 60;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "IO No ";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 110;
+            // 
             // ShipAcknowledgement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 481);
+            this.ClientSize = new System.Drawing.Size(1252, 535);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.totalItemTextBox);
             this.Controls.Add(this.totalItemLabel);
             this.Controls.Add(this.totalQuantityTextBox);
@@ -556,6 +707,8 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,15 +740,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button DoneButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
@@ -614,5 +758,27 @@
         private System.Windows.Forms.TextBox totalQuantityTextBox;
         private System.Windows.Forms.Label totalItemLabel;
         private System.Windows.Forms.TextBox totalItemTextBox;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox iOCheckBox;
+        private System.Windows.Forms.CheckBox pDCheckBox;
+        private System.Windows.Forms.CheckBox pCCheckBox;
+        private System.Windows.Forms.CheckBox pNCheckBox;
+        private System.Windows.Forms.TextBox iOSrchBx;
+        private System.Windows.Forms.TextBox itmDscrptnSrchBx;
+        private System.Windows.Forms.TextBox itmCdSrchBx;
+        private System.Windows.Forms.TextBox prNmSrchBx;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
