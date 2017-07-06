@@ -495,7 +495,7 @@ namespace ImportOrderManagementSystem.UI
                 rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7], rdr[8]);
                 }
                 con.Close();
             }
