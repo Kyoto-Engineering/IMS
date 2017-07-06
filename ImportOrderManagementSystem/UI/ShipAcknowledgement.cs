@@ -346,6 +346,9 @@ namespace ImportOrderManagementSystem.UI
             {
                 MessageBox.Show("May be You forgot to add Last Selected Product\r\n Add The Product");
             }
+
+            totalItemTextBox.Clear();
+            totalQuantityTextBox.Clear();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -663,6 +666,80 @@ namespace ImportOrderManagementSystem.UI
                 iOCheckBox.Checked = false;
             }
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox2.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox3.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox4.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox5.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProductNameTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void ProductNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProductDesTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void ProductDesTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProductCodeTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void ProductCodeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ShipingQtyTextBox.Focus();
+                e.Handled = true;
+            }
+        }
+
+       
 
   }
 }
