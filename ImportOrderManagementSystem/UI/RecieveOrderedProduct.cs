@@ -442,7 +442,7 @@ namespace ImportOrderManagementSystem.UI
             }
             if (pDCheckBox.Checked )
             {
-                SearchModifier3 = "  and ProductListSummary.ItemDescription '" + itmDscrptnSrchBx.Text + "%' ";
+                SearchModifier3 = "  and ProductListSummary.ItemDescription like '" + itmDscrptnSrchBx.Text + "%' ";
             }
             else
             {
@@ -450,7 +450,7 @@ namespace ImportOrderManagementSystem.UI
             }
             if (iOCheckBox.Checked )
             {
-                SearchModifier4 = " and  ImportOrders.ImportOrderNo '"+iOSrchBx.Text+"%' ";
+                SearchModifier4 = " and  ImportOrders.ImportOrderNo like '"+iOSrchBx.Text+"%' ";
             }
             else
             {
