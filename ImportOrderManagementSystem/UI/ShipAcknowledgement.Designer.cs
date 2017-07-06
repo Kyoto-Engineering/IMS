@@ -57,6 +57,15 @@
             this.ProductCodeTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -85,21 +94,14 @@
             this.itmDscrptnSrchBx = new System.Windows.Forms.TextBox();
             this.itmCdSrchBx = new System.Windows.Forms.TextBox();
             this.prNmSrchBx = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -139,6 +141,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(137, 20);
             this.textBox5.TabIndex = 5;
+            this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
             // 
             // label9
             // 
@@ -155,6 +158,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(142, 20);
             this.textBox4.TabIndex = 4;
+            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
             // 
             // label8
             // 
@@ -171,6 +175,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 20);
             this.textBox3.TabIndex = 3;
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             // 
             // label7
             // 
@@ -187,6 +192,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 20);
             this.textBox2.TabIndex = 2;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown_1);
             // 
             // label2
             // 
@@ -203,6 +209,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(141, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -277,6 +284,7 @@
             this.ProductDesTextBox.ReadOnly = true;
             this.ProductDesTextBox.Size = new System.Drawing.Size(191, 20);
             this.ProductDesTextBox.TabIndex = 1;
+            this.ProductDesTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductDesTextBox_KeyDown);
             // 
             // ProductNameTextBox
             // 
@@ -285,6 +293,7 @@
             this.ProductNameTextBox.ReadOnly = true;
             this.ProductNameTextBox.Size = new System.Drawing.Size(191, 20);
             this.ProductNameTextBox.TabIndex = 0;
+            this.ProductNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductNameTextBox_KeyDown);
             // 
             // label4
             // 
@@ -341,6 +350,7 @@
             this.ProductCodeTextBox.ReadOnly = true;
             this.ProductCodeTextBox.Size = new System.Drawing.Size(191, 20);
             this.ProductCodeTextBox.TabIndex = 2;
+            this.ProductCodeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductCodeTextBox_KeyDown);
             // 
             // groupBox3
             // 
@@ -375,6 +385,70 @@
             this.dataGridView1.Size = new System.Drawing.Size(699, 185);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ShipmentProductId";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "ImportOrderProductId";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Sl";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Product Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 180;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Product Code";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Description";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 160;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Shipment Qty";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 60;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Backlog Qty";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            this.Column6.Width = 60;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "IO No ";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 110;
             // 
             // groupBox4
             // 
@@ -456,7 +530,7 @@
             // totalQuantityLabel
             // 
             this.totalQuantityLabel.AutoSize = true;
-            this.totalQuantityLabel.Location = new System.Drawing.Point(202, 391);
+            this.totalQuantityLabel.Location = new System.Drawing.Point(210, 31);
             this.totalQuantityLabel.Name = "totalQuantityLabel";
             this.totalQuantityLabel.Size = new System.Drawing.Size(73, 13);
             this.totalQuantityLabel.TabIndex = 4;
@@ -464,7 +538,7 @@
             // 
             // totalQuantityTextBox
             // 
-            this.totalQuantityTextBox.Location = new System.Drawing.Point(278, 390);
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(286, 30);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
             this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalQuantityTextBox.TabIndex = 5;
@@ -472,7 +546,7 @@
             // totalItemLabel
             // 
             this.totalItemLabel.AutoSize = true;
-            this.totalItemLabel.Location = new System.Drawing.Point(19, 393);
+            this.totalItemLabel.Location = new System.Drawing.Point(27, 33);
             this.totalItemLabel.Name = "totalItemLabel";
             this.totalItemLabel.Size = new System.Drawing.Size(54, 13);
             this.totalItemLabel.TabIndex = 6;
@@ -480,7 +554,7 @@
             // 
             // totalItemTextBox
             // 
-            this.totalItemTextBox.Location = new System.Drawing.Point(83, 387);
+            this.totalItemTextBox.Location = new System.Drawing.Point(91, 27);
             this.totalItemTextBox.Name = "totalItemTextBox";
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 7;
@@ -618,80 +692,26 @@
             this.prNmSrchBx.TabIndex = 5;
             this.prNmSrchBx.TextChanged += new System.EventHandler(this.prNmSrchBx_TextChanged);
             // 
-            // Column1
+            // groupBox6
             // 
-            this.Column1.HeaderText = "ShipmentProductId";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "ImportOrderProductId";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Sl";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Product Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 180;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Product Code";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 120;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Description";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 160;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Shipment Qty";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 60;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Backlog Qty";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            this.Column6.Width = 60;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "IO No ";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 110;
+            this.groupBox6.Controls.Add(this.totalQuantityTextBox);
+            this.groupBox6.Controls.Add(this.totalQuantityLabel);
+            this.groupBox6.Controls.Add(this.totalItemTextBox);
+            this.groupBox6.Controls.Add(this.totalItemLabel);
+            this.groupBox6.Location = new System.Drawing.Point(13, 391);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(414, 76);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Total Info";
             // 
             // ShipAcknowledgement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 535);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.totalItemTextBox);
-            this.Controls.Add(this.totalItemLabel);
-            this.Controls.Add(this.totalQuantityTextBox);
-            this.Controls.Add(this.totalQuantityLabel);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -709,8 +729,9 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -780,5 +801,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }

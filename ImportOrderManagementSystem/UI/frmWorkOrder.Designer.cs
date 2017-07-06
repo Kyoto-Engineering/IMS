@@ -623,6 +623,7 @@
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Product Information";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // textBox1
             // 

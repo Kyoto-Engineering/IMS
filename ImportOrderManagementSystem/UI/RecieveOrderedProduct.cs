@@ -109,6 +109,9 @@ namespace ImportOrderManagementSystem.UI
 
         private void RecieveOrderedProduct_Load(object sender, EventArgs e)
         {
+            totalItemTextBox.ReadOnly = true;
+            totalQuantityTextBox.ReadOnly = true;
+
             con = new SqlConnection(Cs.DBConn);
             string qry =
                 "SELECT SupplierName FROM Supplier";
@@ -325,6 +328,9 @@ namespace ImportOrderManagementSystem.UI
             {
                 MessageBox.Show("May be You forgot to add Last Selected Product\r\n Add The Product");
             }
+
+            totalItemTextBox.Clear();
+            totalQuantityTextBox.Clear();
 
             ClearselectedProduct();
             ClearShipmentandgridsinfo();
