@@ -117,6 +117,10 @@ namespace ImportOrderManagementSystem.UI
                 listView1.Items.Clear();
                 dataGridViewk.Enabled = false;
                 clear_textbox();
+
+                totalItemTextBox.Clear();
+                totalQuantityTextBox.Clear();
+                totalPriceTextBox.Clear();
                 //this.Close();
             }
             catch (Exception ex)
@@ -133,6 +137,10 @@ namespace ImportOrderManagementSystem.UI
        
         private void frmWorkOrder_Load(object sender, EventArgs e)
         {
+            totalItemTextBox.ReadOnly = true;
+            totalQuantityTextBox.ReadOnly = true;
+            totalPriceTextBox.ReadOnly = true;
+          
             groupBox2.Enabled = false;
             SupliercomboBox.Focus();
             //FillWOrderCombo();
@@ -979,7 +987,7 @@ namespace ImportOrderManagementSystem.UI
 
         private void txtOrderAmount_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if(!(char.IsDigit(e.KeyChar)) || e.KeyChar==(char)Keys.Back)
+            if(!(char.IsDigit(e.KeyChar) || (e.KeyChar==(char)Keys.Back)))
             {
                 e.Handled = true;
             }
@@ -1116,6 +1124,11 @@ namespace ImportOrderManagementSystem.UI
         private void txtOrderAmount_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+            
         }
     }
 }
