@@ -49,11 +49,26 @@ namespace ImportOrderManagementSystem.UI
                     dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7],rdr[8]);
                 }
                 con.Close();
+                
+                groupBox2.Enabled = true;
+                groupBox3.Enabled = true;
+                groupBox4.Enabled = true;
+                groupBox5.Enabled = true;
+                groupBox6.Enabled = true;
+                
             }
         }
 
         private void ShipAcknowledgement_Load(object sender, EventArgs e)
         {
+            totalItemTextBox.ReadOnly = true;
+            totalQuantityTextBox.ReadOnly = true;
+            groupBox2.Enabled = false;
+            groupBox3.Enabled = false;
+            groupBox4.Enabled = false;
+            groupBox5.Enabled = false;
+            groupBox6.Enabled = false;
+            
             LoadSupplyOrder();
         }
 
@@ -97,16 +112,21 @@ namespace ImportOrderManagementSystem.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-          
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox5.Text))
+            {
+                MessageBox.Show("Fill Up Above Information");
+            }
+            else
+            {
                 if (string.IsNullOrEmpty(ProductCodeTextBox.Text))
                 {
                     MessageBox.Show("Select A Product First");
                 }
-                else if (string.IsNullOrWhiteSpace(ShipingQtyTextBox.Text) || Convert.ToInt32(ShipingQtyTextBox.Text)<1)
+                else if (string.IsNullOrWhiteSpace(ShipingQtyTextBox.Text) || Convert.ToInt32(ShipingQtyTextBox.Text) < 1)
                 {
                     MessageBox.Show("Product With Zero , MInus or Empty Quantity Can Not Be Added");
                 }
-                else if (Convert.ToInt32(ShipingQtyTextBox.Text)>Convert.ToInt32(checkvalue))
+                else if (Convert.ToInt32(ShipingQtyTextBox.Text) > Convert.ToInt32(checkvalue))
                 {
                     MessageBox.Show("Receive Amount Cannot Be greater Than the Order Quantity");
                 }
@@ -135,7 +155,7 @@ namespace ImportOrderManagementSystem.UI
 
                         //total quantity calculation
                         totalQuantity = Convert.ToInt32(totalQuantity + ShipingQtyTextBox.Text);
-                        totalQuantityTextBox.Text=totalQuantity.ToString();
+                        totalQuantityTextBox.Text = totalQuantity.ToString();
 
                         ClearselectedProduct();
                     }
@@ -160,9 +180,9 @@ namespace ImportOrderManagementSystem.UI
                             //total item calculation
                             totalItem = ++totalItem;
                             totalItemTextBox.Text = totalItem.ToString();
-                            
+
                             //total quantity calculation
-                            totalQuantity = totalQuantity+Convert.ToInt32(ShipingQtyTextBox.Text);
+                            totalQuantity = totalQuantity + Convert.ToInt32(ShipingQtyTextBox.Text);
                             totalQuantityTextBox.Text = totalQuantity.ToString();
 
                             ClearselectedProduct();
@@ -175,6 +195,8 @@ namespace ImportOrderManagementSystem.UI
                     }
                 }
            
+            }
+                
         }
 
         private bool GetValue()
@@ -384,7 +406,7 @@ namespace ImportOrderManagementSystem.UI
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ShipingQtyTextBox_TextChanged(object sender, EventArgs e)
@@ -742,8 +764,8 @@ namespace ImportOrderManagementSystem.UI
 
         public void ClearTextbox()
         {
-            //SupplierComboBox.Items.Clear();
             SupplierComboBox.SelectedIndex = -1;
+            SupplierComboBox.Items.Clear();
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();

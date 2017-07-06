@@ -1066,7 +1066,7 @@ namespace ImportOrderManagementSystem.UI
             importOrderDate.ResetText();
             eDADateTimePicker.ResetText();
             dataGridViewk.Rows.Clear();
-            dataGridViewk.Refresh();
+            //dataGridViewk.Refresh();
             groupBox1.Enabled = true;
             groupBox2.Enabled = false;       
         }
