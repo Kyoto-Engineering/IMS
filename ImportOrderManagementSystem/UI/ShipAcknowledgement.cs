@@ -349,6 +349,7 @@ namespace ImportOrderManagementSystem.UI
 
             totalItemTextBox.Clear();
             totalQuantityTextBox.Clear();
+            ClearTextbox();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -739,7 +740,35 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
-       
+        public void ClearTextbox()
+        {
+            //SupplierComboBox.Items.Clear();
+            SupplierComboBox.SelectedIndex = -1;
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            ProductNameTextBox.Clear();
+            ProductDesTextBox.Clear();
+            ProductCodeTextBox.Clear();
+            ShipingQtyTextBox.Clear();
+            totalItemTextBox.Clear();
+            totalQuantityTextBox.Clear();
+            prNmSrchBx.Clear();
+            itmDscrptnSrchBx.Clear();
+            pNCheckBox.Checked = false;
+            pDCheckBox.Checked = false;
+            itmCdSrchBx.Clear();
+            iOSrchBx.Clear();
+            pCCheckBox.Checked = false;
+            iOCheckBox.Checked = false;
+            listView1.Items.Clear();
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            totalQuantity = 0;
+            totalItem=0;
+        }
 
   }
 }

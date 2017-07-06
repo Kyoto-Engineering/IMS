@@ -94,12 +94,14 @@
             this.itmDscrptnSrchBx = new System.Windows.Forms.TextBox();
             this.itmCdSrchBx = new System.Windows.Forms.TextBox();
             this.prNmSrchBx = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -528,7 +530,7 @@
             // totalQuantityLabel
             // 
             this.totalQuantityLabel.AutoSize = true;
-            this.totalQuantityLabel.Location = new System.Drawing.Point(202, 391);
+            this.totalQuantityLabel.Location = new System.Drawing.Point(210, 31);
             this.totalQuantityLabel.Name = "totalQuantityLabel";
             this.totalQuantityLabel.Size = new System.Drawing.Size(73, 13);
             this.totalQuantityLabel.TabIndex = 4;
@@ -536,7 +538,7 @@
             // 
             // totalQuantityTextBox
             // 
-            this.totalQuantityTextBox.Location = new System.Drawing.Point(278, 390);
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(286, 30);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
             this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalQuantityTextBox.TabIndex = 5;
@@ -544,7 +546,7 @@
             // totalItemLabel
             // 
             this.totalItemLabel.AutoSize = true;
-            this.totalItemLabel.Location = new System.Drawing.Point(19, 393);
+            this.totalItemLabel.Location = new System.Drawing.Point(27, 33);
             this.totalItemLabel.Name = "totalItemLabel";
             this.totalItemLabel.Size = new System.Drawing.Size(54, 13);
             this.totalItemLabel.TabIndex = 6;
@@ -552,7 +554,7 @@
             // 
             // totalItemTextBox
             // 
-            this.totalItemTextBox.Location = new System.Drawing.Point(83, 387);
+            this.totalItemTextBox.Location = new System.Drawing.Point(91, 27);
             this.totalItemTextBox.Name = "totalItemTextBox";
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 7;
@@ -690,16 +692,26 @@
             this.prNmSrchBx.TabIndex = 5;
             this.prNmSrchBx.TextChanged += new System.EventHandler(this.prNmSrchBx_TextChanged);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.totalQuantityTextBox);
+            this.groupBox6.Controls.Add(this.totalQuantityLabel);
+            this.groupBox6.Controls.Add(this.totalItemTextBox);
+            this.groupBox6.Controls.Add(this.totalItemLabel);
+            this.groupBox6.Location = new System.Drawing.Point(13, 391);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(414, 76);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Total Info";
+            // 
             // ShipAcknowledgement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 535);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.totalItemTextBox);
-            this.Controls.Add(this.totalItemLabel);
-            this.Controls.Add(this.totalQuantityTextBox);
-            this.Controls.Add(this.totalQuantityLabel);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -717,8 +729,9 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -788,5 +801,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }
