@@ -128,6 +128,11 @@
       <DependentUpon>ImportOrder.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\ShipmentAcknowledgement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentAcknowledgement.rpt</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ShipmentOrder.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,6 +218,10 @@
     <EmbeddedResource Include="Reports\ImportOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ImportOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShipmentAcknowledgement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShipmentAcknowledgement.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ShipmentOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
