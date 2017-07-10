@@ -132,6 +132,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ShipmentAcknowledgement.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\ShipmentOrder.cs">
       <AutoGen>True</AutoGen>

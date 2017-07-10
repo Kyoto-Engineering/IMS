@@ -357,6 +357,11 @@ namespace ImportOrderManagementSystem.UI
                         
                     }
                     MessageBox.Show("Shipment Taking Done");
+                    ////////////
+                    totalItemTextBox.Clear();
+                    totalQuantityTextBox.Clear();
+                    ClearTextbox();
+                    LoadSupplyOrder();
                 }
                 else
                 {
@@ -369,9 +374,7 @@ namespace ImportOrderManagementSystem.UI
                 MessageBox.Show("May be You forgot to add Last Selected Product\r\n Add The Product");
             }
 
-            totalItemTextBox.Clear();
-            totalQuantityTextBox.Clear();
-            ClearTextbox();
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
