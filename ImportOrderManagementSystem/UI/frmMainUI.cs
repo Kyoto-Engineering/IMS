@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.LoginUI;
+using ImportOrderManagementSystem.Reports;
 
 namespace ImportOrderManagementSystem.UI
 {
@@ -173,6 +174,13 @@ namespace ImportOrderManagementSystem.UI
             this.Visible = false;
             f3.ShowDialog();
             this.Visible = true;
+        }
+
+        private void ReportsButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportsUI frm = new ReportsUI();
+            frm.Show();
         }
     }
 }
