@@ -36,12 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.InsertPricebutton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SupplierRegistrationbutton = new System.Windows.Forms.Button();
             this.CompanyCreationbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.InsertPricebutton = new System.Windows.Forms.Button();
+            this.ReportsButton = new System.Windows.Forms.Button();
             this.toolStripContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ReportsButton);
             this.groupBox1.Controls.Add(this.InsertPricebutton);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -130,6 +132,18 @@
             this.groupBox1.Size = new System.Drawing.Size(357, 428);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // InsertPricebutton
+            // 
+            this.InsertPricebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.InsertPricebutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertPricebutton.Location = new System.Drawing.Point(206, 19);
+            this.InsertPricebutton.Name = "InsertPricebutton";
+            this.InsertPricebutton.Size = new System.Drawing.Size(109, 62);
+            this.InsertPricebutton.TabIndex = 13;
+            this.InsertPricebutton.Text = "Insert Price";
+            this.InsertPricebutton.UseVisualStyleBackColor = false;
+            this.InsertPricebutton.Click += new System.EventHandler(this.InsertPricebutton_Click);
             // 
             // button3
             // 
@@ -192,17 +206,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // InsertPricebutton
+            // ReportsButton
             // 
-            this.InsertPricebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.InsertPricebutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertPricebutton.Location = new System.Drawing.Point(206, 19);
-            this.InsertPricebutton.Name = "InsertPricebutton";
-            this.InsertPricebutton.Size = new System.Drawing.Size(109, 62);
-            this.InsertPricebutton.TabIndex = 13;
-            this.InsertPricebutton.Text = "Insert Price";
-            this.InsertPricebutton.UseVisualStyleBackColor = false;
-            this.InsertPricebutton.Click += new System.EventHandler(this.InsertPricebutton_Click);
+            this.ReportsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportsButton.Location = new System.Drawing.Point(206, 93);
+            this.ReportsButton.Name = "ReportsButton";
+            this.ReportsButton.Size = new System.Drawing.Size(109, 49);
+            this.ReportsButton.TabIndex = 14;
+            this.ReportsButton.Text = "Reports";
+            this.ReportsButton.UseVisualStyleBackColor = true;
+            this.ReportsButton.Click += new System.EventHandler(this.ReportsButton_Click);
             // 
             // frmMainUI
             // 
@@ -246,5 +259,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button InsertPricebutton;
+        private System.Windows.Forms.Button ReportsButton;
     }
 }
