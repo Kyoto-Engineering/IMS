@@ -49,6 +49,7 @@
             this.ShipOrdNoComboBox.Name = "ShipOrdNoComboBox";
             this.ShipOrdNoComboBox.Size = new System.Drawing.Size(121, 21);
             this.ShipOrdNoComboBox.TabIndex = 1;
+            this.ShipOrdNoComboBox.SelectedIndexChanged += new System.EventHandler(this.ShipOrdNoComboBox_SelectedIndexChanged);
             // 
             // GetButton
             // 
@@ -64,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 301);
+            this.ClientSize = new System.Drawing.Size(410, 257);
             this.Controls.Add(this.GetButton);
             this.Controls.Add(this.ShipOrdNoComboBox);
             this.Controls.Add(this.label1);
