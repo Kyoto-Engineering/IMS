@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using CrystalDecisions.Shared;
 using ImportOrderManagementSystem.DbGateway;
 using CrystalDecisions.CrystalReports.Engine;
+using ImportOrderManagementSystem.UI;
 
 namespace ImportOrderManagementSystem.Reports
 {
@@ -21,7 +22,9 @@ namespace ImportOrderManagementSystem.Reports
         private SqlCommand cmd;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        private int id;
+        public int ShipmentId, SupplierId;
+        public string ShipmentOrderNo;
+
         public ReportByShipOrder()
         {
             InitializeComponent();
@@ -44,7 +47,7 @@ namespace ImportOrderManagementSystem.Reports
             paramField1.Name = "id";
 
             //set the parameter value
-            paramDiscreteValue1.Value = ShipOrdNoComboBox.Text;
+            paramDiscreteValue1.Value = ShipmentId;
 
             //add the parameter value in the ParameterField object
             paramField1.CurrentValues.Add(paramDiscreteValue1);
@@ -62,7 +65,7 @@ namespace ImportOrderManagementSystem.Reports
             with1.DatabaseName = "ProductNRelatedDB";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
-            ShipmentAcknowledgement cr = new ShipmentAcknowledgement();
+            ShipmentOrder cr = new ShipmentOrder();
             tables = cr.Database.Tables;
             foreach (Table table in tables)
             {
@@ -97,6 +100,36 @@ namespace ImportOrderManagementSystem.Reports
                 {
                     ShipOrdNoComboBox.Items.Add(rdr[0]);
                 }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ShipOrdNoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ct = "SELECT ShipmentOrder.ShipmentId, ShipmentOrder.ShipmentOrderNo, Supplier.SupplierId FROM ShipmentOrder INNER JOIN Supplier ON ShipmentOrder.SupplierId = Supplier.SupplierId where ShipmentOrder.ShipmentOrderNo='" + ShipOrdNoComboBox.Text + "'";
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    // txtBalance.Text = (rdr.GetDouble(0).ToString());
+                    ShipmentId = (rdr.GetInt32(0));
+                    ShipmentOrderNo = (rdr.GetString(1));
+                    SupplierId = Convert.ToInt32(rdr["SupplierId"]);
+
+                }
+
                 con.Close();
 
             }
