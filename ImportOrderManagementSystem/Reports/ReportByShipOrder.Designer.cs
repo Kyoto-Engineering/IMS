@@ -36,26 +36,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 34);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.Size = new System.Drawing.Size(197, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Shipment Order No      :";
             // 
             // ShipOrdNoComboBox
             // 
+            this.ShipOrdNoComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShipOrdNoComboBox.FormattingEnabled = true;
-            this.ShipOrdNoComboBox.Location = new System.Drawing.Point(170, 34);
+            this.ShipOrdNoComboBox.Location = new System.Drawing.Point(210, 37);
             this.ShipOrdNoComboBox.Name = "ShipOrdNoComboBox";
-            this.ShipOrdNoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ShipOrdNoComboBox.Size = new System.Drawing.Size(154, 24);
             this.ShipOrdNoComboBox.TabIndex = 1;
             this.ShipOrdNoComboBox.SelectedIndexChanged += new System.EventHandler(this.ShipOrdNoComboBox_SelectedIndexChanged);
             // 
             // GetButton
             // 
-            this.GetButton.Location = new System.Drawing.Point(184, 175);
+            this.GetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GetButton.Location = new System.Drawing.Point(226, 169);
             this.GetButton.Name = "GetButton";
-            this.GetButton.Size = new System.Drawing.Size(75, 23);
+            this.GetButton.Size = new System.Drawing.Size(85, 35);
             this.GetButton.TabIndex = 2;
             this.GetButton.Text = "GET";
             this.GetButton.UseVisualStyleBackColor = true;
@@ -65,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 257);
+            this.ClientSize = new System.Drawing.Size(406, 268);
             this.Controls.Add(this.GetButton);
             this.Controls.Add(this.ShipOrdNoComboBox);
             this.Controls.Add(this.label1);
