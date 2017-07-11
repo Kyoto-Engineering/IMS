@@ -104,5 +104,10 @@ namespace ImportOrderManagementSystem.Reports
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ShipmentIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
