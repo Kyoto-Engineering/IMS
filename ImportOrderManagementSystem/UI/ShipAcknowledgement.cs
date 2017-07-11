@@ -112,12 +112,12 @@ namespace ImportOrderManagementSystem.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text) && string.IsNullOrEmpty(textBox2.Text) && string.IsNullOrEmpty(textBox3.Text) && string.IsNullOrEmpty(textBox4.Text) && string.IsNullOrEmpty(textBox5.Text))
-            {
-                MessageBox.Show("Fill Up Above Information");
+           if (string.IsNullOrEmpty(textBox1.Text) && string.IsNullOrEmpty(textBox2.Text) && string.IsNullOrEmpty(textBox3.Text) && string.IsNullOrEmpty(textBox4.Text) && string.IsNullOrEmpty(textBox5.Text))
+           {
+                MessageBox.Show("Fill Up at least one of Above Information");
             }
             else
-            {
+            { 
                 if (string.IsNullOrEmpty(ProductCodeTextBox.Text))
                 {
                     MessageBox.Show("Select A Product First");
@@ -157,6 +157,7 @@ namespace ImportOrderManagementSystem.UI
                         totalQuantity = Convert.ToInt32(totalQuantity + ShipingQtyTextBox.Text);
                         totalQuantityTextBox.Text = totalQuantity.ToString();
 
+                        groupBox1.Enabled = false;
                         ClearselectedProduct();
                     }
                     else
@@ -362,6 +363,14 @@ namespace ImportOrderManagementSystem.UI
                     totalQuantityTextBox.Clear();
                     ClearTextbox();
                     LoadSupplyOrder();
+                    groupBox1.Enabled = true;
+                    groupBox2.Enabled = false;
+                    groupBox6.Enabled = false;
+                    groupBox5.Enabled = false;
+                   // dataGridView1.Refresh();
+                    groupBox3.Enabled = false;
+                    groupBox4.Enabled = false;
+
                 }
                 else
                 {
