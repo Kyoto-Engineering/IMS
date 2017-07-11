@@ -20,7 +20,9 @@ namespace ImportOrderManagementSystem.Reports
         private SqlCommand cmd;
         private SqlDataReader rdr;
         ConnectionString cs = new ConnectionString();
-        private int id;
+        public int ImpId, SupplierId;
+        public string ImportOrderNo;
+
         public ReportByImpOrder()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace ImportOrderManagementSystem.Reports
             paramField1.Name = "id";
 
             //set the parameter value
-            paramDiscreteValue1.Value = ImpOrdNoComboBox.Text;
+            paramDiscreteValue1.Value = ImpId;
 
             //add the parameter value in the ParameterField object
             paramField1.CurrentValues.Add(paramDiscreteValue1);
@@ -104,5 +106,37 @@ namespace ImportOrderManagementSystem.Reports
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ImpOrdNoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                con = new SqlConnection(cs.DBConn);
+                con.Open();
+                string ct = "SELECT ImportOrders.ImpId, Supplier.SupplierId, ImportOrders.ImportOrderNo FROM ImportOrders INNER JOIN Supplier ON ImportOrders.SupplierId = Supplier.SupplierId where ImportOrders.ImportOrderNo='" + ImpOrdNoComboBox.Text + "'";
+                cmd = new SqlCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    // txtBalance.Text = (rdr.GetDouble(0).ToString());
+                    ImpId = (rdr.GetInt32(0));
+                    ImportOrderNo = (rdr.GetValue(1).ToString());
+                    SupplierId = Convert.ToInt32(rdr["SupplierId"]);
+
+                }
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        
     }
 }
