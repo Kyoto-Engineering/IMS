@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
 using ImportOrderManagementSystem.LoginUI;
+using ImportOrderManagementSystem.Reports;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace ImportOrderManagementSystem.UI
 {
@@ -121,6 +124,32 @@ namespace ImportOrderManagementSystem.UI
                 totalItemTextBox.Clear();
                 totalQuantityTextBox.Clear();
                 totalPriceTextBox.Clear();
+                ReportViewer f2 = new ReportViewer();
+                TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+                TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+                ConnectionInfo reportConInfo = new ConnectionInfo();
+                Tables tables = default(Tables);
+                //	Table table = default(Table);
+                var with1 = reportConInfo;
+                with1.ServerName = "tcp:KyotoServer,49172";
+                with1.DatabaseName = "ProductNRelatedDB";
+                with1.UserID = "sa";
+                with1.Password = "SystemAdministrator";
+                ImportOrder cr = new ImportOrder();
+                tables = cr.Database.Tables;
+                foreach (Table table in tables)
+                {
+                    reportLogonInfo = table.LogOnInfo;
+                    reportLogonInfo.ConnectionInfo = reportConInfo;
+                    table.ApplyLogOnInfo(reportLogonInfo);
+                }
+
+                f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+                f2.crystalReportViewer1.ReportSource = cr;
+                this.Visible = false;
+
+                f2.ShowDialog();
+                this.Visible = true;
                 //this.Close();
             }
             catch (Exception ex)
@@ -1130,5 +1159,9 @@ namespace ImportOrderManagementSystem.UI
         {
             
         }
+
+        public CrystalDecisions.CrystalReports.Engine.Tables tables { get; set; }
+
+        public ParameterFields paramFields1 { get; set; }
     }
 }
