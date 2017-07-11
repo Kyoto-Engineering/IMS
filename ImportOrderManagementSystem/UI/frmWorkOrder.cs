@@ -117,6 +117,7 @@ namespace ImportOrderManagementSystem.UI
                 }
                 SaveSTatus();
                 MessageBox.Show("Successfully Submitted.", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Report();
                 listView1.Items.Clear();
                 dataGridViewk.Enabled = false;
                 clear_textbox();
@@ -124,32 +125,6 @@ namespace ImportOrderManagementSystem.UI
                 totalItemTextBox.Clear();
                 totalQuantityTextBox.Clear();
                 totalPriceTextBox.Clear();
-                ReportViewer f2 = new ReportViewer();
-                TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
-                TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
-                ConnectionInfo reportConInfo = new ConnectionInfo();
-                Tables tables = default(Tables);
-                //	Table table = default(Table);
-                var with1 = reportConInfo;
-                with1.ServerName = "tcp:KyotoServer,49172";
-                with1.DatabaseName = "ProductNRelatedDB";
-                with1.UserID = "sa";
-                with1.Password = "SystemAdministrator";
-                ImportOrder cr = new ImportOrder();
-                tables = cr.Database.Tables;
-                foreach (Table table in tables)
-                {
-                    reportLogonInfo = table.LogOnInfo;
-                    reportLogonInfo.ConnectionInfo = reportConInfo;
-                    table.ApplyLogOnInfo(reportLogonInfo);
-                }
-
-                f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
-                f2.crystalReportViewer1.ReportSource = cr;
-                this.Visible = false;
-
-                f2.ShowDialog();
-                this.Visible = true;
                 //this.Close();
             }
             catch (Exception ex)
@@ -159,7 +134,62 @@ namespace ImportOrderManagementSystem.UI
 
             
         }
-        public void GetData()
+
+        private void Report()
+        {
+            ParameterField paramField1 = new ParameterField();
+
+
+            //creating an object of ParameterFields class
+            ParameterFields paramFields1 = new ParameterFields();
+
+            //creating an object of ParameterDiscreteValue class
+            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
+
+            //set the parameter field name
+            paramField1.Name = "id";
+
+            //set the parameter value
+            paramDiscreteValue1.Value = ImpId;
+
+            //add the parameter value in the ParameterField object
+            paramField1.CurrentValues.Add(paramDiscreteValue1);
+
+            //add the parameter in the ParameterFields object
+            paramFields1.Add(paramField1);
+            ReportViewer f2 = new ReportViewer();
+            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+            ConnectionInfo reportConInfo = new ConnectionInfo();
+            Tables tables = default(Tables);
+            //	Table table = default(Table);
+            var with1 = reportConInfo;
+            with1.ServerName = "tcp:KyotoServer,49172";
+            with1.DatabaseName = "ImportDBDemo";
+            with1.UserID = "sa";
+            with1.Password = "SystemAdministrator";
+
+            ImportOrder cr = new ImportOrder();
+
+            tables = cr.Database.Tables;
+            foreach (Table table in tables)
+            {
+                reportLogonInfo = table.LogOnInfo;
+                reportLogonInfo.ConnectionInfo = reportConInfo;
+                table.ApplyLogOnInfo(reportLogonInfo);
+            }
+            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+            f2.crystalReportViewer1.ReportSource = cr;
+
+            this.Visible = false;
+
+            f2.ShowDialog();
+            this.Visible = true;
+
+        }
+
+       
+       public void GetData()
         {
            
         }
