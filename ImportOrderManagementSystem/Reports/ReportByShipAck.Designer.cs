@@ -35,9 +35,10 @@
             // 
             // GetButton
             // 
-            this.GetButton.Location = new System.Drawing.Point(227, 194);
+            this.GetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GetButton.Location = new System.Drawing.Point(204, 178);
             this.GetButton.Name = "GetButton";
-            this.GetButton.Size = new System.Drawing.Size(75, 23);
+            this.GetButton.Size = new System.Drawing.Size(86, 33);
             this.GetButton.TabIndex = 0;
             this.GetButton.Text = "GET";
             this.GetButton.UseVisualStyleBackColor = true;
@@ -45,18 +46,21 @@
             // 
             // ShipmentIdComboBox
             // 
+            this.ShipmentIdComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShipmentIdComboBox.FormattingEnabled = true;
-            this.ShipmentIdComboBox.Location = new System.Drawing.Point(236, 43);
+            this.ShipmentIdComboBox.Location = new System.Drawing.Point(183, 46);
             this.ShipmentIdComboBox.Name = "ShipmentIdComboBox";
-            this.ShipmentIdComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ShipmentIdComboBox.Size = new System.Drawing.Size(132, 24);
             this.ShipmentIdComboBox.TabIndex = 1;
+            this.ShipmentIdComboBox.SelectedIndexChanged += new System.EventHandler(this.ShipmentIdComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(47, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(136, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Shipment Id     :";
             // 
@@ -64,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 308);
+            this.ClientSize = new System.Drawing.Size(429, 290);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ShipmentIdComboBox);
             this.Controls.Add(this.GetButton);
