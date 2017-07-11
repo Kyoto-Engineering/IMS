@@ -156,9 +156,9 @@ namespace ImportOrderManagementSystem.UI
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             /////////////////////////////
-            
-            
-            if (textBox1.Text == ""   &&    textBox2.Text == "")
+
+
+            if (string.IsNullOrEmpty(textBox1.Text) &&  string.IsNullOrEmpty(textBox2.Text))
           
             {
                 DialogResult result3 = MessageBox.Show("Do you want to continue with out any CFR Frieght Charge and Anciliary Cost?",
@@ -186,7 +186,7 @@ namespace ImportOrderManagementSystem.UI
 
 
 
-            else if (textBox1.Text== "")
+            else if (string.IsNullOrEmpty(textBox1.Text))
 
            {
                DialogResult result1 = MessageBox.Show("Do you want to continue with out any CFR Frieght Charge?",
@@ -213,7 +213,7 @@ namespace ImportOrderManagementSystem.UI
            }
 
            
-            else if (textBox2.Text == "")
+            else if (string.IsNullOrEmpty(textBox2.Text))
            {
                DialogResult result2 = MessageBox.Show("Do you want to continue with out any Anciliary Cost?",
                    "Confirm", MessageBoxButtons.YesNo);
