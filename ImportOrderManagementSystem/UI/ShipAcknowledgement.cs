@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
 using ImportOrderManagementSystem.LoginUI;
+using CrystalDecisions.Shared;
+using ImportOrderManagementSystem.Reports;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace ImportOrderManagementSystem.UI
 {
@@ -358,6 +361,7 @@ namespace ImportOrderManagementSystem.UI
                         
                     }
                     MessageBox.Show("Shipment Taking Done");
+                    Report();
                     ////////////
                     totalItemTextBox.Clear();
                     totalQuantityTextBox.Clear();
@@ -384,6 +388,58 @@ namespace ImportOrderManagementSystem.UI
             }
 
 
+        }
+
+        private void Report()
+        {
+            ParameterField paramField1 = new ParameterField();
+
+
+            //creating an object of ParameterFields class
+            ParameterFields paramFields1 = new ParameterFields();
+
+            //creating an object of ParameterDiscreteValue class
+            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
+
+            //set the parameter field name
+            paramField1.Name = "ShipmentId";
+
+            //set the parameter value
+            paramDiscreteValue1.Value = ShipmentId;
+
+            //add the parameter value in the ParameterField object
+            paramField1.CurrentValues.Add(paramDiscreteValue1);
+
+            //add the parameter in the ParameterFields object
+            paramFields1.Add(paramField1);
+            ReportViewer f2 = new ReportViewer();
+            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+            ConnectionInfo reportConInfo = new ConnectionInfo();
+            Tables tables = default(Tables);
+            //	Table table = default(Table);
+            var with1 = reportConInfo;
+            with1.ServerName = "tcp:KyotoServer,49172";
+            with1.DatabaseName = "ImportDBDemo";
+            with1.UserID = "sa";
+            with1.Password = "SystemAdministrator";
+
+            ShipmentAcknowledgement cr = new ShipmentAcknowledgement();
+
+            tables = cr.Database.Tables;
+            foreach (Table table in tables)
+            {
+                reportLogonInfo = table.LogOnInfo;
+                reportLogonInfo.ConnectionInfo = reportConInfo;
+                table.ApplyLogOnInfo(reportLogonInfo);
+            }
+            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+            f2.crystalReportViewer1.ReportSource = cr;
+
+            this.Visible = false;
+
+            f2.ShowDialog();
+            this.Visible = true;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -804,5 +860,9 @@ namespace ImportOrderManagementSystem.UI
             totalItem=0;
         }
 
-  }
+
+        public object ShipmentId { get; set; }
+
+        public object ShipmentIdComboBox { get; set; }
+    }
 }
