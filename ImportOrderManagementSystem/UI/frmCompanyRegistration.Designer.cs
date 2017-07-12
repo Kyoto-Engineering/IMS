@@ -65,6 +65,7 @@
             // 
             this.AddressrichTextBox.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressrichTextBox.Location = new System.Drawing.Point(175, 89);
+            this.AddressrichTextBox.MaxLength = 300;
             this.AddressrichTextBox.Name = "AddressrichTextBox";
             this.AddressrichTextBox.Size = new System.Drawing.Size(399, 96);
             this.AddressrichTextBox.TabIndex = 2;
@@ -76,6 +77,7 @@
             // 
             this.CompanyNametextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyNametextBox.Location = new System.Drawing.Point(175, 46);
+            this.CompanyNametextBox.MaxLength = 250;
             this.CompanyNametextBox.Name = "CompanyNametextBox";
             this.CompanyNametextBox.Size = new System.Drawing.Size(399, 29);
             this.CompanyNametextBox.TabIndex = 1;
