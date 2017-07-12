@@ -112,6 +112,7 @@ namespace ImportOrderManagementSystem.UI
         }
 
         public int totalQuantity = 0, totalItem=0;
+        private int _shId;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -262,7 +263,7 @@ namespace ImportOrderManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d7", string.IsNullOrWhiteSpace(textBox4.Text) ? (object)DBNull.Value : textBox4.Text);
                     cmd.Parameters.AddWithValue("@d8", string.IsNullOrWhiteSpace(textBox5.Text) ? (object)DBNull.Value : textBox5.Text);
                     con.Open();
-                    string ShID = cmd.ExecuteScalar().ToString();
+                    _shId = (int) cmd.ExecuteScalar();
                     con.Close();
                     for (int i = 0; i <= listView1.Items.Count - 1; i++)
                     {
@@ -274,7 +275,7 @@ namespace ImportOrderManagementSystem.UI
                             "INSERT INTO ReceivedProduct (ShipmentProductId,ShipmentAId,RecievedQuantity) Values(@d1,@d2,@d3)";
                         cmd = new SqlCommand(query, con);
                         cmd.Parameters.AddWithValue("@d1", shiprno);
-                        cmd.Parameters.AddWithValue("@d2", ShID );
+                        cmd.Parameters.AddWithValue("@d2", _shId );
                         cmd.Parameters.AddWithValue("@d3", qty);
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -405,7 +406,7 @@ namespace ImportOrderManagementSystem.UI
             paramField1.Name = "ShipmentId";
 
             //set the parameter value
-            paramDiscreteValue1.Value = ShipmentId;
+            paramDiscreteValue1.Value = _shId;
 
             //add the parameter value in the ParameterField object
             paramField1.CurrentValues.Add(paramDiscreteValue1);
@@ -420,7 +421,7 @@ namespace ImportOrderManagementSystem.UI
             //	Table table = default(Table);
             var with1 = reportConInfo;
             with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "ImportDBDemo";
+            with1.DatabaseName = "ProductNRelatedDB_new";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
 
