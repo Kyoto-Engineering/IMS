@@ -766,6 +766,7 @@
             // 
             this.totalPriceTextBox.Location = new System.Drawing.Point(1054, 663);
             this.totalPriceTextBox.Name = "totalPriceTextBox";
+            this.totalPriceTextBox.ReadOnly = true;
             this.totalPriceTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalPriceTextBox.TabIndex = 29;
             this.totalPriceTextBox.TextChanged += new System.EventHandler(this.totalPriceTextBox_TextChanged);
@@ -784,6 +785,7 @@
             // 
             this.totalQuantityTextBox.Location = new System.Drawing.Point(884, 664);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
+            this.totalQuantityTextBox.ReadOnly = true;
             this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalQuantityTextBox.TabIndex = 31;
             // 
@@ -801,6 +803,7 @@
             // 
             this.totalItemTextBox.Location = new System.Drawing.Point(702, 664);
             this.totalItemTextBox.Name = "totalItemTextBox";
+            this.totalItemTextBox.ReadOnly = true;
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 33;
             // 

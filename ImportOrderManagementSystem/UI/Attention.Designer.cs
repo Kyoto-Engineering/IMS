@@ -58,6 +58,7 @@
             // 
             this.EmailtextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailtextBox.Location = new System.Drawing.Point(203, 78);
+            this.EmailtextBox.MaxLength = 90;
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(274, 32);
             this.EmailtextBox.TabIndex = 2;
@@ -92,6 +93,7 @@
             // 
             this.AttntextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AttntextBox.Location = new System.Drawing.Point(203, 26);
+            this.AttntextBox.MaxLength = 90;
             this.AttntextBox.Name = "AttntextBox";
             this.AttntextBox.Size = new System.Drawing.Size(274, 32);
             this.AttntextBox.TabIndex = 1;

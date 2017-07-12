@@ -138,6 +138,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(218, 144);
+            this.textBox5.MaxLength = 50;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(137, 20);
             this.textBox5.TabIndex = 5;
@@ -155,6 +156,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(213, 118);
+            this.textBox4.MaxLength = 50;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(142, 20);
             this.textBox4.TabIndex = 4;
@@ -172,6 +174,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(214, 94);
+            this.textBox3.MaxLength = 50;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 20);
             this.textBox3.TabIndex = 3;
@@ -189,6 +192,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(214, 69);
+            this.textBox2.MaxLength = 50;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 20);
             this.textBox2.TabIndex = 2;
@@ -206,6 +210,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(214, 45);
+            this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(141, 20);
             this.textBox1.TabIndex = 1;
@@ -540,6 +545,7 @@
             // 
             this.totalQuantityTextBox.Location = new System.Drawing.Point(286, 30);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
+            this.totalQuantityTextBox.ReadOnly = true;
             this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalQuantityTextBox.TabIndex = 5;
             // 
@@ -556,6 +562,7 @@
             // 
             this.totalItemTextBox.Location = new System.Drawing.Point(91, 27);
             this.totalItemTextBox.Name = "totalItemTextBox";
+            this.totalItemTextBox.ReadOnly = true;
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 7;
             // 

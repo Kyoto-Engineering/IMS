@@ -383,7 +383,7 @@ namespace ImportOrderManagementSystem.UI
             txtItemCode.Text = "";
             txtOrderAmount.Text = "";
             txtOrderPrice.Text = "";
-            //eDADateTimePicker.Value = DateTime.Now;
+            eDADateTimePicker.Value = DateTime.Now;
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
