@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
 using ImportOrderManagementSystem.LoginUI;
+using ImportOrderManagementSystem.Reports;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace ImportOrderManagementSystem.UI
 {
@@ -21,7 +24,7 @@ namespace ImportOrderManagementSystem.UI
         private SqlDataReader rdr;
         private string impOd;
         private DataGridViewRow dr;
-        private int checkvalue,smId;
+        private int checkvalue, smId;
         private int SupplierId;
         private int Sio;
         private string shipmentOrderNo;
@@ -445,6 +448,7 @@ namespace ImportOrderManagementSystem.UI
                         con.Close();
                     }
                     MessageBox.Show("Shipment Order Done");
+                    Report();
                     
                     ////////////
                     totalItemTextBox.Clear();
@@ -481,6 +485,58 @@ namespace ImportOrderManagementSystem.UI
             }
 
 
+        }
+
+        private void Report()
+        {
+            ParameterField paramField1 = new ParameterField();
+
+
+            //creating an object of ParameterFields class
+            ParameterFields paramFields1 = new ParameterFields();
+
+            //creating an object of ParameterDiscreteValue class
+            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
+
+            //set the parameter field name
+            paramField1.Name = "id";
+
+            //set the parameter value
+            paramDiscreteValue1.Value = ShipmentId;
+
+            //add the parameter value in the ParameterField object
+            paramField1.CurrentValues.Add(paramDiscreteValue1);
+
+            //add the parameter in the ParameterFields object
+            paramFields1.Add(paramField1);
+            ReportViewer f2 = new ReportViewer();
+            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+            ConnectionInfo reportConInfo = new ConnectionInfo();
+            Tables tables = default(Tables);
+            //	Table table = default(Table);
+            var with1 = reportConInfo;
+            with1.ServerName = "tcp:KyotoServer,49172";
+            with1.DatabaseName = "ImportDBDemo";
+            with1.UserID = "sa";
+            with1.Password = "SystemAdministrator";
+
+            ShipmentOrder cr = new ShipmentOrder();
+
+            tables = cr.Database.Tables;
+            foreach (Table table in tables)
+            {
+                reportLogonInfo = table.LogOnInfo;
+                reportLogonInfo.ConnectionInfo = reportConInfo;
+                table.ApplyLogOnInfo(reportLogonInfo);
+            }
+            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+            f2.crystalReportViewer1.ReportSource = cr;
+
+            this.Visible = false;
+
+            f2.ShowDialog();
+            this.Visible = true;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -803,5 +859,7 @@ namespace ImportOrderManagementSystem.UI
                 iOCheckBox.Checked = false;
             }
         }
+
+        public object ShipmentId { get; set; }
     }
 }
