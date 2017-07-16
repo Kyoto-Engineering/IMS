@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecieveOrderedProduct));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ShipmentOrderNoTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -88,10 +92,6 @@
             this.totalItemTextBox = new System.Windows.Forms.TextBox();
             this.totalQuantityLabel = new System.Windows.Forms.Label();
             this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -124,6 +124,38 @@
             this.groupBox1.Text = "Shipment Info";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(82, 186);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(103, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Anciliary Cost          :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(206, 183);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(162, 20);
+            this.textBox2.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(71, 156);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(118, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "CFR Freight Charge\t     :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(210, 149);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(158, 20);
+            this.textBox1.TabIndex = 11;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -136,6 +168,7 @@
             // ShipmentOrderNoTextBox
             // 
             this.ShipmentOrderNoTextBox.Location = new System.Drawing.Point(177, 116);
+            this.ShipmentOrderNoTextBox.MaxLength = 90;
             this.ShipmentOrderNoTextBox.Name = "ShipmentOrderNoTextBox";
             this.ShipmentOrderNoTextBox.ReadOnly = true;
             this.ShipmentOrderNoTextBox.Size = new System.Drawing.Size(191, 20);
@@ -618,6 +651,7 @@
             // 
             this.totalItemTextBox.Location = new System.Drawing.Point(79, 411);
             this.totalItemTextBox.Name = "totalItemTextBox";
+            this.totalItemTextBox.ReadOnly = true;
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 6;
             // 
@@ -634,40 +668,9 @@
             // 
             this.totalQuantityTextBox.Location = new System.Drawing.Point(304, 411);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
+            this.totalQuantityTextBox.ReadOnly = true;
             this.totalQuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalQuantityTextBox.TabIndex = 6;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(71, 156);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(118, 13);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "CFR Freight Charge\t     :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(210, 149);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 11;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(82, 186);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(103, 13);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "Anciliary Cost          :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(206, 183);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 13;
             // 
             // RecieveOrderedProduct
             // 

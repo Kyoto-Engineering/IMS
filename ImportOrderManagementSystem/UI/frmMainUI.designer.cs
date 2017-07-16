@@ -36,12 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ReportsButton = new System.Windows.Forms.Button();
+            this.InsertPricebutton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SupplierRegistrationbutton = new System.Windows.Forms.Button();
             this.CompanyCreationbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.InsertPricebutton = new System.Windows.Forms.Button();
             this.toolStripContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ReportsButton);
             this.groupBox1.Controls.Add(this.InsertPricebutton);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -130,6 +132,30 @@
             this.groupBox1.Size = new System.Drawing.Size(357, 428);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // ReportsButton
+            // 
+            this.ReportsButton.BackColor = System.Drawing.Color.LightCoral;
+            this.ReportsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportsButton.Location = new System.Drawing.Point(206, 87);
+            this.ReportsButton.Name = "ReportsButton";
+            this.ReportsButton.Size = new System.Drawing.Size(109, 55);
+            this.ReportsButton.TabIndex = 14;
+            this.ReportsButton.Text = "Reports";
+            this.ReportsButton.UseVisualStyleBackColor = false;
+            this.ReportsButton.Click += new System.EventHandler(this.ReportsButton_Click);
+            // 
+            // InsertPricebutton
+            // 
+            this.InsertPricebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.InsertPricebutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertPricebutton.Location = new System.Drawing.Point(206, 19);
+            this.InsertPricebutton.Name = "InsertPricebutton";
+            this.InsertPricebutton.Size = new System.Drawing.Size(109, 62);
+            this.InsertPricebutton.TabIndex = 13;
+            this.InsertPricebutton.Text = "Insert Price";
+            this.InsertPricebutton.UseVisualStyleBackColor = false;
+            this.InsertPricebutton.Click += new System.EventHandler(this.InsertPricebutton_Click);
             // 
             // button3
             // 
@@ -192,18 +218,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // InsertPricebutton
-            // 
-            this.InsertPricebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.InsertPricebutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertPricebutton.Location = new System.Drawing.Point(206, 19);
-            this.InsertPricebutton.Name = "InsertPricebutton";
-            this.InsertPricebutton.Size = new System.Drawing.Size(109, 62);
-            this.InsertPricebutton.TabIndex = 13;
-            this.InsertPricebutton.Text = "Insert Price";
-            this.InsertPricebutton.UseVisualStyleBackColor = false;
-            this.InsertPricebutton.Click += new System.EventHandler(this.InsertPricebutton_Click);
-            // 
             // frmMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,5 +260,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button InsertPricebutton;
+        private System.Windows.Forms.Button ReportsButton;
     }
 }

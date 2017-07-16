@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
 using ImportOrderManagementSystem.LoginUI;
+using CrystalDecisions.Shared;
+using ImportOrderManagementSystem.Reports;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace ImportOrderManagementSystem.UI
 {
@@ -109,15 +112,16 @@ namespace ImportOrderManagementSystem.UI
         }
 
         public int totalQuantity = 0, totalItem=0;
+        private int _shId;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text) && string.IsNullOrEmpty(textBox2.Text) && string.IsNullOrEmpty(textBox3.Text) && string.IsNullOrEmpty(textBox4.Text) && string.IsNullOrEmpty(textBox5.Text))
-            {
-                MessageBox.Show("Fill Up Above Information");
+           if (string.IsNullOrEmpty(textBox1.Text) && string.IsNullOrEmpty(textBox2.Text) && string.IsNullOrEmpty(textBox3.Text) && string.IsNullOrEmpty(textBox4.Text) && string.IsNullOrEmpty(textBox5.Text))
+           {
+                MessageBox.Show("Fill Up at least one of Above Information");
             }
             else
-            {
+            { 
                 if (string.IsNullOrEmpty(ProductCodeTextBox.Text))
                 {
                     MessageBox.Show("Select A Product First");
@@ -157,6 +161,7 @@ namespace ImportOrderManagementSystem.UI
                         totalQuantity = Convert.ToInt32(totalQuantity + ShipingQtyTextBox.Text);
                         totalQuantityTextBox.Text = totalQuantity.ToString();
 
+                        groupBox1.Enabled = false;
                         ClearselectedProduct();
                     }
                     else
@@ -258,7 +263,7 @@ namespace ImportOrderManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d7", string.IsNullOrWhiteSpace(textBox4.Text) ? (object)DBNull.Value : textBox4.Text);
                     cmd.Parameters.AddWithValue("@d8", string.IsNullOrWhiteSpace(textBox5.Text) ? (object)DBNull.Value : textBox5.Text);
                     con.Open();
-                    string ShID = cmd.ExecuteScalar().ToString();
+                    _shId = (int) cmd.ExecuteScalar();
                     con.Close();
                     for (int i = 0; i <= listView1.Items.Count - 1; i++)
                     {
@@ -270,7 +275,7 @@ namespace ImportOrderManagementSystem.UI
                             "INSERT INTO ReceivedProduct (ShipmentProductId,ShipmentAId,RecievedQuantity) Values(@d1,@d2,@d3)";
                         cmd = new SqlCommand(query, con);
                         cmd.Parameters.AddWithValue("@d1", shiprno);
-                        cmd.Parameters.AddWithValue("@d2", ShID );
+                        cmd.Parameters.AddWithValue("@d2", _shId );
                         cmd.Parameters.AddWithValue("@d3", qty);
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -357,6 +362,20 @@ namespace ImportOrderManagementSystem.UI
                         
                     }
                     MessageBox.Show("Shipment Taking Done");
+                    Report();
+                    ////////////
+                    totalItemTextBox.Clear();
+                    totalQuantityTextBox.Clear();
+                    ClearTextbox();
+                    LoadSupplyOrder();
+                    groupBox1.Enabled = true;
+                    groupBox2.Enabled = false;
+                    groupBox6.Enabled = false;
+                    groupBox5.Enabled = false;
+                   // dataGridView1.Refresh();
+                    groupBox3.Enabled = false;
+                    groupBox4.Enabled = false;
+
                 }
                 else
                 {
@@ -369,9 +388,59 @@ namespace ImportOrderManagementSystem.UI
                 MessageBox.Show("May be You forgot to add Last Selected Product\r\n Add The Product");
             }
 
-            totalItemTextBox.Clear();
-            totalQuantityTextBox.Clear();
-            ClearTextbox();
+
+        }
+
+        private void Report()
+        {
+            ParameterField paramField1 = new ParameterField();
+
+
+            //creating an object of ParameterFields class
+            ParameterFields paramFields1 = new ParameterFields();
+
+            //creating an object of ParameterDiscreteValue class
+            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
+
+            //set the parameter field name
+            paramField1.Name = "ShipmentId";
+
+            //set the parameter value
+            paramDiscreteValue1.Value = _shId;
+
+            //add the parameter value in the ParameterField object
+            paramField1.CurrentValues.Add(paramDiscreteValue1);
+
+            //add the parameter in the ParameterFields object
+            paramFields1.Add(paramField1);
+            ReportViewer f2 = new ReportViewer();
+            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+            ConnectionInfo reportConInfo = new ConnectionInfo();
+            Tables tables = default(Tables);
+            //	Table table = default(Table);
+            var with1 = reportConInfo;
+            with1.ServerName = "tcp:KyotoServer,49172";
+            with1.DatabaseName = "ProductNRelatedDB_new";
+            with1.UserID = "sa";
+            with1.Password = "SystemAdministrator";
+
+            ShipmentAcknowledgement cr = new ShipmentAcknowledgement();
+
+            tables = cr.Database.Tables;
+            foreach (Table table in tables)
+            {
+                reportLogonInfo = table.LogOnInfo;
+                reportLogonInfo.ConnectionInfo = reportConInfo;
+                table.ApplyLogOnInfo(reportLogonInfo);
+            }
+            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+            f2.crystalReportViewer1.ReportSource = cr;
+
+            this.Visible = false;
+
+            f2.ShowDialog();
+            this.Visible = true;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -792,5 +861,9 @@ namespace ImportOrderManagementSystem.UI
             totalItem=0;
         }
 
-  }
+
+        public object ShipmentId { get; set; }
+
+        public object ShipmentIdComboBox { get; set; }
+    }
 }

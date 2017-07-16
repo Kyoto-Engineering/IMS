@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
 using ImportOrderManagementSystem.LoginUI;
+using ImportOrderManagementSystem.Reports;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace ImportOrderManagementSystem.UI
 {
@@ -21,7 +24,7 @@ namespace ImportOrderManagementSystem.UI
         private SqlDataReader rdr;
         private string impOd;
         private DataGridViewRow dr;
-        private int checkvalue,smId;
+        private int checkvalue, smId;
         private int SupplierId;
         private int Sio;
         private string shipmentOrderNo;
@@ -48,6 +51,10 @@ namespace ImportOrderManagementSystem.UI
                     dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
                 }
                 con.Close();
+                
+                ///////////
+                ShippingModeComboBox.Enabled = true;
+            
             }
             GetShimpentOredrNo();
         }
@@ -109,6 +116,20 @@ namespace ImportOrderManagementSystem.UI
 
         private void RecieveOrderedProduct_Load(object sender, EventArgs e)
         {
+            /////////
+            ShippingModeComboBox.Enabled = false;
+            groupBox2.Enabled = false;
+            totalItemLabel.Enabled = false;
+            totalItemTextBox.Enabled = false;
+            totalQuantityLabel.Enabled = false;
+            totalQuantityTextBox.Enabled = false;
+            groupBox4.Enabled = false;
+            groupBox3.Enabled = false;
+            AddedProductGroupBox.Enabled = false;
+            //////////
+
+
+
             totalItemTextBox.ReadOnly = true;
             totalQuantityTextBox.ReadOnly = true;
 
@@ -137,23 +158,117 @@ namespace ImportOrderManagementSystem.UI
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            /////////////////////////////
+
+
+            if (string.IsNullOrEmpty(textBox1.Text) &&  string.IsNullOrEmpty(textBox2.Text))
+          
             {
-               dr = dataGridView1.SelectedRows[0];
-                impOd = dr.Cells[0].Value.ToString();
-                ProductCodeTextBox.Text = dr.Cells[2].Value.ToString();
-                ShipingQtyTextBox.Text = dr.Cells[5].Value.ToString();
-                ProductNameTextBox.Text = dr.Cells[1].Value.ToString();
-                ProductDesTextBox.Text = dr.Cells[3].Value.ToString();
-                checkvalue =Convert.ToInt32( dr.Cells[5].Value.ToString());
+                DialogResult result3 = MessageBox.Show("Do you want to continue with out any CFR Frieght Charge and Anciliary Cost?",
+                    "Confirm", MessageBoxButtons.YesNo);
+
+                if (result3 == DialogResult.Yes)
+                {
+                    if (dataGridView1.SelectedRows.Count > 0)
+                    {
+                        dr = dataGridView1.SelectedRows[0];
+                        impOd = dr.Cells[0].Value.ToString();
+                        ProductCodeTextBox.Text = dr.Cells[2].Value.ToString();
+                        ShipingQtyTextBox.Text = dr.Cells[5].Value.ToString();
+                        ProductNameTextBox.Text = dr.Cells[1].Value.ToString();
+                        ProductDesTextBox.Text = dr.Cells[3].Value.ToString();
+                        checkvalue = Convert.ToInt32(dr.Cells[5].Value.ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show(@"Select Something first");
+                    }
+                }
+
             }
-            else
-            {
-                MessageBox.Show(@"Select Something first");
-            }
+
+
+
+            else if (string.IsNullOrEmpty(textBox1.Text))
+
+           {
+               DialogResult result1 = MessageBox.Show("Do you want to continue with out any CFR Frieght Charge?",
+                   "Confirm", MessageBoxButtons.YesNo);
+               
+               if (result1 == DialogResult.Yes)
+               {
+                   if (dataGridView1.SelectedRows.Count > 0)
+                   {
+                       dr = dataGridView1.SelectedRows[0];
+                       impOd = dr.Cells[0].Value.ToString();
+                       ProductCodeTextBox.Text = dr.Cells[2].Value.ToString();
+                       ShipingQtyTextBox.Text = dr.Cells[5].Value.ToString();
+                       ProductNameTextBox.Text = dr.Cells[1].Value.ToString();
+                       ProductDesTextBox.Text = dr.Cells[3].Value.ToString();
+                       checkvalue = Convert.ToInt32(dr.Cells[5].Value.ToString());
+                   }
+                   else
+                   {
+                       MessageBox.Show(@"Select Something first");
+                   }
+               }
+
+           }
+
+           
+            else if (string.IsNullOrEmpty(textBox2.Text))
+           {
+               DialogResult result2 = MessageBox.Show("Do you want to continue with out any Anciliary Cost?",
+                   "Confirm", MessageBoxButtons.YesNo);
+
+               if (result2 == DialogResult.Yes)
+               {
+                   if (dataGridView1.SelectedRows.Count > 0)
+                   {
+                       dr = dataGridView1.SelectedRows[0];
+                       impOd = dr.Cells[0].Value.ToString();
+                       ProductCodeTextBox.Text = dr.Cells[2].Value.ToString();
+                       ShipingQtyTextBox.Text = dr.Cells[5].Value.ToString();
+                       ProductNameTextBox.Text = dr.Cells[1].Value.ToString();
+                       ProductDesTextBox.Text = dr.Cells[3].Value.ToString();
+                       checkvalue = Convert.ToInt32(dr.Cells[5].Value.ToString());
+                   }
+                   else
+                   {
+                       MessageBox.Show(@"Select Something first");
+                   }
+               }
+
+           }
+
+
+           
+          
+
+
+           else
+           {
+               if (dataGridView1.SelectedRows.Count > 0)
+               {
+                   dr = dataGridView1.SelectedRows[0];
+                   impOd = dr.Cells[0].Value.ToString();
+                   ProductCodeTextBox.Text = dr.Cells[2].Value.ToString();
+                   ShipingQtyTextBox.Text = dr.Cells[5].Value.ToString();
+                   ProductNameTextBox.Text = dr.Cells[1].Value.ToString();
+                   ProductDesTextBox.Text = dr.Cells[3].Value.ToString();
+                   checkvalue = Convert.ToInt32(dr.Cells[5].Value.ToString());
+               }
+               else
+               {
+                   MessageBox.Show(@"Select Something first");
+               }
+           }
+
+           
         }
 
         public int totalItem = 0, totalQuantity=0;
+        private int ShID;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -247,7 +362,21 @@ namespace ImportOrderManagementSystem.UI
             }
             return x;
         }
-     private void ClearselectedProduct()
+
+        private void ClearSearchParameters()
+        {
+            prNmSrchBx.Clear();
+            pNCheckBox.Checked = false;
+            itmCdSrchBx.Clear();
+            pCCheckBox.Checked = false;
+            itmDscrptnSrchBx.Clear();
+            pDCheckBox.Checked = false;
+            iOSrchBx.Clear();
+            iOCheckBox.Checked = false;
+
+        }
+
+        private void ClearselectedProduct()
         {
             impOd = null;
             ProductCodeTextBox.Clear();
@@ -264,6 +393,9 @@ namespace ImportOrderManagementSystem.UI
 
          SupplierComboBox.ResetText();
          ShippingModeComboBox.ResetText();
+
+         textBox1.Clear();
+         textBox2.Clear();
 
          listView1.Items.Clear();
          dataGridView1.Rows.Clear();
@@ -292,7 +424,7 @@ namespace ImportOrderManagementSystem.UI
                     cmd.Parameters.AddWithValue("@d9", string.IsNullOrWhiteSpace(textBox1.Text)?(object)DBNull.Value:textBox1.Text);
                     cmd.Parameters.AddWithValue("@d10", string.IsNullOrWhiteSpace(textBox2.Text) ? (object)DBNull.Value : textBox2.Text);
                     con.Open();
-                    string ShID=cmd.ExecuteScalar().ToString();
+                    ShID = (int)cmd.ExecuteScalar(); 
                     con.Close();
                     for (int i = 0; i <= listView1.Items.Count - 1; i++)
                     {
@@ -317,6 +449,30 @@ namespace ImportOrderManagementSystem.UI
                         con.Close();
                     }
                     MessageBox.Show("Shipment Order Done");
+                    Report();
+                    
+                    ////////////
+                    totalItemTextBox.Clear();
+                    totalQuantityTextBox.Clear();
+                    ClearSearchParameters();
+                    ClearselectedProduct();
+                    ClearShipmentandgridsinfo();
+                    groupBox1.Enabled = true;
+                    ShippingDateTimePicker.Value = DateTime.Now;
+                    DeliveryDateTimePicker.Value = DateTime.Now;
+
+                    /////////
+                    ShippingModeComboBox.Enabled = false;
+                    groupBox2.Enabled = false;
+                    totalItemLabel.Enabled = false;
+                    totalItemTextBox.Enabled = false;
+                    totalQuantityLabel.Enabled = false;
+                    totalQuantityTextBox.Enabled = false;
+                    groupBox4.Enabled = false;
+                    groupBox3.Enabled = false;
+                    AddedProductGroupBox.Enabled = false;
+                    
+                    
                 }
                 else
                 {
@@ -329,12 +485,59 @@ namespace ImportOrderManagementSystem.UI
                 MessageBox.Show("May be You forgot to add Last Selected Product\r\n Add The Product");
             }
 
-            totalItemTextBox.Clear();
-            totalQuantityTextBox.Clear();
 
-            ClearselectedProduct();
-            ClearShipmentandgridsinfo();
-            groupBox1.Enabled = true;
+        }
+
+        private void Report()
+        {
+            ParameterField paramField1 = new ParameterField();
+
+
+            //creating an object of ParameterFields class
+            ParameterFields paramFields1 = new ParameterFields();
+
+            //creating an object of ParameterDiscreteValue class
+            ParameterDiscreteValue paramDiscreteValue1 = new ParameterDiscreteValue();
+
+            //set the parameter field name
+            paramField1.Name = "id";
+
+            //set the parameter value
+            paramDiscreteValue1.Value = ShID;
+
+            //add the parameter value in the ParameterField object
+            paramField1.CurrentValues.Add(paramDiscreteValue1);
+
+            //add the parameter in the ParameterFields object
+            paramFields1.Add(paramField1);
+            ReportViewer f2 = new ReportViewer();
+            TableLogOnInfos reportLogonInfos = new TableLogOnInfos();
+            TableLogOnInfo reportLogonInfo = new TableLogOnInfo();
+            ConnectionInfo reportConInfo = new ConnectionInfo();
+            Tables tables = default(Tables);
+            //	Table table = default(Table);
+            var with1 = reportConInfo;
+            with1.ServerName = "tcp:KyotoServer,49172";
+            with1.DatabaseName = "ProductNRelatedDB_new";
+            with1.UserID = "sa";
+            with1.Password = "SystemAdministrator";
+
+            ShipmentOrder cr = new ShipmentOrder();
+
+            tables = cr.Database.Tables;
+            foreach (Table table in tables)
+            {
+                reportLogonInfo = table.LogOnInfo;
+                reportLogonInfo.ConnectionInfo = reportConInfo;
+                table.ApplyLogOnInfo(reportLogonInfo);
+            }
+            f2.crystalReportViewer1.ParameterFieldInfo = paramFields1;
+            f2.crystalReportViewer1.ReportSource = cr;
+
+            this.Visible = false;
+
+            f2.ShowDialog();
+            this.Visible = true;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -349,6 +552,20 @@ namespace ImportOrderManagementSystem.UI
                 smId = Convert.ToInt32(rdr["SMId"]);
             }
             con.Close();
+
+            //////////////
+            groupBox2.Enabled = true;
+            totalItemLabel.Enabled = true;
+            totalItemTextBox.Enabled = true;
+            totalQuantityLabel.Enabled = true;
+            totalQuantityTextBox.Enabled = true;
+            groupBox4.Enabled = true;
+            groupBox3.Enabled = true;
+            AddedProductGroupBox.Enabled = true;
+            ///////////////
+
+
+
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
@@ -643,5 +860,7 @@ namespace ImportOrderManagementSystem.UI
                 iOCheckBox.Checked = false;
             }
         }
+
+        public object ShipmentId { get; set; }
     }
 }

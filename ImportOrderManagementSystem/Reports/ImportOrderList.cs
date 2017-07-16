@@ -16,14 +16,14 @@ namespace ImportOrderManagementSystem.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ImportOrder : ReportClass {
+    public class ImportOrderList : ReportClass {
         
-        public ImportOrder() {
+        public ImportOrderList() {
         }
         
         public override string ResourceName {
             get {
-                return "ImportOrder.rpt";
+                return "ImportOrderList.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ImportOrderManagementSystem.Reports {
         
         public override string FullResourceName {
             get {
-                return "ImportOrderManagementSystem.Reports.ImportOrder.rpt";
+                return "ImportOrderManagementSystem.Reports.ImportOrderList.rpt";
             }
             set {
                 // Do nothing
@@ -82,54 +82,17 @@ namespace ImportOrderManagementSystem.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection5 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportFooterSection6 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_id {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-
-        internal void Show()
-        {
-            throw new NotImplementedException();
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedImportOrder : Component, ICachedReport {
+    public class CachedImportOrderList : Component, ICachedReport {
         
-        public CachedImportOrder() {
+        public CachedImportOrderList() {
         }
         
         [Browsable(false)]
@@ -166,7 +129,7 @@ namespace ImportOrderManagementSystem.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ImportOrder rpt = new ImportOrder();
+            ImportOrderList rpt = new ImportOrderList();
             rpt.Site = this.Site;
             return rpt;
         }

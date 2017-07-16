@@ -77,8 +77,12 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -126,6 +130,48 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImportOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ImportOrderList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportOrderList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportByImpOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportByImpOrder.Designer.cs">
+      <DependentUpon>ReportByImpOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportByShipAck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportByShipAck.Designer.cs">
+      <DependentUpon>ReportByShipAck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportByShipOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportByShipOrder.Designer.cs">
+      <DependentUpon>ReportByShipOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportsUI.Designer.cs">
+      <DependentUpon>ReportsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ShipmentAcknowledgement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentAcknowledgement.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\ShipmentOrder.cs">
@@ -213,6 +259,29 @@
     <EmbeddedResource Include="Reports\ImportOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ImportOrder.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ImportOrderList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ImportOrderList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportByImpOrder.resx">
+      <DependentUpon>ReportByImpOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportByShipAck.resx">
+      <DependentUpon>ReportByShipAck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportByShipOrder.resx">
+      <DependentUpon>ReportByShipOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportsUI.resx">
+      <DependentUpon>ReportsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShipmentAcknowledgement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShipmentAcknowledgement.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ShipmentOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
