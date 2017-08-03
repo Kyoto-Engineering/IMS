@@ -862,8 +862,10 @@ namespace ImportOrderManagementSystem.UI
         }
 
 
-        public object ShipmentId { get; set; }
 
-        public object ShipmentIdComboBox { get; set; }
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

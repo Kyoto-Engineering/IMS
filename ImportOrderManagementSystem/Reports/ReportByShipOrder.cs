@@ -62,7 +62,7 @@ namespace ImportOrderManagementSystem.Reports
             //	Table table = default(Table);
             var with1 = reportConInfo;
             with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "ProductNRelatedDB_new";
+            with1.DatabaseName = "ProductNRelatedDB";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
             ShipmentOrder cr = new ShipmentOrder();

@@ -119,11 +119,6 @@ namespace ImportOrderManagementSystem.Reports {
                 return this.DataDefinition.ParameterFields[0];
             }
         }
-
-        internal void Show()
-        {
-            throw new NotImplementedException();
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
