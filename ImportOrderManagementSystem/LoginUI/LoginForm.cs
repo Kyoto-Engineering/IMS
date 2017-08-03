@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using ImportOrderManagementSystem.DbGateway;
 using ImportOrderManagementSystem.UI;
@@ -89,7 +90,7 @@ namespace ImportOrderManagementSystem.LoginUI
                       
 
                     //}
-                    if (dbUserName == txtUserName.Text && dbPassword == readyPassword && userType.Trim() == "Admin")
+                    if (dbUserName == txtUserName.Text && txtUserName.Text == "ceo@keal.com.bd" && dbPassword == readyPassword && userType.Trim() == "Admin")
                     {
                         this.Hide();
                         frmMainUI frm = new frmMainUI();
@@ -98,6 +99,10 @@ namespace ImportOrderManagementSystem.LoginUI
                         txtPassword.Clear();
                         txtUserName.Clear();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Credential");
                     }
                     //if (dbUserName == txtUserName.Text && dbPassword == readyPassword && userType.Trim() == "User")
                     //{
