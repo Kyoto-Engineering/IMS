@@ -73,7 +73,7 @@ namespace ImportOrderManagementSystem.UI
             }
             
                 _con = new SqlConnection(_cs.DBConn);
-                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId,Ancillary,CFRFrieght,UserId) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d9,@d10,@d11,@d12)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId,Ancillary,CFRFrieght,UserId,TotalItem,TotalQty,TotalPrice) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d9,@d10,@d11,@d12,@d13,@d14,@d15)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                 _cmd = new SqlCommand(cd1,_con);                   
                 _cmd.Parameters.AddWithValue("@d1", Brandid);                  
                 _cmd.Parameters.AddWithValue("@d2",SupplierId) ;                    
@@ -86,6 +86,9 @@ namespace ImportOrderManagementSystem.UI
             _cmd.Parameters.AddWithValue("@d10", string.IsNullOrWhiteSpace(textBox3.Text)?(object)DBNull.Value:textBox3.Text);
             _cmd.Parameters.AddWithValue("@d11", string.IsNullOrWhiteSpace(textBox2.Text)?(object)DBNull.Value:textBox2.Text);
             _cmd.Parameters.AddWithValue("@d12", LoginForm.uId2);
+            _cmd.Parameters.AddWithValue("@d13", totalItemTextBox.Text);
+            _cmd.Parameters.AddWithValue("@d14", totalQuantityTextBox.Text);
+            _cmd.Parameters.AddWithValue("@d15", totalPriceTextBox.Text);
             string debugSQL = _cmd.CommandText;
 
             foreach (SqlParameter param in _cmd.Parameters)
@@ -678,7 +681,8 @@ namespace ImportOrderManagementSystem.UI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }}
+            }
+            }
         }
 
         private bool GetProductPrice()
@@ -687,8 +691,7 @@ namespace ImportOrderManagementSystem.UI
             _con = new SqlConnection(_cs.DBConn);
             _con.Open();
           
-                string cty4 = "SELECT Price FROM " + incoCombobox.Text.Trim() + "Price WHERE Sl=" + ProductId+
-                              "";
+                string cty4 = "SELECT Price FROM " + incoCombobox.Text.Trim() + "Price WHERE Sl=" + ProductId+ "";
                 _cmd = new SqlCommand(cty4);
                 _cmd.Connection = _con;
                 rdr = _cmd.ExecuteReader();
@@ -1190,5 +1193,11 @@ namespace ImportOrderManagementSystem.UI
             
         }
 
-   }
+
+        public object TotalQty { get; set; }
+
+        public object TotalItem { get; set; }
+
+        public object TotalPrice { get; set; }
+    }
 }
