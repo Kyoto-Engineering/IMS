@@ -64,10 +64,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewk = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.productNameTextBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -95,6 +91,20 @@
             this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
             this.totalItemlabel = new System.Windows.Forms.Label();
             this.totalItemTextBox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
@@ -107,6 +117,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Olive;
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -129,7 +141,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(604, 385);
+            this.groupBox1.Size = new System.Drawing.Size(604, 358);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Import Order Information";
@@ -138,7 +150,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(221, 341);
+            this.textBox3.Location = new System.Drawing.Point(221, 314);
             this.textBox3.Name = "textBox3";
             this.textBox3.ShortcutsEnabled = false;
             this.textBox3.Size = new System.Drawing.Size(272, 32);
@@ -152,7 +164,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Lime;
-            this.label18.Location = new System.Drawing.Point(10, 346);
+            this.label18.Location = new System.Drawing.Point(10, 318);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(182, 22);
             this.label18.TabIndex = 56;
@@ -161,7 +173,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(221, 303);
+            this.textBox2.Location = new System.Drawing.Point(221, 270);
             this.textBox2.Name = "textBox2";
             this.textBox2.ShortcutsEnabled = false;
             this.textBox2.Size = new System.Drawing.Size(272, 32);
@@ -175,7 +187,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Lime;
-            this.label17.Location = new System.Drawing.Point(11, 311);
+            this.label17.Location = new System.Drawing.Point(11, 274);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(211, 22);
             this.label17.TabIndex = 54;
@@ -186,7 +198,7 @@
             this.AttentioncomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.AttentioncomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.AttentioncomboBox.FormattingEnabled = true;
-            this.AttentioncomboBox.Location = new System.Drawing.Point(221, 269);
+            this.AttentioncomboBox.Location = new System.Drawing.Point(221, 230);
             this.AttentioncomboBox.Name = "AttentioncomboBox";
             this.AttentioncomboBox.Size = new System.Drawing.Size(272, 30);
             this.AttentioncomboBox.TabIndex = 6;
@@ -199,7 +211,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Lime;
-            this.label13.Location = new System.Drawing.Point(8, 277);
+            this.label13.Location = new System.Drawing.Point(8, 234);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(165, 22);
             this.label13.TabIndex = 46;
@@ -207,24 +219,25 @@
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label12.Location = new System.Drawing.Point(11, 196);
+            this.label12.Location = new System.Drawing.Point(526, 101);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(207, 22);
+            this.label12.Size = new System.Drawing.Size(37, 22);
             this.label12.TabIndex = 45;
             this.label12.Text = "Currency                       :";
+            this.label12.Visible = false;
             // 
             // currencyComboBox
             // 
             this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.currencyComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currencyComboBox.FormattingEnabled = true;
-            this.currencyComboBox.Location = new System.Drawing.Point(221, 191);
+            this.currencyComboBox.Location = new System.Drawing.Point(514, 50);
             this.currencyComboBox.Name = "currencyComboBox";
-            this.currencyComboBox.Size = new System.Drawing.Size(272, 32);
+            this.currencyComboBox.Size = new System.Drawing.Size(80, 32);
             this.currencyComboBox.TabIndex = 4;
+            this.currencyComboBox.Visible = false;
             this.currencyComboBox.SelectedIndexChanged += new System.EventHandler(this.currencyComboBox_SelectedIndexChanged);
             // 
             // label6
@@ -245,7 +258,7 @@
             this.incoCombobox.FormattingEnabled = true;
             this.incoCombobox.Location = new System.Drawing.Point(221, 146);
             this.incoCombobox.Name = "incoCombobox";
-            this.incoCombobox.Size = new System.Drawing.Size(274, 32);
+            this.incoCombobox.Size = new System.Drawing.Size(105, 32);
             this.incoCombobox.TabIndex = 3;
             this.incoCombobox.SelectedIndexChanged += new System.EventHandler(this.incoCombobox_SelectedIndexChanged);
             // 
@@ -296,7 +309,7 @@
             // txtImportOrderNo
             // 
             this.txtImportOrderNo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImportOrderNo.Location = new System.Drawing.Point(221, 230);
+            this.txtImportOrderNo.Location = new System.Drawing.Point(221, 189);
             this.txtImportOrderNo.Name = "txtImportOrderNo";
             this.txtImportOrderNo.ReadOnly = true;
             this.txtImportOrderNo.Size = new System.Drawing.Size(274, 32);
@@ -339,7 +352,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(11, 234);
+            this.label1.Location = new System.Drawing.Point(11, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 22);
             this.label1.TabIndex = 0;
@@ -363,7 +376,7 @@
             this.submitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.submitButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.Fuchsia;
-            this.submitButton.Location = new System.Drawing.Point(484, 204);
+            this.submitButton.Location = new System.Drawing.Point(484, 179);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(111, 55);
             this.submitButton.TabIndex = 8;
@@ -392,7 +405,9 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader2,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader1,
+            this.columnHeader8});
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
@@ -472,12 +487,16 @@
             // 
             // dataGridViewk
             // 
+            this.dataGridViewk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewk.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -486,35 +505,12 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewk.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewk.Location = new System.Drawing.Point(10, 109);
+            this.dataGridViewk.Location = new System.Drawing.Point(6, 109);
             this.dataGridViewk.Name = "dataGridViewk";
-            this.dataGridViewk.Size = new System.Drawing.Size(609, 211);
+            this.dataGridViewk.Size = new System.Drawing.Size(616, 211);
             this.dataGridViewk.TabIndex = 0;
             this.dataGridViewk.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewk_CellContentClick);
             this.dataGridViewk.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewk_CellMouseClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Product Id";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Product Generic Description";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 180;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Item Description";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 160;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Item Code";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 120;
             // 
             // groupBox5
             // 
@@ -601,6 +597,9 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.textBox5);
+            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.textBox1);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.eDADateTimePicker);
@@ -617,9 +616,9 @@
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(12, 399);
+            this.groupBox6.Location = new System.Drawing.Point(12, 372);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(603, 285);
+            this.groupBox6.Size = new System.Drawing.Size(603, 312);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Product Information";
@@ -628,7 +627,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(244, 186);
+            this.textBox1.Location = new System.Drawing.Point(244, 216);
             this.textBox1.MaxLength = 100;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(219, 32);
@@ -639,7 +638,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Lime;
-            this.label16.Location = new System.Drawing.Point(12, 191);
+            this.label16.Location = new System.Drawing.Point(12, 225);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(235, 22);
             this.label16.TabIndex = 57;
@@ -649,7 +648,7 @@
             // 
             this.eDADateTimePicker.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eDADateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.eDADateTimePicker.Location = new System.Drawing.Point(244, 229);
+            this.eDADateTimePicker.Location = new System.Drawing.Point(244, 255);
             this.eDADateTimePicker.Name = "eDADateTimePicker";
             this.eDADateTimePicker.Size = new System.Drawing.Size(219, 32);
             this.eDADateTimePicker.TabIndex = 5;
@@ -659,7 +658,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label11.Location = new System.Drawing.Point(11, 237);
+            this.label11.Location = new System.Drawing.Point(11, 266);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(237, 22);
             this.label11.TabIndex = 55;
@@ -670,7 +669,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Lime;
-            this.label10.Location = new System.Drawing.Point(12, 105);
+            this.label10.Location = new System.Drawing.Point(12, 103);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(232, 22);
             this.label10.TabIndex = 53;
@@ -679,7 +678,7 @@
             // txtOrderPrice
             // 
             this.txtOrderPrice.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderPrice.Location = new System.Drawing.Point(244, 100);
+            this.txtOrderPrice.Location = new System.Drawing.Point(244, 98);
             this.txtOrderPrice.Name = "txtOrderPrice";
             this.txtOrderPrice.Size = new System.Drawing.Size(219, 32);
             this.txtOrderPrice.TabIndex = 2;
@@ -689,7 +688,7 @@
             // txtOrderAmount
             // 
             this.txtOrderAmount.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderAmount.Location = new System.Drawing.Point(244, 138);
+            this.txtOrderAmount.Location = new System.Drawing.Point(244, 176);
             this.txtOrderAmount.Name = "txtOrderAmount";
             this.txtOrderAmount.ShortcutsEnabled = false;
             this.txtOrderAmount.Size = new System.Drawing.Size(219, 32);
@@ -703,7 +702,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Lime;
-            this.label9.Location = new System.Drawing.Point(12, 143);
+            this.label9.Location = new System.Drawing.Point(12, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(236, 22);
             this.label9.TabIndex = 52;
@@ -714,7 +713,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Lime;
-            this.label8.Location = new System.Drawing.Point(12, 69);
+            this.label8.Location = new System.Drawing.Point(12, 64);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 22);
             this.label8.TabIndex = 51;
@@ -723,7 +722,7 @@
             // txtItemCode
             // 
             this.txtItemCode.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemCode.Location = new System.Drawing.Point(244, 64);
+            this.txtItemCode.Location = new System.Drawing.Point(244, 59);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.ReadOnly = true;
             this.txtItemCode.Size = new System.Drawing.Size(219, 32);
@@ -734,7 +733,7 @@
             // txtProductId
             // 
             this.txtProductId.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductId.Location = new System.Drawing.Point(244, 28);
+            this.txtProductId.Location = new System.Drawing.Point(244, 22);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.ReadOnly = true;
             this.txtProductId.Size = new System.Drawing.Size(219, 32);
@@ -747,7 +746,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(12, 33);
+            this.label4.Location = new System.Drawing.Point(12, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(232, 22);
             this.label4.TabIndex = 50;
@@ -806,6 +805,100 @@
             this.totalItemTextBox.ReadOnly = true;
             this.totalItemTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalItemTextBox.TabIndex = 33;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Lime;
+            this.label19.Location = new System.Drawing.Point(10, 143);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(145, 22);
+            this.label19.TabIndex = 58;
+            this.label19.Text = "Price Currency :";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(244, 137);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(219, 32);
+            this.textBox4.TabIndex = 59;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(484, 255);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(94, 32);
+            this.textBox5.TabIndex = 60;
+            this.textBox5.Visible = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Price Currency";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Currency ID";
+            this.columnHeader8.Width = 0;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(332, 146);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(90, 32);
+            this.textBox6.TabIndex = 60;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(428, 146);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(67, 32);
+            this.textBox7.TabIndex = 61;
+            this.textBox7.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Product Id";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Product Generic Description";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 180;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Item Description";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 160;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Item Code";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 120;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "EXW Price";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Price Currency";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Currency ID";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
             // 
             // frmWorkOrder
             // 
@@ -875,10 +968,6 @@
         private System.Windows.Forms.Label k;
         private System.Windows.Forms.Label g;
         private System.Windows.Forms.DataGridView dataGridViewk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.DateTimePicker importOrderDate;
         private System.Windows.Forms.Label label14;
@@ -917,5 +1006,19 @@
         private System.Windows.Forms.TextBox totalQuantityTextBox;
         private System.Windows.Forms.Label totalItemlabel;
         private System.Windows.Forms.TextBox totalItemTextBox;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

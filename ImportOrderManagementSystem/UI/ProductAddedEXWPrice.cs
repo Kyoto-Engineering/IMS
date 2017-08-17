@@ -19,6 +19,9 @@ namespace ImportOrderManagementSystem.UI
         SqlCommand _cmd;
         ConnectionString _cs = new ConnectionString();
         SqlDataReader rdr;
+
+        public int CurrencyId;
+        public bool CurrencySelected;
         public ProductAddedEXWPrice()
         {
             InitializeComponent();
@@ -27,8 +30,69 @@ namespace ImportOrderManagementSystem.UI
         private void ProductAddedEXWPrice_Load(object sender, EventArgs e)
         {
             GridLoad();
+            GetCurrency();
+
         }
 
+        
+        ///iqbal
+
+        private void GetCurrency()
+        {
+            try
+            {
+                _con = new SqlConnection(_cs.DBConn);
+                _con.Open();
+                string ctt = "SELECT CurrencyName FROM Currency";
+                _cmd = new SqlCommand(ctt);
+                _cmd.Connection = _con;
+                rdr = _cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    currencyComboBox.Items.Add(rdr.GetValue(0).ToString());
+                }
+                //cmbGender.Items.Add("Not In The List");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void currencyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            if (currencyComboBox.SelectedIndex != -1)
+            {
+                _con = new SqlConnection(_cs.DBConn);
+                _con.Open();
+                string cty4 = "SELECT CurrencyId FROM Currency where CurrencyName='" + currencyComboBox.Text + "'";
+                _cmd = new SqlCommand(cty4);
+                _cmd.Connection = _con;
+                rdr = _cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    CurrencyId = (rdr.GetInt32(0));
+                    textBox1.Text = CurrencyId.ToString();
+                    CurrencySelected = true;
+                    //if (BrandSelected && IncoTermsSelected && Exists)
+                    //{
+                    //    groupBox2.Enabled = true;
+                    //}
+                }
+
+            }
+
+        }
+        
+        
+        
+        
+        
+        
+        
         private void GridLoad()
         {
             try
@@ -57,7 +121,7 @@ namespace ImportOrderManagementSystem.UI
         }
 
         private void Savebutton_Click(object sender, EventArgs e)
-        {
+        {  
             if (listView1.Items.Count == 0)
             {
                 MessageBox.Show("Please add to Chart first", "Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -70,10 +134,11 @@ namespace ImportOrderManagementSystem.UI
                     for (int i = 0; i <= listView1.Items.Count - 1; i++)
                     {
                         _con = new SqlConnection(_cs.DBConn);
-                        string cd = "INSERT INTO EXWPrice (Price,Sl) VALUES (@d1,@d2)";
+                        string cd = "INSERT INTO EXWPrice (Price,Sl,CurrencyId) VALUES (@d1,@d2,@d3)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
                         _cmd = new SqlCommand(cd, _con);
                         _cmd.Parameters.AddWithValue("@d1", listView1.Items[i].SubItems[1].Text);
                         _cmd.Parameters.AddWithValue("@d2", listView1.Items[i].SubItems[0].Text);
+                        _cmd.Parameters.AddWithValue("@d3", listView1.Items[i].SubItems[3].Text);
                         _con.Open();
                         _cmd.ExecuteNonQuery();
                         _con.Close();
@@ -118,8 +183,11 @@ namespace ImportOrderManagementSystem.UI
                     {
                         ListViewItem lst = new ListViewItem();
                         //lst.SubItems.Add(IdtextBox.Text);
-                        lst.Text = IdtextBox.Text;
+                        
                         lst.SubItems.Add(PricetextBox.Text);
+                        lst.Text = IdtextBox.Text;
+                        lst.SubItems.Add(currencyComboBox.SelectedItem.ToString());
+                        lst.SubItems.Add(textBox1.Text);
                         listView1.Items.Add(lst);
                        
                         IdtextBox.Clear();
@@ -127,6 +195,8 @@ namespace ImportOrderManagementSystem.UI
                         ItemDestextBox.Clear();
                         CodetextBox.Clear();
                         PricetextBox.Clear();
+                        currencyComboBox.Items.Clear();
+                        GetCurrency();
                         return;
                     }
                     String Val = IdtextBox.Text;
@@ -134,8 +204,11 @@ namespace ImportOrderManagementSystem.UI
                     {
                         ListViewItem lst1 = new ListViewItem();
                         //lst1.SubItems.Add(IdtextBox.Text);
-                        lst1.Text = IdtextBox.Text;
+                        
                         lst1.SubItems.Add(PricetextBox.Text);
+                        lst1.Text = IdtextBox.Text;
+                        lst1.SubItems.Add(currencyComboBox.SelectedItem.ToString());
+                        lst1.SubItems.Add(textBox1.Text);
                         listView1.Items.Add(lst1);
 
                         IdtextBox.Clear();
@@ -197,5 +270,7 @@ namespace ImportOrderManagementSystem.UI
                 Addbutton_Click(this, new EventArgs());
             }
         }
+
+        
     }
 }

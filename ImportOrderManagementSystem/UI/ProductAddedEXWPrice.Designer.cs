@@ -38,6 +38,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Savebutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.currencyComboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Addbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.IdtextBox = new System.Windows.Forms.TextBox();
@@ -53,8 +55,12 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label6 = new System.Windows.Forms.Label();
             this.Removebutton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -126,7 +132,7 @@
             // 
             // Savebutton
             // 
-            this.Savebutton.Location = new System.Drawing.Point(766, 529);
+            this.Savebutton.Location = new System.Drawing.Point(927, 529);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(75, 52);
             this.Savebutton.TabIndex = 6;
@@ -136,6 +142,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.currencyComboBox);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.Addbutton);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.IdtextBox);
@@ -149,13 +159,34 @@
             this.groupBox1.Controls.Add(this.PricetextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(426, 276);
+            this.groupBox1.Size = new System.Drawing.Size(426, 361);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // currencyComboBox
+            // 
+            this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.currencyComboBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currencyComboBox.FormattingEnabled = true;
+            this.currencyComboBox.Location = new System.Drawing.Point(148, 199);
+            this.currencyComboBox.Name = "currencyComboBox";
+            this.currencyComboBox.Size = new System.Drawing.Size(231, 32);
+            this.currencyComboBox.TabIndex = 19;
+            this.currencyComboBox.SelectedIndexChanged += new System.EventHandler(this.currencyComboBox_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(38, 206);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 19);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Price Currency :";
+            // 
             // Addbutton
             // 
-            this.Addbutton.Location = new System.Drawing.Point(335, 210);
+            this.Addbutton.Location = new System.Drawing.Point(335, 297);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(75, 47);
             this.Addbutton.TabIndex = 6;
@@ -264,7 +295,7 @@
             this.groupBox3.Controls.Add(this.listView1);
             this.groupBox3.Location = new System.Drawing.Point(465, 336);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(280, 284);
+            this.groupBox3.Size = new System.Drawing.Size(309, 284);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
@@ -272,14 +303,16 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(10, 19);
+            this.listView1.Location = new System.Drawing.Point(6, 19);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(256, 259);
+            this.listView1.Size = new System.Drawing.Size(370, 259);
             this.listView1.TabIndex = 18;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -292,7 +325,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Price";
-            this.columnHeader2.Width = 150;
+            this.columnHeader2.Width = 93;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Price Currency";
+            this.columnHeader3.Width = 104;
             // 
             // label6
             // 
@@ -313,6 +351,30 @@
             this.Removebutton.Text = "Remove";
             this.Removebutton.UseVisualStyleBackColor = true;
             this.Removebutton.Click += new System.EventHandler(this.Removebutton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(51, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 19);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Currency Id";
+            this.label8.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(148, 250);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(228, 26);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.Visible = false;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Currency Id";
             // 
             // ProductAddedEXWPrice
             // 
@@ -367,5 +429,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Removebutton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox currencyComboBox;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

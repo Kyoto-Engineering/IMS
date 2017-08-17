@@ -31,6 +31,8 @@ namespace ImportOrderManagementSystem.UI
         public int SupplierId, Brandid, Sio, IncoId, CurrencyId,ProductId,ImpId;
         public decimal Price;
         public bool BrandSelected, SupplierSelected, IncoTermsSelected, CurrencySelected,Exists;
+        private int i;
+        public string currencyid= "";
         public frmWorkOrder()
         {
             InitializeComponent();
@@ -71,41 +73,55 @@ namespace ImportOrderManagementSystem.UI
                 return;
 
             }
-            
+
+
+          
+             
                 _con = new SqlConnection(_cs.DBConn);
                 string cd1 = "INSERT INTO ImportOrders (BrandId,SupplierId,ImportDate,SIO,ImportOrderNo,IncoID,CurrencyId,AttnId,Ancillary,CFRFrieght,UserId,TotalItem,TotalQty,TotalPrice) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7,@d9,@d10,@d11,@d12,@d13,@d14,@d15)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
-                _cmd = new SqlCommand(cd1,_con);                   
-                _cmd.Parameters.AddWithValue("@d1", Brandid);                  
-                _cmd.Parameters.AddWithValue("@d2",SupplierId) ;                    
-                _cmd.Parameters.AddWithValue("@d3",importOrderDate.Value.ToLocalTime());
-                _cmd.Parameters.AddWithValue("@d4",Sio) ;                    
+                _cmd = new SqlCommand(cd1, _con);
+                _cmd.Parameters.AddWithValue("@d1", Brandid);
+                _cmd.Parameters.AddWithValue("@d2", SupplierId);
+                _cmd.Parameters.AddWithValue("@d3", importOrderDate.Value.ToLocalTime());
+                _cmd.Parameters.AddWithValue("@d4", Sio);
                 _cmd.Parameters.AddWithValue("@d5", ImpOrderNo);
-            _cmd.Parameters.AddWithValue("@d6", IncoId);
-            _cmd.Parameters.AddWithValue("@d7", CurrencyId);
-            _cmd.Parameters.AddWithValue("@d9", attentionid);
-            _cmd.Parameters.AddWithValue("@d10", string.IsNullOrWhiteSpace(textBox3.Text)?(object)DBNull.Value:textBox3.Text);
-            _cmd.Parameters.AddWithValue("@d11", string.IsNullOrWhiteSpace(textBox2.Text)?(object)DBNull.Value:textBox2.Text);
-            _cmd.Parameters.AddWithValue("@d12", LoginForm.uId2);
-            _cmd.Parameters.AddWithValue("@d13", totalItemTextBox.Text);
-            _cmd.Parameters.AddWithValue("@d14", totalQuantityTextBox.Text);
-            _cmd.Parameters.AddWithValue("@d15", totalPriceTextBox.Text);
-            string debugSQL = _cmd.CommandText;
+                _cmd.Parameters.AddWithValue("@d6", IncoId);
 
+                _cmd.Parameters.AddWithValue("@d7", textBox7.Text); 
+               
+                _cmd.Parameters.AddWithValue("@d9", attentionid);
+                _cmd.Parameters.AddWithValue("@d10", string.IsNullOrWhiteSpace(textBox3.Text) ? (object)DBNull.Value : textBox3.Text);
+                _cmd.Parameters.AddWithValue("@d11", string.IsNullOrWhiteSpace(textBox2.Text) ? (object)DBNull.Value : textBox2.Text);
+                _cmd.Parameters.AddWithValue("@d12", LoginForm.uId2);
+                _cmd.Parameters.AddWithValue("@d13", totalItemTextBox.Text);
+                _cmd.Parameters.AddWithValue("@d14", totalQuantityTextBox.Text);
+                _cmd.Parameters.AddWithValue("@d15", totalPriceTextBox.Text);
+                string debugSQL = _cmd.CommandText;
+           
             foreach (SqlParameter param in _cmd.Parameters)
             {
                 debugSQL = debugSQL.Replace(param.ParameterName, param.Value.ToString());
             }
                 _con.Open();
             ImpId = (int)_cmd.ExecuteScalar();
-              
+            
                 _con.Close();
+
+                //_con.Open();
+                //_cmd.ExecuteNonQuery();
+                //_con.Close();
+                
+         
+            
             try
             {
                 for (int i = 0; i <= listView1.Items.Count - 1; i++)
                 {
                     _con = new SqlConnection(_cs.DBConn);
                     string cd = "INSERT INTO ImportOrderProduct (ImpId,Sl,OrderQty,Price,ExpectedDateOfArrival,BacklogQty) VALUES (@d1,@d2,@d3,@d4,@d5,@d6)";
-                    _cmd = new SqlCommand(cd,_con);                   
+                     
+                    _cmd = new SqlCommand(cd,_con);
+                     
                     _cmd.Parameters.AddWithValue("@d1",ImpId);                  
                     _cmd.Parameters.AddWithValue("d2", listView1.Items[i].Text);                    
                     _cmd.Parameters.AddWithValue("d3", listView1.Items[i].SubItems[2].Text);
@@ -113,10 +129,20 @@ namespace ImportOrderManagementSystem.UI
                     _cmd.Parameters.AddWithValue("d5", listView1.Items[i].SubItems[4].Text);
                     _cmd.Parameters.AddWithValue("d6", listView1.Items[i].SubItems[2].Text);
                     _cmd.Parameters.AddWithValue("d7", string.IsNullOrWhiteSpace(listView1.Items[i].SubItems[5].Text) ? (object)DBNull.Value : listView1.Items[i].SubItems[5].Text);
+                    
                     _con.Open();
                     _cmd.ExecuteNonQuery();
                     _con.Close();
-                   
+
+                    //_con = new SqlConnection(_cs.DBConn);
+                    //string cdy = "INSERT INTO ImportOrders(CurrencyId) VALUES(@d8)" + "SELECT CONVERT(int, SCOPE_IDENTITY())";
+                    //_cmd = new SqlCommand(cdy, _con);
+                    //_cmd.Parameters.AddWithValue("d8", listView1.Items[i].SubItems[7].Text);
+
+                    //_con.Open();
+                    //_cmd.ExecuteNonQuery();
+                    //_con.Close();
+
                 }
                 SaveSTatus();
                 MessageBox.Show("Successfully Submitted.", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -168,7 +194,7 @@ namespace ImportOrderManagementSystem.UI
             //	Table table = default(Table);
             var with1 = reportConInfo;
             with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "ProductNRelatedDB_new";
+            with1.DatabaseName = "ProductNRelatedDB_new1";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
 
@@ -203,7 +229,7 @@ namespace ImportOrderManagementSystem.UI
             totalQuantityTextBox.ReadOnly = true;
             totalPriceTextBox.ReadOnly = true;
           
-            groupBox2.Enabled = false;
+           groupBox2.Enabled = false;
             SupliercomboBox.Focus();
             //FillWOrderCombo();
             GetBrand();
@@ -296,6 +322,8 @@ namespace ImportOrderManagementSystem.UI
                     lst.SubItems.Add(txtOrderPrice.Text);
                     lst.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
                     lst.SubItems.Add(textBox1.Text);
+                    lst.SubItems.Add(textBox4.Text);
+                    lst.SubItems.Add(textBox5.Text);
                     listView1.Items.Add(lst);
 
                     //tawhidul
@@ -326,6 +354,8 @@ namespace ImportOrderManagementSystem.UI
                         lst1.SubItems.Add(txtOrderPrice.Text);
                         lst1.SubItems.Add(eDADateTimePicker.Value.ToLocalTime().Date.ToString());
                         lst1.SubItems.Add(textBox1.Text);
+                        lst1.SubItems.Add(textBox4.Text);
+                        lst1.SubItems.Add(textBox5.Text);
                         listView1.Items.Add(lst1);
 
                         //tawhidul
@@ -387,6 +417,8 @@ namespace ImportOrderManagementSystem.UI
             txtOrderAmount.Text = "";
             txtOrderPrice.Text = "";
             eDADateTimePicker.Value = DateTime.Now;
+            textBox5.Clear();
+            textBox4.Clear();
         }
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
@@ -674,6 +706,10 @@ namespace ImportOrderManagementSystem.UI
                     txtProductId.Text = dr.Cells[0].Value.ToString();
                     txtItemCode.Text = dr.Cells[3].Value.ToString();
                     txtOrderPrice.Text = Price.ToString();
+                    textBox4.Text = dr.Cells[5].Value.ToString();
+                    textBox5.Text = dr.Cells[6].Value.ToString();
+                    textBox6.Text = dr.Cells[5].Value.ToString();
+                    textBox7.Text = dr.Cells[6].Value.ToString();
                     g.Text = k.Text;
                 }
             }
@@ -837,13 +873,13 @@ namespace ImportOrderManagementSystem.UI
                     _con.Open();
                     //cmd = new SqlCommand("SELECT RTRIM(ProductListSummary.Sl),RTRIM(ProductListSummary.ProductGenericDescription),RTRIM(ProductListSummary.ItemDescription),RTRIM(ProductListSummary.ItemCode),RTRIM(MasterStocks.MQuantity),RTRIM(MasterStocks.UnitPrice) from ProductListSummary,MasterStocks where MasterStocks.Sl=ProductListSummary.Sl order by MasterStocks.Sl desc", con);
                     _cmd = new SqlCommand(
-                        "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode FROM Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId where Brand.BrandName='" +
+                        "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId   where Brand.BrandName ='" +
                         BrandcomboBox.Text + "' order by ProductListSummary.Sl desc", _con);
                     rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
                     dataGridViewk.Rows.Clear();
                     while (rdr.Read() == true)
                     {
-                        dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3]);
+                        dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6]);
                     }
 
                     _con.Close();
@@ -884,17 +920,28 @@ namespace ImportOrderManagementSystem.UI
                 rdr = _cmd.ExecuteReader();
                 if (rdr.Read())
                 {
+
                     IncoId = (rdr.GetInt32(0));
                     IncoTermsSelected = true;
+                   
                     if (PriceExists())
                     {
                         Exists = true;
+                       
                     }
+                   
                     else
                     {
                         MessageBox.Show(@"You Can Not Import in this Method Right Now" + "\n" +
                                         @"Please Contact With Developer");
                     }
+
+                    if (BrandSelected && IncoTermsSelected && Exists)
+                    {
+                        groupBox2.Enabled = true;
+                    }
+
+                  
                 }
                 
             }
@@ -915,12 +962,12 @@ namespace ImportOrderManagementSystem.UI
                 {
                     CurrencyId = (rdr.GetInt32(0));
                     CurrencySelected = true;
-                    if (BrandSelected && IncoTermsSelected && Exists)
-                    {
-                        groupBox2.Enabled = true;
-                    }
+                    //if (BrandSelected && IncoTermsSelected && Exists)
+                    //{
+                    //    groupBox2.Enabled = true;
+                    //}
                 }
-                
+
             }
         }
 
@@ -1130,7 +1177,9 @@ namespace ImportOrderManagementSystem.UI
             dataGridViewk.Rows.Clear();
             //dataGridViewk.Refresh();
             groupBox1.Enabled = true;
-            groupBox2.Enabled = false;       
+            groupBox2.Enabled = false;
+            textBox6.Clear();
+            textBox7.Clear();
         }
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
