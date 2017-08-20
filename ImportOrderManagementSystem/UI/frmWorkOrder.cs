@@ -694,31 +694,43 @@ namespace ImportOrderManagementSystem.UI
 
         private void dataGridViewk_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dataGridViewk.SelectedRows.Count>0)
-            { try
+            if (AttentioncomboBox.SelectedIndex != -1)
             {
-                groupBox1.Enabled = false; 
-                //cmbWorkOrderNo.Enabled = false;
-                DataGridViewRow dr = dataGridViewk.CurrentRow;
-                ProductId = Convert.ToInt32(dr.Cells[0].Value.ToString().Trim());
-                if(GetProductPrice())
+
+                if (dataGridViewk.SelectedRows.Count > 0)
                 {
-                    txtProductId.Text = dr.Cells[0].Value.ToString();
-                    txtItemCode.Text = dr.Cells[3].Value.ToString();
-                    txtOrderPrice.Text = Price.ToString();
-                    textBox4.Text = dr.Cells[5].Value.ToString();
-                    textBox5.Text = dr.Cells[6].Value.ToString();
-                    textBox6.Text = dr.Cells[5].Value.ToString();
-                    textBox7.Text = dr.Cells[6].Value.ToString();
-                    g.Text = k.Text;
+                    try
+                    {
+                        groupBox1.Enabled = false;
+                        //cmbWorkOrderNo.Enabled = false;
+                        DataGridViewRow dr = dataGridViewk.CurrentRow;
+                        ProductId = Convert.ToInt32(dr.Cells[0].Value.ToString().Trim());
+                        if (GetProductPrice())
+                        {
+                            txtProductId.Text = dr.Cells[0].Value.ToString();
+                            txtItemCode.Text = dr.Cells[3].Value.ToString();
+                            txtOrderPrice.Text = Price.ToString();
+                            textBox4.Text = dr.Cells[5].Value.ToString();
+                            textBox5.Text = dr.Cells[6].Value.ToString();
+                            textBox6.Text = dr.Cells[5].Value.ToString();
+                            textBox7.Text = dr.Cells[6].Value.ToString();
+                            g.Text = k.Text;
+                        }
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+
             }
 
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select Attention");
             }
-            }
+            
         }
 
         private bool GetProductPrice()

@@ -164,7 +164,7 @@ namespace ImportOrderManagementSystem.UI
             if (string.IsNullOrEmpty(textBox1.Text) &&  string.IsNullOrEmpty(textBox2.Text))
           
             {
-                DialogResult result3 = MessageBox.Show("Do you want to continue with out any CFR Frieght Charge and Anciliary Cost?",
+                DialogResult result3 = MessageBox.Show("Do you want to continue without any CFR Frieght Charge and Anciliary Cost?",
                     "Confirm", MessageBoxButtons.YesNo);
 
                 if (result3 == DialogResult.Yes)
