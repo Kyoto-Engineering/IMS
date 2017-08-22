@@ -153,7 +153,7 @@
             this.InsertPricebutton.Name = "InsertPricebutton";
             this.InsertPricebutton.Size = new System.Drawing.Size(109, 62);
             this.InsertPricebutton.TabIndex = 13;
-            this.InsertPricebutton.Text = "Insert Price";
+            this.InsertPricebutton.Text = "Price Management";
             this.InsertPricebutton.UseVisualStyleBackColor = false;
             this.InsertPricebutton.Click += new System.EventHandler(this.InsertPricebutton_Click);
             // 
