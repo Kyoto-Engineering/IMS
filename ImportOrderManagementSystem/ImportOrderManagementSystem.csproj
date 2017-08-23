@@ -27,7 +27,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -188,6 +188,12 @@
     <Compile Include="UI\Attention.Designer.cs">
       <DependentUpon>Attention.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CFR_Price.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CFR_Price.Designer.cs">
+      <DependentUpon>CFR_Price.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmCompanyRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Attention.resx">
       <DependentUpon>Attention.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CFR_Price.resx">
+      <DependentUpon>CFR_Price.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCompanyRegistration.resx">
       <DependentUpon>frmCompanyRegistration.cs</DependentUpon>
