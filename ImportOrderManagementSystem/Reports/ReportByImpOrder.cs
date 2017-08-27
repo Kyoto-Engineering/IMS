@@ -89,7 +89,7 @@ namespace ImportOrderManagementSystem.Reports
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string ct = "SELECT ImportOrderNo FROM ImportOrders ORDER BY ImportOrderNo";
+                string ct = "SELECT ImportOrderNo FROM ImportOrders ORDER BY ImportOrderNo ";
                 cmd = new SqlCommand(ct);
                 cmd.Connection = con;
                 rdr = cmd.ExecuteReader();

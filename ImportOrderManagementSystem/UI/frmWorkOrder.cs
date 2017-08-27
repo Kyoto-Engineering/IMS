@@ -435,9 +435,14 @@ namespace ImportOrderManagementSystem.UI
                         _con = new SqlConnection(_cs.DBConn);
                         _con.Open();
 
+                        //String sql1 = "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID where Brand.BrandName ='" +
+                        //               BrandcomboBox.Text + "' order by ProductListSummary.Sl desc";
                         String sql =
                             "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID where ItemCode like '" +
                             txtProduct.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        //String sql = "SELECT ('" + sql1 + "') where ItemCode like '" + txtProduct.Text +
+                        //             "%'order by ProductListSummary.Sl desc";
 
                         // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
                         _cmd = new SqlCommand(sql, _con);
@@ -838,46 +843,714 @@ namespace ImportOrderManagementSystem.UI
 
         private void productNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    _con = new SqlConnection(_cs.DBConn);
+            //    _con.Open();
+            //    String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ProductGenericDescription like '" + productNameTextBox.Text + "%'order by ProductListSummary.Sl desc";
+            //    _cmd = new SqlCommand(sql, _con);
+            //    rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            //    dataGridViewk.Rows.Clear();
+            //    while (rdr.Read() == true)
+            //    {
+            //        dataGridViewk.Rows.Add(rdr[0], rdr[1],rdr[2],rdr[3]);
+            //    }
+            //    _con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+
+            switch (incoCombobox.Text)
             {
-                _con = new SqlConnection(_cs.DBConn);
-                _con.Open();
-                String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ProductGenericDescription like '" + productNameTextBox.Text + "%'order by ProductListSummary.Sl desc";
-                _cmd = new SqlCommand(sql, _con);
-                rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                dataGridViewk.Rows.Clear();
-                while (rdr.Read() == true)
-                {
-                    dataGridViewk.Rows.Add(rdr[0], rdr[1],rdr[2],rdr[3]);
-                }
-                _con.Close();
+                case "EXW":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        //String sql1 = "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID where Brand.BrandName ='" +
+                        //               BrandcomboBox.Text + "' order by ProductListSummary.Sl desc";
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        //String sql = "SELECT ('" + sql1 + "') where ItemCode like '" + txtProduct.Text +
+                        //             "%'order by ProductListSummary.Sl desc";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "FCA":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, FCAPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN FCAPrice ON ProductListSummary.Sl = FCAPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = FCAPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = FCAPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "FAS":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, FASPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN FASPrice ON ProductListSummary.Sl = FASPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = FASPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = FASPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "FOB":
+
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, FOBPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN FOBPrice ON ProductListSummary.Sl = FOBPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = FOBPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = FOBPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+
+                    break;
+
+                case "CPT":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CPTPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CPTPrice ON ProductListSummary.Sl = CPTPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CPTPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CPTPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "CFR":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CFRPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CFRPrice ON ProductListSummary.Sl = CFRPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CFRPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CFRPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "CIF":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CIFPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CIFPrice ON ProductListSummary.Sl = CIFPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CIFPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CIFPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "CIP":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CIPPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CIPPrice ON ProductListSummary.Sl = CIPPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CIPPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CIPPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "DAT":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, DATPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN DATPrice ON ProductListSummary.Sl = DATPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = DATPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = DATPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "DAP":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, DAPPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN DAPPrice ON ProductListSummary.Sl = DAPPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = DAPPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = DAPPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "DDP":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, DDPPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN DDPPrice ON ProductListSummary.Sl = DDPPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = DDPPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = DDPPrice.IncoID where ProductGenericDescription like '" +
+                            productNameTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+
+
+                default:
+                    MessageBox.Show("ERROR");
+                    break;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+
         }
 
         private void itemDescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    _con = new SqlConnection(_cs.DBConn);
+            //    _con.Open();
+            //   String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemDescription like '" + itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc";
+              
+            //    _cmd = new SqlCommand(sql, _con);
+            //    rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            //    dataGridViewk.Rows.Clear();
+            //    while (rdr.Read() == true)
+            //    {
+            //        dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3]);
+            //    }
+            //    _con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+            switch (incoCombobox.Text)
             {
-                _con = new SqlConnection(_cs.DBConn);
-                _con.Open();
-                String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemDescription like '" + itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc";
-                _cmd = new SqlCommand(sql, _con);
-                rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                dataGridViewk.Rows.Clear();
-                while (rdr.Read() == true)
-                {
-                    dataGridViewk.Rows.Add(rdr[0], rdr[1],rdr[2],rdr[3]);
-                }
-                _con.Close();
+                case "EXW":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        //String sql1 = "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID where Brand.BrandName ='" +
+                        //               BrandcomboBox.Text + "' order by ProductListSummary.Sl desc";
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        //String sql = "SELECT ('" + sql1 + "') where ItemCode like '" + txtProduct.Text +
+                        //             "%'order by ProductListSummary.Sl desc";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "FCA":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, FCAPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN FCAPrice ON ProductListSummary.Sl = FCAPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = FCAPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = FCAPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "FAS":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, FASPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN FASPrice ON ProductListSummary.Sl = FASPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = FASPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = FASPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "FOB":
+
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, FOBPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN FOBPrice ON ProductListSummary.Sl = FOBPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = FOBPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = FOBPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+
+                    break;
+
+                case "CPT":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CPTPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CPTPrice ON ProductListSummary.Sl = CPTPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CPTPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CPTPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "CFR":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CFRPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CFRPrice ON ProductListSummary.Sl = CFRPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CFRPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CFRPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "CIF":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CIFPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CIFPrice ON ProductListSummary.Sl = CIFPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CIFPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CIFPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "CIP":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, CIPPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN CIPPrice ON ProductListSummary.Sl = CIPPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = CIPPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = CIPPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+                case "DAT":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, DATPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN DATPrice ON ProductListSummary.Sl = DATPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = DATPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = DATPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "DAP":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, DAPPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN DAPPrice ON ProductListSummary.Sl = DAPPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = DAPPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = DAPPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+                case "DDP":
+
+                    try
+                    {
+                        _con = new SqlConnection(_cs.DBConn);
+                        _con.Open();
+
+                        String sql =
+                            "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, DDPPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN DDPPrice ON ProductListSummary.Sl = DDPPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = DDPPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = DDPPrice.IncoID where ItemDescription like '" +
+                            itemDescriptionTextBox.Text + "%'order by ProductListSummary.Sl desc ";
+
+                        // String sql = "SELECT ProductListSummary.Sl,ProductListSummary.ProductGenericDescription,ProductListSummary.ItemDescription,ProductListSummary.ItemCode from ProductListSummary where ItemCode like '" + txtProduct.Text + "%'order by ProductListSummary.Sl desc";
+                        _cmd = new SqlCommand(sql, _con);
+                        rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        dataGridViewk.Rows.Clear();
+                        while (rdr.Read() == true)
+                        {
+                            dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                        }
+                        _con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    break;
+
+
+
+
+                default:
+                    MessageBox.Show("ERROR");
+                    break;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+
         }
 
         private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -1827,5 +2500,30 @@ namespace ImportOrderManagementSystem.UI
         public object TotalItem { get; set; }
 
         public object TotalPrice { get; set; }
+
+        private void txtOrderPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eDADateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

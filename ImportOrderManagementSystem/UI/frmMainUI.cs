@@ -31,10 +31,10 @@ namespace ImportOrderManagementSystem.UI
         {
 
 
-            this.Hide();
+            this.Visible = false;
             UserManagementUI aform=new UserManagementUI();
             aform.ShowDialog();
-            
+            this.Visible = true;
         }
 
         private void lcButton_Click(object sender, EventArgs e)
