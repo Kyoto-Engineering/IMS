@@ -121,7 +121,7 @@ namespace ImportOrderManagementSystem.UI
                 for (int i = 0; i <= listView1.Items.Count - 1; i++)
                 {
                     _con = new SqlConnection(_cs.DBConn);
-                    string cd = "INSERT INTO ImportOrderProduct (ImpId,Sl,OrderQty,Price,ExpectedDateOfArrival,BacklogQty) VALUES (@d1,@d2,@d3,@d4,@d5,@d6)";
+                    string cd = "INSERT INTO ImportOrderProduct (ImpId,Sl,OrderQty,Price,ExpectedDateOfArrival,BacklogQty,Remarks) VALUES (@d1,@d2,@d3,@d4,@d5,@d6,@d7)";
                      
                     _cmd = new SqlCommand(cd,_con);
                      
