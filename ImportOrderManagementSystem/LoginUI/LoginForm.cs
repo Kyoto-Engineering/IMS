@@ -91,7 +91,7 @@ namespace ImportOrderManagementSystem.LoginUI
 
                     //}
                    
-                    /*
+                    
                     if (dbUserName == txtUserName.Text && txtUserName.Text == "ceo@keal.com.bd" && dbPassword == readyPassword && userType.Trim() == "Admin")
                     {
                         this.Hide();
@@ -102,22 +102,25 @@ namespace ImportOrderManagementSystem.LoginUI
                         txtUserName.Clear();
 
                     }
-                     */
+                     
 
-                    if (dbUserName == txtUserName.Text && dbPassword == readyPassword && userType.Trim() == "Admin")
-                    {
-                        this.Hide();
-                        frmMainUI frm = new frmMainUI();
-                        frm.Show();
-                        frm.lblUser.Text = txtUserName.Text;
-                        txtPassword.Clear();
-                        txtUserName.Clear();
+                    //if (dbUserName == txtUserName.Text && dbPassword == readyPassword && userType.Trim() == "Admin")
+                    //{
+                    //    this.Hide();
+                    //    frmMainUI frm = new frmMainUI();
+                    //    frm.Show();
+                    //    frm.lblUser.Text = txtUserName.Text;
+                    //    txtPassword.Clear();
+                    //    txtUserName.Clear();
 
-                    }
+                    //}
                     
                     else
                     {
                         MessageBox.Show("Invalid Credential");
+                        txtUserName.Clear();
+                        txtPassword.Clear();
+                        txtUserName.Focus();
                     }
                     //if (dbUserName == txtUserName.Text && dbPassword == readyPassword && userType.Trim() == "User")
                     //{

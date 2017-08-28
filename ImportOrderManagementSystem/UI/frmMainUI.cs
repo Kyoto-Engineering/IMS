@@ -178,9 +178,11 @@ namespace ImportOrderManagementSystem.UI
 
         private void ReportsButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             ReportsUI frm = new ReportsUI();
-            frm.Show();
+            this.Visible = false;
+            frm.ShowDialog();
+            this.Visible = true;
         }
     }
 }

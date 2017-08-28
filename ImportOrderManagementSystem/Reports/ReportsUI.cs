@@ -29,9 +29,11 @@ namespace ImportOrderManagementSystem.Reports
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             frmMainUI frm = new frmMainUI();
-            frm.Show();
+            this.Visible = false;
+            frm.ShowDialog();
+            this.Visible = true;
         }
 
         private void ReportsUI_FormClosed(object sender, FormClosedEventArgs e)
