@@ -27,7 +27,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -263,6 +263,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\ImportOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -561,6 +562,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="import_order_management_system_PR9_icon.ico" />
+    <None Include="Resources\buttons_PNG168.png" />
+    <None Include="Resources\green-button %281%29.png" />
+    <None Include="Resources\green-button.png" />
+    <None Include="Resources\expencesbuttonpnghi.png" />
+    <None Include="Resources\shiny_green_button_by_ahimsa1.png" />
+    <None Include="Resources\Import Order Management System.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

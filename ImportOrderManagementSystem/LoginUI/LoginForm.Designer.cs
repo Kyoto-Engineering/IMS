@@ -42,7 +42,7 @@
             // 
             this.txtUserType.BackColor = System.Drawing.Color.Black;
             this.txtUserType.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserType.Location = new System.Drawing.Point(12, 470);
+            this.txtUserType.Location = new System.Drawing.Point(12, 411);
             this.txtUserType.Name = "txtUserType";
             this.txtUserType.Size = new System.Drawing.Size(100, 13);
             this.txtUserType.TabIndex = 13;
@@ -50,8 +50,9 @@
             // 
             // btnSignIn
             // 
+            this.btnSignIn.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.btnSignIn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.Location = new System.Drawing.Point(296, 366);
+            this.btnSignIn.Location = new System.Drawing.Point(292, 267);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(231, 46);
             this.btnSignIn.TabIndex = 2;
@@ -63,26 +64,29 @@
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(300, 336);
+            this.textBox3.Location = new System.Drawing.Point(118, 403);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(202, 22);
             this.textBox3.TabIndex = 11;
+            this.textBox3.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(153, 284);
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(145, 219);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 27);
+            this.label2.Size = new System.Drawing.Size(112, 28);
             this.label2.TabIndex = 10;
             this.label2.Text = "Password";
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(263, 281);
+            this.txtPassword.Location = new System.Drawing.Point(263, 213);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -93,17 +97,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 240);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(167, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 27);
+            this.label1.Size = new System.Drawing.Size(90, 28);
             this.label1.TabIndex = 8;
             this.label1.Text = "User Id";
             // 
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(263, 233);
+            this.txtUserName.Location = new System.Drawing.Point(263, 168);
             this.txtUserName.MaxLength = 50;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(294, 39);
@@ -114,7 +120,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 498);
+            this.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.Import_Order_Management_System;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.txtUserType);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.textBox3);
@@ -122,6 +130,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUserName);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

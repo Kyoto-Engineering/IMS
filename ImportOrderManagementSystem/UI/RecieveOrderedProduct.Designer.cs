@@ -268,9 +268,10 @@
             // 
             // DoneButton
             // 
-            this.DoneButton.Location = new System.Drawing.Point(333, 123);
+            this.DoneButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+            this.DoneButton.Location = new System.Drawing.Point(333, 114);
             this.DoneButton.Name = "DoneButton";
-            this.DoneButton.Size = new System.Drawing.Size(75, 23);
+            this.DoneButton.Size = new System.Drawing.Size(75, 36);
             this.DoneButton.TabIndex = 7;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
@@ -330,9 +331,10 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(333, 46);
+            this.RemoveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
+            this.RemoveButton.Location = new System.Drawing.Point(333, 66);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(75, 23);
+            this.RemoveButton.Size = new System.Drawing.Size(75, 41);
             this.RemoveButton.TabIndex = 6;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -340,9 +342,10 @@
             // 
             // AddButton
             // 
+            this.AddButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.AddButton.Location = new System.Drawing.Point(333, 20);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.Size = new System.Drawing.Size(75, 40);
             this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
