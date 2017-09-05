@@ -121,6 +121,12 @@
   <data name="Import Order Management System" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Import Order Management System.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buttons_PNG168" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttons_PNG168.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whitey-glossy-rectangle-button-md" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whitey-glossy-rectangle-button-md1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="expencesbuttonpnghi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\expencesbuttonpnghi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,13 +136,16 @@
   <data name="green-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttons_PNG168" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttons_PNG168.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="green-button (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green-button (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImportOrderManagementSystem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportOrderManagementSystem1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="green-button (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green-button (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whitey-glossy-rectangle-button-md" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whitey-glossy-rectangle-button-md1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImportOrderManagementSystem1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportOrderManagementSystem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -103,9 +103,39 @@ namespace ImportOrderManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap green_button__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("green-button (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Import_Order_Management_System {
             get {
                 object obj = ResourceManager.GetObject("Import Order Management System", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImportOrderManagementSystem {
+            get {
+                object obj = ResourceManager.GetObject("ImportOrderManagementSystem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImportOrderManagementSystem1 {
+            get {
+                object obj = ResourceManager.GetObject("ImportOrderManagementSystem1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

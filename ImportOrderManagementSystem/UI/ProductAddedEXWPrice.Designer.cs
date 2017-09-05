@@ -139,7 +139,7 @@
             // Savebutton
             // 
             this.Savebutton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Savebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+//            this.Savebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
             this.Savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Savebutton.Location = new System.Drawing.Point(963, 529);
             this.Savebutton.Name = "Savebutton";
@@ -260,7 +260,7 @@
             // Addbutton
             // 
             this.Addbutton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Addbutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+//            this.Addbutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.Addbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addbutton.Location = new System.Drawing.Point(304, 330);
             this.Addbutton.Name = "Addbutton";
@@ -440,7 +440,7 @@
             // Removebutton
             // 
             this.Removebutton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Removebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
+//            this.Removebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
             this.Removebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Removebutton.Location = new System.Drawing.Point(316, 529);
             this.Removebutton.Name = "Removebutton";

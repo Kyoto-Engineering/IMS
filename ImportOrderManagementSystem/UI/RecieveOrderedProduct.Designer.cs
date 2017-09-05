@@ -268,7 +268,7 @@
             // 
             // DoneButton
             // 
-            this.DoneButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+//            this.DoneButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
             this.DoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DoneButton.Location = new System.Drawing.Point(325, 114);
             this.DoneButton.Name = "DoneButton";
@@ -332,7 +332,7 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
+//            this.RemoveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
             this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoveButton.Location = new System.Drawing.Point(325, 66);
             this.RemoveButton.Name = "RemoveButton";
@@ -344,7 +344,7 @@
             // 
             // AddButton
             // 
-            this.AddButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+//            this.AddButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.Location = new System.Drawing.Point(325, 20);
             this.AddButton.Name = "AddButton";

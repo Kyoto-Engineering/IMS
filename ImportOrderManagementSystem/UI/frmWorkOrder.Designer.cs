@@ -388,7 +388,7 @@
             // removeButton
             // 
             this.removeButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.removeButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
+           // this.removeButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
             this.removeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.removeButton.Location = new System.Drawing.Point(508, 103);
@@ -402,7 +402,7 @@
             // submitButton
             // 
             this.submitButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.submitButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+            //this.submitButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.submitButton.Location = new System.Drawing.Point(508, 174);
@@ -417,7 +417,7 @@
             // 
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+           // this.button1.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(506, 43);
