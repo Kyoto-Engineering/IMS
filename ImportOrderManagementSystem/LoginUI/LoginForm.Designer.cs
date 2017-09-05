@@ -50,11 +50,11 @@
             // 
             // btnSignIn
             // 
-            this.btnSignIn.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.btnSignIn.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
             this.btnSignIn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.Location = new System.Drawing.Point(292, 267);
+            this.btnSignIn.Location = new System.Drawing.Point(330, 267);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(231, 46);
+            this.btnSignIn.Size = new System.Drawing.Size(162, 46);
             this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = true;

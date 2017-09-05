@@ -562,6 +562,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="import_order_management_system_PR9_icon.ico" />
+    <None Include="Resources\whitey-glossy-rectangle-button-md1.png" />
     <None Include="Resources\buttons_PNG168.png" />
     <None Include="Resources\green-button %281%29.png" />
     <None Include="Resources\green-button.png" />

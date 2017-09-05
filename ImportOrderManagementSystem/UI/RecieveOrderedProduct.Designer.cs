@@ -269,9 +269,10 @@
             // DoneButton
             // 
             this.DoneButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
-            this.DoneButton.Location = new System.Drawing.Point(333, 114);
+            this.DoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoneButton.Location = new System.Drawing.Point(325, 114);
             this.DoneButton.Name = "DoneButton";
-            this.DoneButton.Size = new System.Drawing.Size(75, 36);
+            this.DoneButton.Size = new System.Drawing.Size(83, 45);
             this.DoneButton.TabIndex = 7;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
@@ -332,9 +333,10 @@
             // RemoveButton
             // 
             this.RemoveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
-            this.RemoveButton.Location = new System.Drawing.Point(333, 66);
+            this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveButton.Location = new System.Drawing.Point(325, 66);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(75, 41);
+            this.RemoveButton.Size = new System.Drawing.Size(83, 42);
             this.RemoveButton.TabIndex = 6;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -343,9 +345,10 @@
             // AddButton
             // 
             this.AddButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
-            this.AddButton.Location = new System.Drawing.Point(333, 20);
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(325, 20);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 40);
+            this.AddButton.Size = new System.Drawing.Size(83, 40);
             this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;

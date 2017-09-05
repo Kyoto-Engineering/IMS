@@ -257,6 +257,7 @@
             // DoneButton
             // 
             this.DoneButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+            this.DoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DoneButton.Location = new System.Drawing.Point(333, 111);
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 48);
@@ -322,6 +323,7 @@
             // RemoveButton
             // 
             this.RemoveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
+            this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoveButton.Location = new System.Drawing.Point(333, 62);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(75, 43);
@@ -333,6 +335,7 @@
             // AddButton
             // 
             this.AddButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.Location = new System.Drawing.Point(333, 12);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 44);

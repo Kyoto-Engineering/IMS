@@ -137,7 +137,7 @@
             // ReportsButton
             // 
             this.ReportsButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ReportsButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.ReportsButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
             this.ReportsButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportsButton.ForeColor = System.Drawing.Color.Red;
             this.ReportsButton.Location = new System.Drawing.Point(12, 243);
@@ -151,7 +151,7 @@
             // InsertPricebutton
             // 
             this.InsertPricebutton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.InsertPricebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.InsertPricebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
             this.InsertPricebutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InsertPricebutton.Location = new System.Drawing.Point(215, 22);
             this.InsertPricebutton.Name = "InsertPricebutton";
@@ -164,7 +164,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.button3.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Location = new System.Drawing.Point(12, 170);
@@ -178,7 +178,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.button2.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Location = new System.Drawing.Point(12, 96);
@@ -192,7 +192,7 @@
             // SupplierRegistrationbutton
             // 
             this.SupplierRegistrationbutton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.SupplierRegistrationbutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.SupplierRegistrationbutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
             this.SupplierRegistrationbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SupplierRegistrationbutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SupplierRegistrationbutton.Location = new System.Drawing.Point(215, 170);
@@ -206,7 +206,7 @@
             // CompanyCreationbutton
             // 
             this.CompanyCreationbutton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CompanyCreationbutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.CompanyCreationbutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
             this.CompanyCreationbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyCreationbutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CompanyCreationbutton.Location = new System.Drawing.Point(215, 96);
@@ -220,7 +220,7 @@
             // btnWorkOrder
             // 
             this.btnWorkOrder.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnWorkOrder.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.btnWorkOrder.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.whitey_glossy_rectangle_button_md;
             this.btnWorkOrder.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWorkOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnWorkOrder.Location = new System.Drawing.Point(12, 22);
@@ -234,7 +234,7 @@
             // registerButton
             // 
             this.registerButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.registerButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+            this.registerButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.registerButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.registerButton.Location = new System.Drawing.Point(12, 326);
