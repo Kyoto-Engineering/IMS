@@ -50,7 +50,7 @@
             // 
             // btnSignIn
             // 
-            this.btnSignIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSignIn.BackgroundImage")));
+            this.btnSignIn.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
             this.btnSignIn.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.Location = new System.Drawing.Point(330, 267);
             this.btnSignIn.Name = "btnSignIn";
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.ImportOrderManagementSystem;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.txtUserType);

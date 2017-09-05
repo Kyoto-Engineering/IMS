@@ -197,7 +197,7 @@
             // registerButton
             // 
             this.registerButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.registerButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("registerButton.BackgroundImage")));
+            this.registerButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.registerButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.registerButton.Location = new System.Drawing.Point(12, 326);
@@ -223,7 +223,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
+            this.groupBox2.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.ImportOrderManagementSystem;
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.groupBox2.Location = new System.Drawing.Point(494, 85);
             this.groupBox2.Name = "groupBox2";
