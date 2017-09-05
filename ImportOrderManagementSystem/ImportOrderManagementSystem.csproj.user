@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>\\KYOTOSERVER\Share\Software Apps\Kyoto Import Order Management System\|\\KYOTOSERVER\Share\Software Apps\Import Order Management System\|publish\</PublishUrlHistory>
+    <PublishUrlHistory>\\KYOTOSERVER\Share\Software Apps\Import Order Management System\|\\kyotoserver\Share\Software Apps\Kyoto Import Order Management System\|E:\Afifa\ims\|E:\Afifa\|\\KYOTOSERVER\Share\Software Apps\Kyoto Import Order Management System\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />

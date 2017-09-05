@@ -35,6 +35,7 @@
             // 
             // GetButton
             // 
+            this.GetButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.WhiteButton;
             this.GetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GetButton.Location = new System.Drawing.Point(204, 178);
             this.GetButton.Name = "GetButton";

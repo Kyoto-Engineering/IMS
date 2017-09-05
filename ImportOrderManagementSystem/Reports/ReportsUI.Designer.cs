@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsUI));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ShipAckButton = new System.Windows.Forms.Button();
             this.ShipOrdButton = new System.Windows.Forms.Button();
@@ -50,8 +51,9 @@
             // ShipAckButton
             // 
             this.ShipAckButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ShipAckButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ShipAckButton.BackgroundImage")));
             this.ShipAckButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShipAckButton.ForeColor = System.Drawing.Color.Cornsilk;
+            this.ShipAckButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ShipAckButton.Location = new System.Drawing.Point(341, 30);
             this.ShipAckButton.Name = "ShipAckButton";
             this.ShipAckButton.Size = new System.Drawing.Size(166, 52);
@@ -63,8 +65,9 @@
             // ShipOrdButton
             // 
             this.ShipOrdButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ShipOrdButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ShipOrdButton.BackgroundImage")));
             this.ShipOrdButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShipOrdButton.ForeColor = System.Drawing.Color.Cornsilk;
+            this.ShipOrdButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ShipOrdButton.Location = new System.Drawing.Point(172, 30);
             this.ShipOrdButton.Name = "ShipOrdButton";
             this.ShipOrdButton.Size = new System.Drawing.Size(151, 52);
@@ -76,8 +79,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Location = new System.Drawing.Point(26, 30);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 52);

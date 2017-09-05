@@ -256,11 +256,11 @@
             // 
             // DoneButton
             // 
-//            this.DoneButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+            this.DoneButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.greenbutton;
             this.DoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoneButton.Location = new System.Drawing.Point(333, 111);
+            this.DoneButton.Location = new System.Drawing.Point(333, 114);
             this.DoneButton.Name = "DoneButton";
-            this.DoneButton.Size = new System.Drawing.Size(75, 48);
+            this.DoneButton.Size = new System.Drawing.Size(75, 45);
             this.DoneButton.TabIndex = 6;
             this.DoneButton.Text = "Done";
             this.DoneButton.UseVisualStyleBackColor = true;
@@ -322,8 +322,9 @@
             // 
             // RemoveButton
             // 
-//            this.RemoveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.buttons_PNG168;
+            this.RemoveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.WhiteButton;
             this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveButton.ForeColor = System.Drawing.Color.Red;
             this.RemoveButton.Location = new System.Drawing.Point(333, 62);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(75, 43);
@@ -334,7 +335,7 @@
             // 
             // AddButton
             // 
-//            this.AddButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
+            this.AddButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.expencesbuttonpnghi;
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.Location = new System.Drawing.Point(333, 12);
             this.AddButton.Name = "AddButton";

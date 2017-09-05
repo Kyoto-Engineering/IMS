@@ -123,7 +123,7 @@
             // 
             // Savebutton
             // 
-//            this.Savebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+            this.Savebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.greenbutton;
             this.Savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Savebutton.Location = new System.Drawing.Point(388, 271);
             this.Savebutton.Name = "Savebutton";
@@ -137,7 +137,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-           // this.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.Import_Order_Management_System;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(631, 422);
             this.Controls.Add(this.Savebutton);

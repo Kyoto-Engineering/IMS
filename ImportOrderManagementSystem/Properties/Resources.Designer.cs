@@ -85,7 +85,7 @@ namespace ImportOrderManagementSystem.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap green_button {
             get {
-                object obj = ResourceManager.GetObject("green-button", resourceCulture);
+                object obj = ResourceManager.GetObject("green_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace ImportOrderManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap green_button__1_ {
+        internal static System.Drawing.Bitmap green_button1 {
             get {
-                object obj = ResourceManager.GetObject("green-button (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("green_button1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,19 +103,9 @@ namespace ImportOrderManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap green_button__1_1 {
+        internal static System.Drawing.Bitmap greenbutton {
             get {
-                object obj = ResourceManager.GetObject("green-button (1)1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Import_Order_Management_System {
-            get {
-                object obj = ResourceManager.GetObject("Import Order Management System", resourceCulture);
+                object obj = ResourceManager.GetObject("greenbutton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +143,9 @@ namespace ImportOrderManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap whitey_glossy_rectangle_button_md {
+        internal static System.Drawing.Bitmap WhiteButton {
             get {
-                object obj = ResourceManager.GetObject("whitey-glossy-rectangle-button-md", resourceCulture);
+                object obj = ResourceManager.GetObject("WhiteButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -106,9 +106,9 @@
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-//            this.saveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.green_button__1_;
+            this.saveButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.greenbutton;
             this.saveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.ForeColor = System.Drawing.Color.Navy;
+            this.saveButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.saveButton.Location = new System.Drawing.Point(436, 333);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(118, 62);
@@ -122,7 +122,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            //this.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.Import_Order_Management_System;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(854, 443);
             this.Controls.Add(this.saveButton);

@@ -35,6 +35,7 @@
             // 
             // GetButton
             // 
+            this.GetButton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.WhiteButton;
             this.GetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GetButton.Location = new System.Drawing.Point(240, 185);
             this.GetButton.Name = "GetButton";
@@ -72,6 +73,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ImpOrdNoComboBox);
             this.Controls.Add(this.GetButton);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ReportByImpOrder";
             this.Text = "ReportByImpOrder";
             this.Load += new System.EventHandler(this.ReportByImpOrder_Load);
