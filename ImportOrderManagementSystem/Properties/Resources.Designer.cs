@@ -63,6 +63,16 @@ namespace ImportOrderManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap banner {
+            get {
+                object obj = ResourceManager.GetObject("banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buttons_PNG168 {
             get {
                 object obj = ResourceManager.GetObject("buttons_PNG168", resourceCulture);
@@ -113,6 +123,16 @@ namespace ImportOrderManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImportOrderManagementedited {
+            get {
+                object obj = ResourceManager.GetObject("ImportOrderManagementedited", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ImportOrderManagementSystem {
             get {
                 object obj = ResourceManager.GetObject("ImportOrderManagementSystem", resourceCulture);
@@ -126,6 +146,16 @@ namespace ImportOrderManagementSystem.Properties {
         internal static System.Drawing.Bitmap ImportOrderManagementSystem1 {
             get {
                 object obj = ResourceManager.GetObject("ImportOrderManagementSystem1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logowithoutnamarked {
+            get {
+                object obj = ResourceManager.GetObject("Logowithoutnamarked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

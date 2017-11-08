@@ -276,5 +276,25 @@ namespace ImportOrderManagementSystem.LoginUI
         {
             Application.Exit();
         }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
