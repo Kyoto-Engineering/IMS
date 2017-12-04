@@ -87,7 +87,7 @@ namespace ImportOrderManagementSystem.Reports
 
                 con = new SqlConnection(cs.DBConn);
                 con.Open();
-                string ct = "SELECT ShipmentId FROM ShipmentAcknowledgement ORDER BY ShipmentId";
+                string ct = "SELECT ShipmentAId FROM ShipmentAcknowledgement ORDER BY ShipmentAId";
                 cmd = new SqlCommand(ct);
                 cmd.Connection = con;
                 rdr = cmd.ExecuteReader();
