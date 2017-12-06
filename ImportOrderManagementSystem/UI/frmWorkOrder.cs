@@ -1916,7 +1916,7 @@ namespace ImportOrderManagementSystem.UI
             dataGridViewk.Rows.Clear();
             while (rdr.Read() == true)
             {
-                dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7]);
+                dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4], rdr[5], rdr[6], rdr[7],rdr[8]);
             }
 
             _con.Close();
