@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,10 +62,19 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.productNameTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -86,7 +95,7 @@
             this.groupBox1.Controls.Add(this.CodetextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.PricetextBox);
-            this.groupBox1.Location = new System.Drawing.Point(3, 36);
+            this.groupBox1.Location = new System.Drawing.Point(3, 77);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(314, 417);
             this.groupBox1.TabIndex = 1;
@@ -243,9 +252,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridViewk);
-            this.groupBox2.Location = new System.Drawing.Point(323, 36);
+            this.groupBox2.Location = new System.Drawing.Point(323, 77);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(361, 276);
+            this.groupBox2.Size = new System.Drawing.Size(400, 276);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.UseCompatibleTextRendering = true;
@@ -261,19 +270,19 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewk.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewk.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewk.Location = new System.Drawing.Point(6, 19);
             this.dataGridViewk.Name = "dataGridViewk";
             this.dataGridViewk.ReadOnly = true;
             this.dataGridViewk.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewk.Size = new System.Drawing.Size(349, 240);
+            this.dataGridViewk.Size = new System.Drawing.Size(388, 240);
             this.dataGridViewk.TabIndex = 121;
             this.dataGridViewk.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewk_CellContentClick);
             this.dataGridViewk.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewk_RowHeaderMouseClick);
@@ -281,9 +290,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Location = new System.Drawing.Point(323, 317);
+            this.groupBox3.Location = new System.Drawing.Point(323, 354);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(361, 227);
+            this.groupBox3.Size = new System.Drawing.Size(400, 227);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             // 
@@ -302,7 +311,7 @@
             this.listView1.Location = new System.Drawing.Point(6, 17);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(349, 201);
+            this.listView1.Size = new System.Drawing.Size(388, 201);
             this.listView1.TabIndex = 18;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -356,7 +365,7 @@
             this.Savebutton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Savebutton.BackgroundImage = global::ImportOrderManagementSystem.Properties.Resources.greenbutton;
             this.Savebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Savebutton.Location = new System.Drawing.Point(181, 469);
+            this.Savebutton.Location = new System.Drawing.Point(181, 523);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(106, 52);
             this.Savebutton.TabIndex = 11;
@@ -397,11 +406,80 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox5.Controls.Add(this.productNameTextBox);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox5.Location = new System.Drawing.Point(323, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(132, 84);
+            this.groupBox5.TabIndex = 12;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Search By Product Gen  Description";
+            // 
+            // productNameTextBox
+            // 
+            this.productNameTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productNameTextBox.Location = new System.Drawing.Point(7, 39);
+            this.productNameTextBox.Name = "productNameTextBox";
+            this.productNameTextBox.Size = new System.Drawing.Size(115, 26);
+            this.productNameTextBox.TabIndex = 0;
+            this.productNameTextBox.TextChanged += new System.EventHandler(this.productNameTextBox_TextChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox4.Location = new System.Drawing.Point(457, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(129, 84);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Search By Item  Description";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(7, 39);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(115, 26);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox6.Controls.Add(this.textBox3);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox6.Location = new System.Drawing.Point(590, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(133, 84);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Search By Item  Code";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(8, 39);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(115, 26);
+            this.textBox3.TabIndex = 0;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
             // SpecialPriceUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 548);
+            this.ClientSize = new System.Drawing.Size(735, 586);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.Savebutton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -414,6 +492,12 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewk)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -453,5 +537,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox productNameTextBox;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

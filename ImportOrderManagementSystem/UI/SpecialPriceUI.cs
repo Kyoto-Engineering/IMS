@@ -262,5 +262,53 @@ namespace ImportOrderManagementSystem.UI
             }
         }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            string qq2 =
+                "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, SpecialPrice.SPrice FROM ProductListSummary Left Outer Join SpecialPrice on ProductListSummary.Sl = SpecialPrice.Sl where ProductListSummary.ItemCode like'"+ textBox3.Text +"%' ";
+            cmd = new SqlCommand(qq2, con);
+            dataGridViewk.Rows.Clear();
+            rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rdr.Read())
+            {
+                dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4]);
+            }
+            con.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            string qq2 =
+                "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, SpecialPrice.SPrice FROM ProductListSummary Left Outer Join SpecialPrice on ProductListSummary.Sl = SpecialPrice.Sl where ProductListSummary.ItemDescription like'" + textBox2.Text + "%' ";
+            cmd = new SqlCommand(qq2, con);
+            dataGridViewk.Rows.Clear();
+            rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rdr.Read())
+            {
+                dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4]);
+            }
+            con.Close();
+        }
+
+        private void productNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            con = new SqlConnection(cs.DBConn);
+            con.Open();
+            string qq2 =
+                "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, SpecialPrice.SPrice FROM ProductListSummary Left Outer Join SpecialPrice on ProductListSummary.Sl = SpecialPrice.Sl where ProductListSummary.ProductGenericDescription like'" + productNameTextBox.Text + "%' ";
+            cmd = new SqlCommand(qq2, con);
+            dataGridViewk.Rows.Clear();
+            rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (rdr.Read())
+            {
+                dataGridViewk.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3], rdr[4]);
+            }
+            con.Close();
+        }
+
     }
 }
