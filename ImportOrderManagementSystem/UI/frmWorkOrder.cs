@@ -197,7 +197,7 @@ namespace ImportOrderManagementSystem.UI
             //	Table table = default(Table);
             var with1 = reportConInfo;
             with1.ServerName = "tcp:KyotoServer,49172";
-            with1.DatabaseName = "ProductNRelatedDB";
+            with1.DatabaseName = "ProductNRelatedDB_newforSpecialPrice";
             with1.UserID = "sa";
             with1.Password = "SystemAdministrator";
 
@@ -1910,7 +1910,7 @@ namespace ImportOrderManagementSystem.UI
             _con.Open();
             //cmd = new SqlCommand("SELECT RTRIM(ProductListSummary.Sl),RTRIM(ProductListSummary.ProductGenericDescription),RTRIM(ProductListSummary.ItemDescription),RTRIM(ProductListSummary.ItemCode),RTRIM(MasterStocks.MQuantity),RTRIM(MasterStocks.UnitPrice) from ProductListSummary,MasterStocks where MasterStocks.Sl=ProductListSummary.Sl order by MasterStocks.Sl desc", con);
             _cmd = new SqlCommand(
-                "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID where Brand.BrandName ='" +
+                "SELECT ProductListSummary.Sl, ProductListSummary.ProductGenericDescription, ProductListSummary.ItemDescription, ProductListSummary.ItemCode, EXWPrice.Price, Currency.CurrencyName, Currency.CurrencyId, IncoTerms.Incoterm,SpecialPrice.SPrice FROM  Brand INNER JOIN ProductListSummary ON Brand.BrandId = ProductListSummary.BrandId  FULL OUTER JOIN EXWPrice ON ProductListSummary.Sl = EXWPrice.Sl FULL OUTER JOIN Currency ON Currency.CurrencyId = EXWPrice.CurrencyId FULL OUTER JOIN IncoTerms ON IncoTerms.IncoID = EXWPrice.IncoID Left Outer Join SpecialPrice on ProductListSummary.Sl = SpecialPrice.Sl  where Brand.BrandName ='" +
                 BrandcomboBox.Text + "' order by ProductListSummary.Sl desc", _con);
             rdr = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
             dataGridViewk.Rows.Clear();

@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.toolStripContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.ReportsButton);
             this.groupBox1.Controls.Add(this.InsertPricebutton);
             this.groupBox1.Controls.Add(this.button3);
@@ -158,7 +160,7 @@
             this.SupplierRegistrationbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SupplierRegistrationbutton.BackgroundImage")));
             this.SupplierRegistrationbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SupplierRegistrationbutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.SupplierRegistrationbutton.Location = new System.Drawing.Point(215, 170);
+            this.SupplierRegistrationbutton.Location = new System.Drawing.Point(215, 243);
             this.SupplierRegistrationbutton.Name = "SupplierRegistrationbutton";
             this.SupplierRegistrationbutton.Size = new System.Drawing.Size(169, 53);
             this.SupplierRegistrationbutton.TabIndex = 10;
@@ -172,7 +174,7 @@
             this.CompanyCreationbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CompanyCreationbutton.BackgroundImage")));
             this.CompanyCreationbutton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyCreationbutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.CompanyCreationbutton.Location = new System.Drawing.Point(215, 96);
+            this.CompanyCreationbutton.Location = new System.Drawing.Point(215, 168);
             this.CompanyCreationbutton.Name = "CompanyCreationbutton";
             this.CompanyCreationbutton.Size = new System.Drawing.Size(169, 56);
             this.CompanyCreationbutton.TabIndex = 9;
@@ -244,13 +246,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(215, 96);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(169, 56);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Special Price Management";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // frmMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1122, 561);
+            this.ClientSize = new System.Drawing.Size(1020, 561);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -290,5 +305,6 @@
         private System.Windows.Forms.Button ReportsButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button4;
     }
 }

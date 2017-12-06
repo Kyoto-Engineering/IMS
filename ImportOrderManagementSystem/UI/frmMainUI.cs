@@ -184,5 +184,13 @@ namespace ImportOrderManagementSystem.UI
             frm.ShowDialog();
             this.Visible = true;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SpecialPriceUI spui = new SpecialPriceUI();
+            this.Visible = false;
+            spui.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

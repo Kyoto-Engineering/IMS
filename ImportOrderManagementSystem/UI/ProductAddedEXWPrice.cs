@@ -1007,6 +1007,11 @@ namespace ImportOrderManagementSystem.UI
             {
                 MessageBox.Show(@"Please Enter Price!", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (string.IsNullOrWhiteSpace(currencyComboBox.Text))
+            {
+                MessageBox.Show(@"Please Select Currency!", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
             else
             {
                 try
